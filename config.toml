@@ -1,4 +1,4 @@
-baseURL = "https://shivas.blog/"
+baseURL = "https://shivas.blog/public/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
