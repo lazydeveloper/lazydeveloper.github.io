@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/posts\/calculate-anual-rate-of-return\/"
-        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python Programming","wordcount":  273 ,
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python Programming","wordcount":  296 ,
         "url": "\/posts\/calculate-anual-rate-of-return\/","datePublished": "2023-03-04T13:55:20-05:00","dateModified": "2023-03-04T13:55:20-05:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "\/images\/avatar.png"},"author": {
@@ -103,7 +103,7 @@
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Calculate anual rate of return</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://shivas.blog/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shiva Inampudi</a>
 </span>&nbsp;<span class="post-category">included in <a href="/categories/code-challenge/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Code Challenge</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-04">2023-03-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;273 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-04">2023-03-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;296 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;<span id="/posts/calculate-anual-rate-of-return/" class="leancloud_visitors" data-flag-title="Calculate anual rate of return">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
                     </span>&nbsp;</div>
@@ -132,33 +132,74 @@ year by $5. The second year, the increase is 5% of the new amount $105, which is
 <p>The function signature might look something like this:<br>
 <code>def invest(amount, rate, years):</code></p>
 <p>The function then prints out the amount of the investment, rounded to 2 decimal places, at the end of each year for the specified number of years.  For example, calling invest(100, .05, 4) should print the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>year 1: $105.00
-</span></span><span style="display:flex;"><span>year 2: $110.25
-</span></span><span style="display:flex;"><span>year 3: $115.76
-</span></span><span style="display:flex;"><span>year 4: $121.55
-</span></span></code></pre></div><h2 id="solution">Solution</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">year 1: <span class="nv">$105</span>.00
+</span></span><span class="line"><span class="cl">year 2: <span class="nv">$110</span>.25
+</span></span><span class="line"><span class="cl">year 3: <span class="nv">$115</span>.76
+</span></span><span class="line"><span class="cl">year 4: <span class="nv">$121</span>.55
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
 <h3 id="doing-with-for-loop">Doing with &lsquo;for&rsquo; loop</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">invest</span>(principal, rate, year): <span style="color:#75715e">#(100, 5, 4)</span>
-</span></span><span style="display:flex;"><span>    final_amount <span style="color:#f92672">=</span> principal <span style="color:#75715e"># ( final_amount = 100)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(year):
-</span></span><span style="display:flex;"><span>        final_amount <span style="color:#f92672">*=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> rate<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>) <span style="color:#75715e"># final_amount = 100 * ( 1 + 5/100)</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Year </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">: $</span><span style="color:#e6db74">{:,.2f}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, final_amount))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>invest(float(input(<span style="color:#e6db74">&#34;Enter Principal amount in $&#34;</span>)), 
-</span></span><span style="display:flex;"><span>float(input(<span style="color:#e6db74">&#34;Enter the rate %&#34;</span>)), 
-</span></span><span style="display:flex;"><span>int(input(<span style="color:#e6db74">&#34;And enter the number of years: &#34;</span>)))
-</span></span></code></pre></div><h3 id="doing-with-while-loop">Doing with &lsquo;while&rsquo; loop</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">invest</span>(principal, rate, years):
-</span></span><span style="display:flex;"><span>    final_amount <span style="color:#f92672">=</span> principal
-</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;=</span> years:
-</span></span><span style="display:flex;"><span>        final_amount <span style="color:#f92672">*=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> rate<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>)
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Year </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">: Final amount: $</span><span style="color:#e6db74">{:,.2f}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(i, final_amount))
-</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>invest(float(input(<span style="color:#e6db74">&#34;Enter Principal amount in $&#34;</span>)), 
-</span></span><span style="display:flex;"><span>float(input(<span style="color:#e6db74">&#34;Enter the rate %&#34;</span>)), 
-</span></span><span style="display:flex;"><span>int(input(<span style="color:#e6db74">&#34;And enter the number of years: &#34;</span>)))
-</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">invest</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span> <span class="c1">#(100, 5, 4)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">final_amount</span> <span class="o">=</span> <span class="n">principal</span> <span class="c1"># ( final_amount = 100)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">final_amount</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># final_amount = 100 * ( 1 + 5/100)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Year </span><span class="si">{}</span><span class="s2">: $</span><span class="si">{:,.2f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">final_amount</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">invest</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Enter Principal amount in $&#34;</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Enter the rate %&#34;</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;And enter the number of years: &#34;</span><span class="p">)))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="doing-with-while-loop">Doing with &lsquo;while&rsquo; loop</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">invest</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">years</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">final_amount</span> <span class="o">=</span> <span class="n">principal</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">years</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">final_amount</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Year </span><span class="si">{}</span><span class="s2">: Final amount: $</span><span class="si">{:,.2f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">final_amount</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">invest</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Enter Principal amount in $&#34;</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Enter the rate %&#34;</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;And enter the number of years: &#34;</span><span class="p">)))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
