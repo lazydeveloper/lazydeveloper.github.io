@@ -1,15 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Shiva&#39;s Tech Blog</title>
-        <link>https://shivas.blog/posts/</link>
-        <description>All Posts | Shiva&#39;s Tech Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="https://shivas.blog/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>First_post</title>
-    <link>https://shivas.blog/posts/first_post/</link>
+        <title>All Posts - </title>
+        <link>/posts/</link>
+        <description>All Posts | </description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Calculate anual rate of return</title>
+    <link>/posts/calculate-anual-rate-of-return/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva Inampudi</author>
-    <guid>https://shivas.blog/posts/first_post/</guid>
-    <description><![CDATA[this is some text]]></description>
+    <guid>/posts/calculate-anual-rate-of-return/</guid>
+    <description><![CDATA[The Challenge In this challenge, you will write a program called invest.py that tracks the growing amount of an investment over time.
+An initial deposit, called the principal amount, is made. Each year, the amount increases by a fixed percentage, called the annual rate of return.
+For example, a principal amount of $100 with an annual rate of return of 5% increases the first year by $5. The second year, the increase is 5% of the new amount $105, which is $5.]]></description>
 </item>
 </channel>
 </rss>
