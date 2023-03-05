@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>My New Hugo Site</title>
+        <title>Shiva&#39;s Tech Blog</title>
         <link>https://shivas.blog/</link>
-        <description>This is my cool site</description>
+        <description>Tech blog by Shiva Inampudi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate>
             <atom:link href="https://shivas.blog/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>First_post</title>
     <link>https://shivas.blog/posts/first_post/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>xxxx</author>
+    <author>Shiva Inampudi</author>
     <guid>https://shivas.blog/posts/first_post/</guid>
     <description><![CDATA[this is some text]]></description>
 </item>

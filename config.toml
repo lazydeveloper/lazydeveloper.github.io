@@ -1,10 +1,10 @@
-baseURL = "https://shivas.blog/public/"
+baseURL = "https://shivas.blog/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
 # website title
-title = "My New Hugo Site"
+title = "Shiva's Tech Blog"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -13,9 +13,9 @@ languageName = "English"
 
 # Author config
 [author]
-  name = "xxxx"
+  name = "Shiva Inampudi"
   email = ""
-  link = ""
+  link = "https://shivas.blog/"
 
 # Menu config
 [menu]
