@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Calculate Anual Rate Of Return",
+        "uri": "posts/Calculate Anual Rate Of Return",
+        "content": "Hey there  We re going work challenge together we ll writing program called invest py  goal program track growing amount investment time  We ll start initial deposit  known principal amount  year  amount will increase fixed percentage called annual rate return  instance  start principal amount  100 annual rate return 5   first year s increase will  5  second year  increase will 5  new amount   105  resulting increase  5 25  complete challenge  need write function called  invest  three parameters  principal amount  annual rate return  number years calculate  function look something this  def invest amount  rate  years   Once we ve defined function  need ensure prints amount investment  rounded 2 decimal places  end year specified number years  example  call function this  invest 100   05  4   print following  year 1   105 00 year 2   110 25 year 3   115 76 year 4   121 55 Solution Doing  for  loop def invest principal  rate  year   final_amount   principal range year   final_amount     1   rate 100  print  Year          2f   format i 1  final_amount   invest float input  Enter Principal amount       float input  Enter rate      int input  And enter number years       Doing  while  loop def invest principal  rate  years   final_amount   principal   1",
+        "objectID": "posts/Calculate Anual Rate Of Return",
+        "description": "Calculate simple anual rate of return using python programming language",
+        "date": "2023-03-04T18:55:20.000Z",
+        "draft": false,
+        "tags": [
+            "Code Challenge",
+            "Python Programming",
+            "Loops"
+        ],
+        "categories": [
+            "Python Programming"
+        ]
+    }
+]

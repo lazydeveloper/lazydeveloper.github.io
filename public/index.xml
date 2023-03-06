@@ -6,14 +6,14 @@
         <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Calculate anual rate of return</title>
+    <title>Calculate Anual Rate Of Return</title>
     <link>/posts/calculate-anual-rate-of-return/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva Inampudi</author>
     <guid>/posts/calculate-anual-rate-of-return/</guid>
-    <description><![CDATA[The Challenge In this challenge, you will write a program called invest.py that tracks the growing amount of an investment over time.
-An initial deposit, called the principal amount, is made. Each year, the amount increases by a fixed percentage, called the annual rate of return.
-For example, a principal amount of $100 with an annual rate of return of 5% increases the first year by $5. The second year, the increase is 5% of the new amount $105, which is $5.]]></description>
+    <description><![CDATA[Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
+We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.
+For instance, if we start with a principal amount of $100 and an annual rate of return of 5%, the first year&rsquo;s increase will be $5.]]></description>
 </item>
 </channel>
 </rss>

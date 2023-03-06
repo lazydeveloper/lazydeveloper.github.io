@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "160fd4edba1ca84e",
+        "id": "882852ae03da8d00",
         "type": "tabs",
         "children": [
           {
-            "id": "1bdf4548658f5a0f",
+            "id": "1c30df155b433645",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Calculate anual rate of return.md",
+                "file": "content/posts/Calculate Anual Rate Of Return.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/Calculate anual rate of return.md",
+                "file": "content/posts/Calculate Anual Rate Of Return.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/Calculate anual rate of return.md",
+                "file": "content/posts/Calculate Anual Rate Of Return.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Calculate anual rate of return.md"
+                "file": "content/posts/Calculate Anual Rate Of Return.md"
               }
             }
           }
@@ -146,7 +146,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1bdf4548658f5a0f",
+  "active": "1c30df155b433645",
   "lastOpenFiles": [
     "public/tags/python-programming/page/1/index.html",
     "public/tags/python-programming/page/1",
@@ -161,7 +161,7 @@
     "public/categories/code-challenge/page",
     "themes/LoveIt/exampleSite/content/posts/basic-markdown-syntax/index.en.md",
     "themes/LoveIt/exampleSite/content/posts/basic-markdown-syntax/featured-image.png",
-    "content/posts/Calculate anual rate of return.md",
+    "content/posts/Calculate Anual Rate Of Return.md",
     "content/posts/Second Post.md",
     "content/posts/first_post.md",
     "themes/LoveIt/exampleSite/content/posts/basic-markdown-syntax/index.zh-cn.md",

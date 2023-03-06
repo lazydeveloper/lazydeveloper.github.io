@@ -168,27 +168,7 @@ enableEmoji = true
     # Windows v8-11 tile color
     tileColor = "#da532c"
 
-  # Search config
-  [params.search]
-    enable = true
-    # type of search engine ["lunr", "algolia"]
-    type = "algolia"
-    # max index length of the chunked content
-    contentLength = 4000
-    # placeholder of the search bar
-    placeholder = ""
-    # max number of results length
-    maxResultLength = 10
-    # snippet length of the result
-    snippetLength = 30
-    # HTML tag name of the highlight part in results
-    highlightTag = "em"
-    # whether to use the absolute URL based on the baseURL in search index
-    absoluteURL = false
-    [params.search.algolia]
-      index = "index.en"
-      appID = "PASDMWALPK"
-      searchKey = "b42948e51daaa93df92381c8e2ac0f93"
+
 
   # Home page config
   [params.home]
@@ -583,16 +563,13 @@ enableEmoji = true
       typographer = true
     [markup.goldmark.renderer]
       # whether to use HTML tags directly in the document
-      # 是否在文档中直接使用 HTML 标签
       unsafe = true
   # Table Of Contents settings
-  # 目录设置
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 6
 
 # Sitemap config
-# 网站地图配置
 [sitemap]
   changefreq = "weekly"
   filename = "sitemap.xml"
@@ -617,7 +594,6 @@ enableEmoji = true
     privacyEnhanced = true
 
 # Options to make output .md files
-# 用于输出 Markdown 格式文档的设置
 [mediaTypes]
   [mediaTypes."text/plain"]
     suffixes = ["md"]
@@ -635,7 +611,7 @@ enableEmoji = true
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
-
+# -----------------------------------------------
 # Multilingual
 [languages]
   [languages.en]
