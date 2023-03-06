@@ -22,7 +22,6 @@ theme = "LoveIt"
     noClasses = false
 
 # ------------
-
   # Search config
   [params.search]
     enable = true
@@ -40,8 +39,8 @@ theme = "LoveIt"
     highlightTag = "em"
     # whether to use the absolute URL based on the baseURL in search index
     absoluteURL = false
+    
     [params.search.algolia]
       index = "shivasblog"
       appID = "86WT0W3RY2"
       searchKey = "66427dfa09802bd19793a66c81fd82f9"
-

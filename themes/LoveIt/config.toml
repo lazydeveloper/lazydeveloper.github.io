@@ -37,6 +37,7 @@ enableEmoji = true
   email = ""
   link = ""
 
+
 # Menu config
 [menu]
   [[menu.main]]
