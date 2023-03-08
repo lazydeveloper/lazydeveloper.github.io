@@ -1,5 +1,5 @@
 ---
-title: "Calculate Anual Rate Of Return"
+title: "Calculate Anual Rate Of Return In Python"
 description: "Calculate simple anual rate of return using python programming language"
 date: 2023-03-04T13:55:20-05:00
 draft: false
@@ -15,6 +15,7 @@ categories: ["Python Programming"]
 #   src: "featured-image.png"
 # lightgallery: true
 ---
+
 Hey there! We're going to work on a challenge together where we'll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
 
 We'll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.
@@ -25,7 +26,7 @@ To complete this challenge, we need to write a function called "invest" with thr
 
 The function should look something like this:
 
-	`def invest(amount, rate, years):`
+    `def invest(amount, rate, years):`
 
 Once we've defined the function, we need to ensure it prints out the amount of the investment, rounded to 2 decimal places, at the end of each year for the specified number of years.
 
@@ -41,6 +42,7 @@ year 4: $121.55
 ## Solution
 
 ### Doing with 'for' loop
+
 ```python
 def invest(principal, rate, year):
     final_amount = principal
@@ -52,6 +54,7 @@ invest(float(input("Enter Principal amount in $")), float(input("Enter the rate%
 ```
 
 ### Doing with 'while' loop
+
 ```python
 def invest(principal, rate, years):
     final_amount = principal

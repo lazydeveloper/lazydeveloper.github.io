@@ -1,16 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title></title>
+        <title>LoveIt</title>
         <link>/</link>
-        <description>Tech Blog by Shiva Inampudi</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Calculate Anual Rate Of Return</title>
-    <link>/posts/calculate-anual-rate-of-return/</link>
+    <title>Adding Algolia Search to Hugo</title>
+    <link>/posts/adding_algolia_search_to_hugo/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva Inampudi</author>
-    <guid>/posts/calculate-anual-rate-of-return/</guid>
+    <guid>/posts/adding_algolia_search_to_hugo/</guid>
+    <description><![CDATA[What This Post Covers Hi There! If you&rsquo;re looking for a powerful framework to build your personal or project website in a matter of minutes, Hugo is your guy. However, there&rsquo;s one little problem - Hugo doesn&rsquo;t come with a search engine by default. But don&rsquo;t fret, I&rsquo;m here to show you how I enabled Algolia search on my Hugo website. Just a quick heads up, this isn&rsquo;t a comprehensive guide, but rather a post that I created as I was learning how to do this myself.]]></description>
+</item>
+<item>
+    <title>Calculate Anual Rate Of Return In Python</title>
+    <link>/posts/calcuate_anual_rate_of_return_using_python/</link>
+    <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
+    <author>Shiva Inampudi</author>
+    <guid>/posts/calcuate_anual_rate_of_return_using_python/</guid>
     <description><![CDATA[Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
 We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.
 For instance, if we start with a principal amount of $100 and an annual rate of return of 5%, the first year&rsquo;s increase will be $5.]]></description>

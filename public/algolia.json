@@ -1,9 +1,26 @@
 [
     {
-        "title": "Calculate Anual Rate Of Return",
-        "uri": "posts/Calculate Anual Rate Of Return",
+        "title": "Adding Algolia Search to Hugo",
+        "uri": "posts/adding_algolia_search_to_hugo",
+        "content": "Post Covers Hi There  you re looking powerful framework build personal project website matter minutes  Hugo guy  However  there s one little problem   Hugo doesn t search engine default  don t fret  I m show enabled Algolia search Hugo website  Just quick heads up  isn t comprehensive guide  rather post created learning myself  So  let s dive started  shall we  Begin follow post  following installed up to date local machine   x  Hugo  x  NPM will using Algolia search provider  SaaS  Search Service  platform  Therefore  will need Algolia account set https   www algolia com   Getting Keys Algolia creating Algolia account  navigate  Search  product left hand panel  Here  create index application  It s worth noting Algolia free service  find details website  Next  go API Keys sectionfrom seetings  left bottom  copy following details  Application ID Admin API Key Index name   name index created earlier  Change local env Install Hugo algolia local Navigate project root directory run following command npm install hugo algolia Add piece code package json project root directory  scripts      index    hugo algolia    index and send    hugo algolia  s     add config yml file  which project root dir  don t exist create one    algolia  index   hugopage  key   66427d478es90866c81fd82f9  appID   86WT02H4BNN2  replace index  key appid Algolia account created  sure cople posts created already run following command create local  npm run index will create  json file upload algolia index create",
+        "objectID": "posts/adding_algolia_search_to_hugo",
+        "description": "Lets add algolia search to hugo",
+        "date": "2023-03-04T18:55:20.000Z",
+        "draft": false,
+        "tags": [
+            "Search Engine",
+            "Algolia",
+            "Hugo"
+        ],
+        "categories": [
+            "Development"
+        ]
+    },
+    {
+        "title": "Calculate Anual Rate Of Return In Python",
+        "uri": "posts/calcuate_anual_rate_of_return_using_python",
         "content": "Hey there  We re going work challenge together we ll writing program called invest py  goal program track growing amount investment time  We ll start initial deposit  known principal amount  year  amount will increase fixed percentage called annual rate return  instance  start principal amount  100 annual rate return 5   first year s increase will  5  second year  increase will 5  new amount   105  resulting increase  5 25  complete challenge  need write function called  invest  three parameters  principal amount  annual rate return  number years calculate  function look something this  def invest amount  rate  years   Once we ve defined function  need ensure prints amount investment  rounded 2 decimal places  end year specified number years  example  call function this  invest 100   05  4   print following  year 1   105 00 year 2   110 25 year 3   115 76 year 4   121 55 Solution Doing  for  loop def invest principal  rate  year   final_amount   principal range year   final_amount     1   rate 100  print  Year          2f   format i 1  final_amount   invest float input  Enter Principal amount       float input  Enter rate      int input  And enter number years       Doing  while  loop def invest principal  rate  years   final_amount   principal   1",
-        "objectID": "posts/Calculate Anual Rate Of Return",
+        "objectID": "posts/calcuate_anual_rate_of_return_using_python",
         "description": "Calculate simple anual rate of return using python programming language",
         "date": "2023-03-04T18:55:20.000Z",
         "draft": false,

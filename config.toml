@@ -3,13 +3,52 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
+# themes directory
+# themesDir = "../.."
+
+# website title
+title = "LoveIt"
+
+# determines default content language ["en", "zh-cn", "fr", "pl", ...]
+# 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
+defaultContentLanguage = "en"
+# language code ["en", "zh-CN", "fr", "pl", ...]
+# 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
+languageCode = "en"
+# language name ["English", "简体中文", "Français", "Polski", ...]
+# 语言名称 ["English", "简体中文", "Français", "Polski", ...]
+languageName = "English"
+# whether to include Chinese/Japanese/Korean
+# 是否包括中日韩文字
+hasCJKLanguage = false
+
+# default amount of posts in each pages
+# 默认每页列表显示的文章数目
+paginate = 12
+# google analytics code [UA-XXXXXXXX-X]
+# 谷歌分析代号 [UA-XXXXXXXX-X]
+googleAnalytics = ""
+# copyright description used only for seo schema
+# 版权描述，仅仅用于 SEO
+copyright = ""
+
+# whether to use robots.txt
+enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = true
+# whether to use emoji code
+enableEmoji = true
+gitRepo = "https://github.com/lazydeveloper/lazydeveloper.github.io"
+
+# ignore some build errors
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
 # Author config
 [author]
   name = "Shiva Inampudi"
   email = ""
   link = "https://shivas.blog/"
 
-# Markup related configuration in Hugo
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
@@ -21,16 +60,14 @@ theme = "LoveIt"
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
 
-# ------------
-  # Search config
-  [params.search]
+[params.search]
     enable = true
     # type of search engine ["lunr", "algolia"]
     type = "algolia"
     # max index length of the chunked content
     contentLength = 4000
     # placeholder of the search bar
-    placeholder = ""
+    placeholder = "Search works on homepage"
     # max number of results length
     maxResultLength = 10
     # snippet length of the result
@@ -44,3 +81,8 @@ theme = "LoveIt"
       index = "shivasblog"
       appID = "86WT0W3RY2"
       searchKey = "66427dfa09802bd19793a66c81fd82f9"
+
+
+
+
+ 
