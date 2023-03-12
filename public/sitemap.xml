@@ -2,17 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/posts/adding_algolia_search_to_hugo/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/algolia/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/posts/calcuate_anual_rate_of_return_using_python/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/categories/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/code-challenge/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/categories/development/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/hugo/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/loops/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/python-programming/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/categories/python-programming/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/search-engine/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2023-03-04T13:55:20-05:00</lastmod></url></urlset>
+            <loc>/posts/calcuate_anual_rate_of_return_using_python/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/tags/code-challenge/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/tags/loops/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/tags/programming/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/categories/programming/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/tags/python/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/categories/python/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2023-03-07T22:56:01-05:00</lastmod></url></urlset>
