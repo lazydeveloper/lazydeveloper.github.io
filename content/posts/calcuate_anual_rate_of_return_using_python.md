@@ -3,8 +3,8 @@ title: "Calculate Anual Rate Of Return In Python"
 description: "Calculate simple anual rate of return using python programming language"
 date: 2023-03-04T13:55:20-05:00
 draft: false
-tags: ["Code Challenge", "Python", "Programming", "Loops"]
-categories: ["Python", "Programming"]
+tags: ["Code Challenge", "Python", "Loops"]
+categories: ["Programming"]
 # weight: 4
 # lastmod: 2020-01-01T16:45:40+08:00
 # author: "Dillon"

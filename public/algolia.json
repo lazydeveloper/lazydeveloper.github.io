@@ -1,5 +1,21 @@
 [
     {
+        "title": "Adding Algolia Search to Hugo",
+        "uri": "posts/adding_algolia_search_to_hugo",
+        "content": "Post Covers Hi There  you re looking powerful framework build personal project website matter minutes  Hugo guy  However  there s one little problem   Hugo doesn t search engine default  don t fret  I m show enabled Algolia search Hugo website  Just quick heads up  isn t comprehensive guide  rather post created learning myself  So  let s dive started  shall we  0  Begin follow post  following installed up to date local machine   x  Hugo  x  NPM will using Algolia search provider  SaaS  Search Service  platform  Therefore  will need Algolia account set https   www algolia com   x  Signup  https   www algolia com   x  atlease one post created published test search  1  Getting Keys Algolia creating Algolia account  navigate  Search  product left hand panel  Here  create index application  It s worth noting Algolia free service  find details website  Next  go API Keys sectionfrom seetings  left bottom  copy following details  Application ID Admin API Key Index name   name index created earlier  2  Installing Hugo algolia install Hugo algolia package local configure project  follow steps below  Open terminal navigate root directory Hugo project  Run command npm install hugo algolia install hugo algolia package  Once package installed  add following code snippet package json file located project root directory   scripts      index    hugo algolia    index and send    hugo algolia  s    code will allow run commands npm run index index search  npm run index and send send search index Algolia  Next  create config yml file project root directory  if doesn t exist already   Add following code config yml file  algolia  index   yourindexname  key   yourapikey  appID   yourappid  Replace yourindexname  yourapikey  yourappid values Algolia account created  following above steps  successfully installed hugo algolia package local configured Hugo project  3  Building Site Index Assuming few posts already published hugo server running   follow steps below build hugo search index send Algelio Index  Open terminal navigate root directory Hugo project  Run hugo command build static pages website  Once static pages built  run npm run index command index search  Finally  run npm run index and send command send search index Algolia Index  Check search working correctly local  following above steps  successfully configured Algolia search Hugo website  indexed search pushed changes GitHub repository  4  End successfully integrated Algolia search Hugo site  search posts using keywords  Please note need build send search index Algolia every time publish new post  explained step 3  Posts not included search index will not appear search results  navigate manually website  example  visit blog shiva blog  search posts using search bar located header section  questions  suggestions feedback tutorial  please feel free start new discussion here  Looking ways improve provide better content blog readers",
+        "objectID": "posts/adding_algolia_search_to_hugo",
+        "description": "Lets add algolia search to hugo",
+        "date": "2023-03-04T18:55:20.000Z",
+        "draft": false,
+        "tags": [
+            "Algolia",
+            "Hugo"
+        ],
+        "categories": [
+            "Development"
+        ]
+    },
+    {
         "title": "Calculate Anual Rate Of Return In Python",
         "uri": "posts/calcuate_anual_rate_of_return_using_python",
         "content": "Hey there  We re going work challenge together we ll writing program called invest py  goal program track growing amount investment time  We ll start initial deposit  known principal amount  year  amount will increase fixed percentage called annual rate return  instance  start principal amount  100 annual rate return 5   first year s increase will  5  second year  increase will 5  new amount   105  resulting increase  5 25  complete challenge  need write function called  invest  three parameters  principal amount  annual rate return  number years calculate  function look something this  def invest amount  rate  years   Once we ve defined function  need ensure prints amount investment  rounded 2 decimal places  end year specified number years  example  call function this  invest 100   05  4   print following  year 1   105 00 year 2   110 25 year 3   115 76 year 4   121 55 Solution Doing  for  loop def invest principal  rate  year   final_amount   principal range year   final_amount     1   rate 100  print  Year          2f   format i 1  final_amount   invest float input  Enter Principal amount       float input  Enter rate      int input  And enter number years       Doing  while  loop def invest principal  rate  years   final_amount   principal   1",
@@ -10,11 +26,9 @@
         "tags": [
             "Code Challenge",
             "Python",
-            "Programming",
             "Loops"
         ],
         "categories": [
-            "Python",
             "Programming"
         ]
     }
