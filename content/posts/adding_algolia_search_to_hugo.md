@@ -84,7 +84,8 @@ Now that you have successfully integrated Algolia search into your Hugo site, yo
 
 For example, if you visit my blog at [shiva.blog](http://lazydeveloper.github.io/), you can search for posts using the search bar located in the header section. 
 
-![alt text](assets/img/algolia-search-bar.jpg)
+![alt text](https://raw.githubusercontent.com/lazydeveloper/lazydeveloper.github.io/f07aa763fbd9b7b8f1f1b81b6e3359b0aa09c132/assets/img/algolia-search-bar.jpg)
 
 If you have any questions, suggestions or feedback about this tutorial, please feel free to start a [new discussion here](https://github.com/lazydeveloper/lazydeveloper.github.io/discussions).  Looking for ways to improve and provide better content to my blog readers.
+
 

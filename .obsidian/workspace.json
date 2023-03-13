@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/calcuate_anual_rate_of_return_using_python.md",
+                "file": "content/posts/adding_algolia_search_to_hugo.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/calcuate_anual_rate_of_return_using_python.md",
+                "file": "content/posts/adding_algolia_search_to_hugo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/calcuate_anual_rate_of_return_using_python.md",
+                "file": "content/posts/adding_algolia_search_to_hugo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/calcuate_anual_rate_of_return_using_python.md"
+                "file": "content/posts/adding_algolia_search_to_hugo.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "c9b36a7c4cd0eed7",
   "lastOpenFiles": [
-    "content/posts/adding_algolia_search_to_hugo.md",
     "content/posts/calcuate_anual_rate_of_return_using_python.md",
+    "content/posts/adding_algolia_search_to_hugo.md",
     "assets/img/algolia-search-bar.jpg",
     "assets/img",
     "public/categories/coding/index.xml",
