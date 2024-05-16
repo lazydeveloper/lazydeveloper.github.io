@@ -1,4 +1,4 @@
-# baseURL = "https://shivas.blog/"
+# baseURL = "https://shiva.dev"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
@@ -7,7 +7,7 @@ theme = "LoveIt"
 # themesDir = "../.."
 
 # website title
-title = "Shiva's Blog"
+title = "SHIVA.DEV"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
@@ -45,9 +45,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-  name = "Shiva Inampudi"
+  name = "Shiva"
   email = ""
-  link = "https://shivas.blog/"
+  link = "https://shiva.dev"
 
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
