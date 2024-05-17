@@ -53,7 +53,7 @@
   title = "www.shiva.dev"
   # website description for RSS, SEO, Open Graph and Twitter Cards
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "Shiva Inampudi's Tech Blog."
+  description = "Shiva Inampudi's Tech Blog"
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = []
