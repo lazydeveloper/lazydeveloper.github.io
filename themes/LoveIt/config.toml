@@ -75,7 +75,6 @@
       logo = ""
       # title name
       # 标题名称
-      # shiva.dev
       name = "SHIVA.DEV"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
@@ -233,13 +232,13 @@
   # 主页的社交信息设置
   [params.social]
     GitHub = "lazydeveloper"
-    Linkedin = "/"
-    Twitter = ""
-    Instagram = "/"
+    Linkedin = ""
+    Twitter = "/"
+    Instagram = ""
     Facebook = ""
     Telegram = ""
     Medium = ""
-    Gitlab = ""
+    Gitlab = "okkadu"
     Youtubelegacy = ""
     Youtubecustom = ""
     Youtubechannel = ""
@@ -247,11 +246,11 @@
     Quora = ""
     Keybase = ""
     Pinterest = ""
-    Reddit = "/"
+    Reddit = ""
     Codepen = ""
     FreeCodeCamp = ""
     Bitbucket = ""
-    Stackoverflow = "/"
+    Stackoverflow = ""
     Weibo = ""
     Odnoklassniki = ""
     VK = ""
@@ -294,7 +293,7 @@
     XMPP = ""
     Matrix = ""
     Bilibili = ""
-    Discord = "/"
+    Discord = ""
     DiscordInvite = ""
     Lichess = ""
     ORCID = ""
