@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - SHIVA.DEV</title>
-        <link>/categories/</link>
+        <link>https://shiva.dev/categories/</link>
         <description>Categories - Category - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Development</title>
-    <link>/categories/development/</link>
+    <link>https://shiva.dev/categories/development/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>/categories/development/</guid>
+    <guid>https://shiva.dev/categories/development/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Programming</title>
-    <link>/categories/programming/</link>
+    <link>https://shiva.dev/categories/programming/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>/categories/programming/</guid>
+    <guid>https://shiva.dev/categories/programming/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

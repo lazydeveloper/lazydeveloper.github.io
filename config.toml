@@ -1,4 +1,4 @@
-# baseURL = "https://shiva.dev"
+baseURL = "https://shiva.dev"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
@@ -78,9 +78,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     absoluteURL = false
     
     [params.search.algolia]
-      index = "shivasblog"
-      appID = "86WT0W3RY2"
-      searchKey = "66427dfa09802bd19793a66c81fd82f9"
+      index = "shiva.dev"
+      appID = "CW3TBRQ1T6"
+      searchKey = "1732c84c65fb18888d34b872d243899e"
 
 
 

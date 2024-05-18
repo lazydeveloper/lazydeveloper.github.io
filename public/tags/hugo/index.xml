@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Hugo - Tag - SHIVA.DEV</title>
-        <link>/tags/hugo/</link>
+        <link>https://shiva.dev/tags/hugo/</link>
         <description>Hugo - Tag - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>Adding Algolia Search to Hugo</title>
-    <link>/posts/adding_algolia_search_to_hugo/</link>
+    <link>https://shiva.dev/posts/adding_algolia_search_to_hugo/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>/posts/adding_algolia_search_to_hugo/</guid>
+    <guid>https://shiva.dev/posts/adding_algolia_search_to_hugo/</guid>
     <description><![CDATA[What This Post Covers Hi There! If you&rsquo;re looking for a powerful framework to build your personal or project website in a matter of minutes, Hugo is your guy. However, there&rsquo;s one little problem - Hugo doesn&rsquo;t come with a search engine by default. But don&rsquo;t fret, I&rsquo;m here to show you how I enabled Algolia search on my Hugo website. Just a quick heads up, this isn&rsquo;t a comprehensive guide, but rather a post that I created as I was learning how to do this myself.]]></description>
 </item>
 </channel>
