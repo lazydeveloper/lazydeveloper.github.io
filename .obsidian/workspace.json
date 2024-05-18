@@ -11,12 +11,8 @@
             "id": "dfd39f3ecd90cc1c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/adding_algolia_search_to_hugo.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -64,6 +60,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "f9ea0da29d5ba145",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -85,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/adding_algolia_search_to_hugo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/adding_algolia_search_to_hugo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/posts/adding_algolia_search_to_hugo.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,21 +146,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c9b36a7c4cd0eed7",
+  "active": "dfd39f3ecd90cc1c",
   "lastOpenFiles": [
-    "content/posts/calcuate_anual_rate_of_return_using_python.md",
+    "public/cv",
+    "static/cv",
+    "static/cv/resume-shiva.md",
+    "public/cv/tmp/test.tex",
+    "public/cv/tmp/test.html",
+    "public/cv/tmp",
+    "public/cv/resume-uploader",
+    "public/cv/resume-shiva.pdf",
+    "public/cv/resume-shiva.md",
+    "public/cv/resume-shiva.html",
+    "public/cv/resume-shiva.docx",
+    "public/cv/res/resume.css",
+    "public/cv/res/resume-template.tex",
+    "public/cv/README.md",
     "content/posts/adding_algolia_search_to_hugo.md",
+    "content/posts/calcuate_anual_rate_of_return_using_python.md",
     "assets/img/algolia-search-bar.jpg",
-    "assets/img",
-    "public/categories/coding/index.xml",
-    "public/tags/search/page/1/index.html",
-    "public/tags/search/page/1",
-    "public/tags/search/page",
-    "public/tags/search/index.xml",
-    "public/tags/search/index.html",
-    "public/tags/search",
-    "public/categories/coding/page/1/index.html",
-    "public/categories/coding/page/1",
     "Changes.canvas",
     "().md",
     "themes/LoveIt/exampleSite/content/posts/basic-markdown-syntax/index.en.md",

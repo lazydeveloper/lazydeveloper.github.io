@@ -1,4 +1,5 @@
 [submodule "static/cv"]
-	path = static/cv
+	path = public/cv
 	url = https://github.com/lazydeveloper/resume.git
 	branch = pub
+
