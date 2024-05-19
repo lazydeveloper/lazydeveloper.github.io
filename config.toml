@@ -76,11 +76,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     highlightTag = "em"
     # whether to use the absolute URL based on the baseURL in search index
     absoluteURL = false
-    
-    [params.search.algolia]
-      index = "shiva.dev"
-      appID = "CW3TBRQ1T6"
-      searchKey = "1732c84c65fb18888d34b872d243899e"
+
 
 
 
