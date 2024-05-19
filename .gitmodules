@@ -2,3 +2,7 @@
 	path = public/cv
 	url = https://github.com/SHlVA/resume.git
 	branch = main
+[submodule "static/cv"]
+	path = static/cv
+	url = https://github.com/SHlVA/resume.git
+	branch = main
