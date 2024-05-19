@@ -1,0 +1,4 @@
+[submodule "public/cv"]
+	path = public/cv/
+	url = git@github.com:lazydeveloper/resume.git
+	branch = main
