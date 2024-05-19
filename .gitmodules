@@ -1,4 +1,4 @@
 [submodule "static/cv"]
-	path = static/cv/
-	url = git@github.com:shlva/resume.git
+	path = static/cv
+	url = https://github.com/SHlVA/shlva.github.io.git
 	branch = main
