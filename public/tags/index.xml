@@ -3,7 +3,39 @@
         <title>Tags - Tag - SHIVA.DEV</title>
         <link>https://shiva.dev/tags/</link>
         <description>Tags - Tag - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Mar 2023 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Java</title>
+    <link>https://shiva.dev/tags/java/</link>
+    <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java21</title>
+    <link>https://shiva.dev/tags/java21/</link>
+    <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/java21/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>JEP</title>
+    <link>https://shiva.dev/tags/jep/</link>
+    <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/jep/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>String</title>
+    <link>https://shiva.dev/tags/string/</link>
+    <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/string/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Algolia</title>
     <link>https://shiva.dev/tags/algolia/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>

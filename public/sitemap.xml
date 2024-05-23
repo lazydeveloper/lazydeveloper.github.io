@@ -2,16 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://shiva.dev/categories/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/java/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/java21/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/jep/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/posts/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/categories/programming/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/string/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/posts/java_string_template/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/</loc><lastmod>2024-05-23T00:11:05-04:00</lastmod></url><url>
             <loc>https://shiva.dev/posts/adding_algolia_search_to_hugo/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/algolia/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
             <loc>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/categories/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/code-challenge/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url><url>
             <loc>https://shiva.dev/categories/development/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/hugo/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/loops/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/posts/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/categories/programming/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/tags/python/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/tags/</loc><lastmod>2023-03-13T14:06:34-04:00</lastmod></url></urlset>
+            <loc>https://shiva.dev/tags/python/</loc><lastmod>2023-03-13T13:58:31-04:00</lastmod></url></urlset>
