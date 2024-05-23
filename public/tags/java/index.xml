@@ -1,13 +1,13 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Java - Tag - SHIVA.DEV</title>
+        <title>Java - Tag - Shiva Inampudi</title>
         <link>https://shiva.dev/tags/java/</link>
-        <description>Java - Tag - SHIVA.DEV</description>
+        <description>Java - Tag - Shiva Inampudi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/java/" rel="self" type="application/rss+xml" /><item>
     <title>String Template in Java 21</title>
     <link>https://shiva.dev/posts/java_string_template/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
+    <author>Shiva Inampudi</author>
     <guid>https://shiva.dev/posts/java_string_template/</guid>
     <description><![CDATA[What is String Template? String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
 Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.]]></description>
