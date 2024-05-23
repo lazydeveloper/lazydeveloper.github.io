@@ -7,7 +7,7 @@ theme = "LoveIt"
 # themesDir = "../.."
 
 # website title
-title = "SHIVA.DEV"
+title = "Shiva Inampudi"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
@@ -38,14 +38,14 @@ enableRobotsTXT = true
 enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
-gitRepo = "https://github.com/lazydeveloper/lazydeveloper.github.io"
+gitRepo = "https://github.com/SHlVA/shlva.github.io"
 
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-  name = "Shiva"
+  name = "Shiva Inampudi"
   email = ""
   link = "https://shiva.dev"
 
