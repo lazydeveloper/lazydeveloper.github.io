@@ -11,9 +11,9 @@
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
     <guid>https://shiva.dev/posts/java_string_template/</guid>
-    <description><![CDATA[The String Template I still remember when writing print statements in Java, I managed to make the output look more readable by appending text with the variable. Something like this
-System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
-Now this will change from Java 21 as String Template is here. Example program demonstrating String Template What is String Template? String Template is a process of substituting values of variables into placeholders in a string.]]></description>
+    <description><![CDATA[String Template In the past, we relied on string concatenation to format output for print statements. System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
+Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.
+What is String Template? String Template is a process of substituting values of variables into placeholders in a string.]]></description>
 </item>
 <item>
     <title>Adding Algolia Search to Hugo</title>
