@@ -11,15 +11,13 @@ tags:
 categories:
   - Programming
 ---
-### String Template
-In the past, we relied on string concatenation to format output for print statements. 
+
+### What is String Template?
+String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. 
 
 `System.out.println(arr[i] + " " + "From for loop");`
 
 Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.
-
-### What is String Template?
-String Template is a process of substituting values of variables into placeholders in a string. 
 
 **Example 01 - using STR format**
 ```java
@@ -36,14 +34,14 @@ public class StringTemplate {
 
 - **Focus on the placement of the `STR` template processor** within the string literal. It acts as a signal for the Java compiler to treat the following text as a template.
 - **Notice the placeholders `{name}` and `{email}`** embedded within the string. These will be replaced with the actual values of corresponding variables during template processing.
-- 
+
 Here is the output: `Hello, this is Shiva and my email address is myemail@shiva.dev`
 
 [Example program demonstrating String Template](https://github.com/SHlVA/java-bootcamp/blob/main/src/dev/shiva/core/string/StringTemplate.java)
 
 
-### Advantages of String Templates:**
-**Readability:** String templates improve code readability by embedding expressions directly within the string.
+### Advantages of String Templates:
+**Readability**: String templates improve code readability by embedding expressions directly within the string.
 **Type Safety:** Expressions within templates are evaluated at runtime, ensuring type safety.
 **Flexibility:** String templates can incorporate complex logic and expressions.
 
