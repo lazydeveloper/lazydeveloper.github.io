@@ -11,8 +11,12 @@
             "id": "dfd39f3ecd90cc1c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/java_string_template.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "tag:Java21",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,11 +73,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 408.5
   },
   "right": {
     "id": "e668c6ebd57356cb",
@@ -89,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/posts/java_string_template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/posts/java_string_template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,15 +133,16 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/posts/java_string_template.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
