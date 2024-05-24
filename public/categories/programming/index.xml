@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Programming - Category - Shiva Inampudi</title>
+        <title>Programming - Category - SHIVA.DEV</title>
         <link>https://shiva.dev/categories/programming/</link>
-        <description>Programming - Category - Shiva Inampudi</description>
+        <description>Programming - Category - SHIVA.DEV</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/categories/programming/" rel="self" type="application/rss+xml" /><item>
     <title>String Template in Java 21</title>
     <link>https://shiva.dev/posts/java_string_template/</link>

@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Shiva Inampudi</title>
+        <title>SHIVA.DEV</title>
         <link>https://shiva.dev/</link>
-        <description>Shiva&#39;s Tech Blog</description>
+        <description>Tech Odyssey of Shiva Inampudi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate>
             <atom:link href="https://shiva.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
