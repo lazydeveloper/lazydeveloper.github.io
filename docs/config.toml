@@ -1,0 +1,8 @@
+baseURL = "https://shiva.dev/docs/"
+languageCode = "en-us"
+title = "Dev Docs"
+themsDir= z""/themes""
+theme = "lotusdocs"
+contentDir = "/content"
+publishDir = "/public"
+staticDir = "/static"
