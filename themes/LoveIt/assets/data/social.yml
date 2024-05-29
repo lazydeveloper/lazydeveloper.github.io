@@ -14,13 +14,13 @@ linkedin:
   Icon:
     Class: fab fa-linkedin fa-fw
 
-# 003: Twitter (X)
+# 003: Twitter
 twitter:
   Weight: 3
-  Prefix: https://x.com/
-  Title: X
+  Prefix: https://twitter.com/
+  Title: Twitter (x)
   Icon:
-    Class: fa-brands fa-x-twitter fa-fw
+    Class: fa-brands fa-x-twitter
 
 # 004: Instagram
 instagram:
@@ -60,7 +60,7 @@ gitlab:
   Prefix: https://gitlab.com/
   Title: GitLab
   Icon:
-    Class: fa-brands fa-gitlab fa-fw
+    Class: fa-brands fa-gitlab
 
 # 009: YouTube Legacy
 youtubelegacy:
