@@ -18,9 +18,9 @@ linkedin:
 twitter:
   Weight: 3
   Prefix: https://twitter.com/
-  Title: Twitter (x)
+  Title: Twitter
   Icon:
-    Class: fa-brands fa-x-twitter
+    Class: fa-brands fa-x-twitter fa-fw
 
 # 004: Instagram
 instagram:
