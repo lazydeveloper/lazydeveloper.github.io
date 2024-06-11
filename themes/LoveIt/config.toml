@@ -32,6 +32,14 @@
     name = "Categories"
     url = "/categories/"
     title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "GitHub"
+    pre = "<i class='fa-brands fa-github fa-lg' style='margin-right: 5px;'></i>"
+    post = ""
+    name = ""
+    url = "https://github.com/SHlVA"
+    title = "Visit my github profile"
 
 [params]
   # site default theme ["auto", "light", "dark"]
@@ -53,7 +61,7 @@
   title = "www.shiva.dev"
   # website description for RSS, SEO, Open Graph and Twitter Cards
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "Tech Odyssey of Shiva Inampudi"
+  description = "This is Shiva Inampudi, I build things for the web on the cloud"
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = []
@@ -75,7 +83,7 @@
       logo = ""
       # title name
       # 标题名称
-      name = "shiva.dev"
+      name = "Shiva.Dev"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
@@ -84,7 +92,7 @@
       post = ""
       # whether to use typeit animation for title name
       # 是否为标题显示打字机动画
-      typeit = true
+      typeit = false
 
   # Footer config
   # 页面底部信息配置
@@ -211,7 +219,7 @@
       title = ""
       # subtitle shown in home page (HTML format is supported)
       # 主页显示的网站副标题 (允许 HTML 格式)
-      subtitle = "Tech Odyssey of Shiva Inampudi"
+      subtitle = "This is Shiva, I build things for the web!"
       # whether to use typeit animation for subtitle
       # 是否为副标题显示打字机动画
       typeit = true
