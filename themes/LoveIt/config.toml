@@ -235,6 +235,7 @@
   # Social config in home page
   # 主页的社交信息设置
   [params.social]
+    Email = "me@shiva.dev"
     GitHub = "shlva"
     Linkedin = ""
     Twitter = "okkaduX"
@@ -307,7 +308,6 @@
     Plume = ""
     HackTheBox = ""
     RootMe= ""
-    Email = ""
     Phone = ""
     RSS = ""
 
