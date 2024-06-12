@@ -60,23 +60,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
 
-[params.search]
-    enable = true
-    # type of search engine ["lunr", "algolia"]
-    type = "algolia"
-    # max index length of the chunked content
-    contentLength = 4000
-    # placeholder of the search bar
-    placeholder = "Search works on homepage"
-    # max number of results length
-    maxResultLength = 10
-    # snippet length of the result
-    snippetLength = 30
-    # HTML tag name of the highlight part in results
-    highlightTag = "em"
-    # whether to use the absolute URL based on the baseURL in search index
-    absoluteURL = false
-
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
 
 
 

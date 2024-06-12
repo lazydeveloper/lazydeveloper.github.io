@@ -1,10 +1,9 @@
 {
   "dependencies": {
-    "hugo-algolia": "^1.2.14"
+    
   },
   "scripts": {
-    "index": "hugo-algolia",
-    "index-and-send": "hugo-algolia -s"
+    "index": "hugo-lunr -i \"content/subdir/**\" -o static/lunr.json"
   }
 }
 

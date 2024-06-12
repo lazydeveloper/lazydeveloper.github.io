@@ -2,12 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://shiva.dev/docs/example-three/</loc><lastmod>2024-06-10T17:46:27-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/</loc><lastmod>2024-06-10T17:46:27-04:00</lastmod></url><url>
             <loc>https://shiva.dev/categories/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/java/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/java21/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/jep/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/categories/programming/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/</loc><lastmod>2024-05-27T19:09:35-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/string/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/posts/java_string_template/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/</loc><lastmod>2024-05-23T00:24:42-04:00</lastmod></url><url>
