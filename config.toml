@@ -60,10 +60,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-  page = ["HTML"]
 
+  # Enable JSON output 
+  [outputs]
+    home = ["HTML", "RSS", "JSON"]
+    page = ["HTML"]
 
 
 

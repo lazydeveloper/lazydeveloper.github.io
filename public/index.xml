@@ -3,9 +3,19 @@
         <title>SHIVA.DEV</title>
         <link>https://shiva.dev/</link>
         <description>This is Shiva Inampudi, I build things for the web on the cloud</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 27 May 2024 23:44:33 -0400</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate>
             <atom:link href="https://shiva.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Add Lunr Search to Hugo site</title>
+    <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
+    <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
+    <author>Shiva Inampudi</author>
+    <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
+    <description><![CDATA[Why Lunr? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
+Install and update! Make sure you the following installed/updated
+Hugo NPM hugo-lunr Today, there are handfull of search tools available for Hugo websites.]]></description>
+</item>
+<item>
     <title>String Template in Java 21</title>
     <link>https://shiva.dev/posts/java_string_template/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
@@ -13,14 +23,6 @@
     <guid>https://shiva.dev/posts/java_string_template/</guid>
     <description><![CDATA[What is String Template? String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
 Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.]]></description>
-</item>
-<item>
-    <title>Adding Algolia Search to Hugo</title>
-    <link>https://shiva.dev/posts/adding_algolia_search_to_hugo/</link>
-    <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva Inampudi</author>
-    <guid>https://shiva.dev/posts/adding_algolia_search_to_hugo/</guid>
-    <description><![CDATA[What This Post Covers Hi There! If you&rsquo;re looking for a powerful framework to build your personal or project website in a matter of minutes, Hugo is your guy. However, there&rsquo;s one little problem - Hugo doesn&rsquo;t come with a search engine by default. But don&rsquo;t fret, I&rsquo;m here to show you how I enabled Algolia search on my Hugo website. Just a quick heads up, this isn&rsquo;t a comprehensive guide, but rather a post that I created as I was learning how to do this myself.]]></description>
 </item>
 <item>
     <title>Calculate Anual Rate Of Return In Python</title>
