@@ -11,9 +11,8 @@
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
     <author>Shiva Inampudi</author>
     <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
-    <description><![CDATA[Why Lunr? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
-Install and update! Make sure you the following installed/updated
-Hugo NPM hugo-lunr Today, there are handfull of search tools available for Hugo websites.]]></description>
+    <description><![CDATA[What&rsquo;s covered in this post? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
+Install or update! Make sure you update or install before we start.]]></description>
 </item>
 <item>
     <title>String Template in Java 21</title>
