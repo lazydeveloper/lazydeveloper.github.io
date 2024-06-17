@@ -7,7 +7,7 @@
     <title>Calculate Anual Rate Of Return In Python</title>
     <link>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva Inampudi</author>
+    <author>Shiva</author>
     <guid>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</guid>
     <description><![CDATA[Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
 We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.

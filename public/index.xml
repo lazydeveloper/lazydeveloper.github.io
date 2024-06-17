@@ -2,14 +2,14 @@
     <channel>
         <title>SHIVA.DEV</title>
         <link>https://shiva.dev/</link>
-        <description>This is Shiva Inampudi, I build things for the web on the cloud</description>
+        <description>A tech blog by Shiva Inampudi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate>
             <atom:link href="https://shiva.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Add Lunr Search to Hugo site</title>
     <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
-    <author>Shiva Inampudi</author>
+    <author>Shiva</author>
     <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
     <description><![CDATA[What&rsquo;s covered in this post? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
 Install or update! Make sure you update or install before we start.]]></description>
@@ -18,7 +18,7 @@ Install or update! Make sure you update or install before we start.]]></descript
     <title>String Template in Java 21</title>
     <link>https://shiva.dev/posts/java_string_template/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-    <author>Shiva Inampudi</author>
+    <author>Shiva</author>
     <guid>https://shiva.dev/posts/java_string_template/</guid>
     <description><![CDATA[What is String Template? String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
 Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.]]></description>
@@ -27,7 +27,7 @@ Now this will change from Java 21 as String Template is here. String templates o
     <title>Calculate Anual Rate Of Return In Python</title>
     <link>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva Inampudi</author>
+    <author>Shiva</author>
     <guid>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</guid>
     <description><![CDATA[Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
 We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.
