@@ -1,0 +1,6 @@
+# Enable the Rewrite Engine
+RewriteEngine On
+
+# Redirect meet.shiva.dev to the external URL
+RewriteCond %{HTTP_HOST} ^meets\.shiva\.dev$ [NC]
+RewriteRule ^(.*)$ http://www.facebook.com/ [L,R=301]

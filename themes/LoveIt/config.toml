@@ -40,7 +40,6 @@
     name = ""
     url = "https://github.com/SHlVA"
     title = "Visit my github profile"
-
 [params]
   # site default theme ["auto", "light", "dark"]
   # 网站默认主题 ["auto", "light", "dark"]
@@ -310,6 +309,7 @@
     RootMe= ""
     Phone = ""
     RSS = ""
+    Meet = ""
 
   # Page global config
   # 文章页面全局配置

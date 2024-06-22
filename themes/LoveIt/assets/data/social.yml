@@ -509,3 +509,12 @@ rss:
   Newtab: true
   Icon:
     Class: fas fa-rss fa-fw
+
+# 065: Meet
+meet:
+  Weight: 65
+  Url: 
+  Title: Meet
+  Newtab: true
+  Icon:
+    Class: fa-brands fa-google fa-fw
