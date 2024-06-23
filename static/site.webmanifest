@@ -1,6 +1,6 @@
 {
-    "name": "Shiva.Dev",
-    "short_name": "Shiva.Dev",
+    "name": "shiva.dev",
+    "short_name": "shiva.dev",
     "description": "Shiva's Tech Blog",
     "start_url": "/",
     "display": "standalone",
