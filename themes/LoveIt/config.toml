@@ -38,7 +38,7 @@
     pre = "<i class='fa-brands fa-github fa-lg' style='margin-right: 5px;'></i>"
     post = ""
     name = ""
-    url = "https://github.com/SHlVA"
+    url = "https://github.com/lazydeveloper"
     title = "Visit my github profile"
 [params]
   # site default theme ["auto", "light", "dark"]
@@ -235,7 +235,7 @@
   # 主页的社交信息设置
   [params.social]
     Email = "me@shiva.dev"
-    GitHub = "shlva"
+    GitHub = "lazydeveloper"
     Linkedin = ""
     Twitter = "okkaduX"
     Instagram = ""

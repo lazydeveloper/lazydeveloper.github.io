@@ -38,7 +38,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
-gitRepo = "https://github.com/SHlVA/shlva.github.io"
+gitRepo = "https://github.com/lazydeveloper/lazydeveloper.github.io"
 
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]

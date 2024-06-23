@@ -37,7 +37,7 @@ public class StringTemplate {
 
 Here is the output: `Hello, this is Shiva and my email address is myemail@shiva.dev`
 
-[Example program demonstrating String Template](https://github.com/SHlVA/java-bootcamp/blob/main/src/dev/shiva/core/string/StringTemplate.java)
+[Example program demonstrating String Template](https://github.com/lazydeveloper/java-bootcamp/blob/main/src/dev/shiva/core/string/StringTemplate.java)
 
 
 ### Advantages of String Templates:

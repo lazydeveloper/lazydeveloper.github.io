@@ -1,4 +1,4 @@
-module github.com/SHlVA/shlva.github.io
+module github.com/lazydeveloper/lazydeveloper.github.io
 
 go 1.22.3
 

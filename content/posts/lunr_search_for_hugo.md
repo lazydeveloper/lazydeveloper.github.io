@@ -37,7 +37,7 @@ Go to `package.json` in project root directory and add the following
     "index": "hugo-lunr -i \"content/subdir/**\" -o static/lunr.json"
   }
 ```
-[here](https://github.com/SHlVA/shlva.github.io/blob/main/package.json) is my package.json for quick reference 
+[here](https://github.com/lazydeveloper/lazydeveloper.github.io/blob/main/package.json) is my package.json for quick reference 
 
 {{< admonition type=info title="Info" open=false >}}
 Line 2 will allow you to change the output of the index file generation. You can change the path as you need.
@@ -61,7 +61,7 @@ and then add out-puts if not added already (must go into config.toml thats in ro
 {{< admonition type=warning title="STOP" open=true >}}
 make sure you add outputs to the `config.toml` file that exist at the root of your project.
 {{< /admonition >}}
-you can check my both config.toml file [here](https://github.com/SHlVA/shlva.github.io/tree/main)
+you can check my both config.toml file [here](https://github.com/lazydeveloper/lazydeveloper.github.io/tree/main)
 
 ### 3. Build the index
 After step 1 and 2 you shall be able to build the site index. Go ahead and open the terminal and run the following command from your project root directory.
@@ -159,4 +159,4 @@ It is worth mentioning that every time you create a new post or updated an exist
 {{< /admonition >}}
 
 ### Conclusion
-I don't claim expertise in Hugo or Lunr. I integrated Lunr by researching various resources and credit those who explained it before me. I only take credit for detailing how I implemented Lunr search on my website. If you have any questions or suggestions, please post them [here](https://github.com/SHlVA/shlva.github.io/discussions/new/choose).
+I don't claim expertise in Hugo or Lunr. I integrated Lunr by researching various resources and credit those who explained it before me. I only take credit for detailing how I implemented Lunr search on my website. If you have any questions or suggestions, please post them [here](https://github.com/lazydeveloper/lazydeveloper.github.io/discussions/new/choose).
