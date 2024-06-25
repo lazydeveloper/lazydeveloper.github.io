@@ -527,3 +527,12 @@ docker:
   Newtab: true
   Icon:
     Class: fa-brands fa-docker fa-fw
+
+# 067: NPM
+npm:
+  Weight: 2
+  Prefix: https://www.npmjs.com/
+  Title: NPM
+  Newtab: true
+  Icon:
+    Class: fa-brands fa-npm

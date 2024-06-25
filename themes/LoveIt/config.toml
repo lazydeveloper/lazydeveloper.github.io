@@ -237,7 +237,7 @@
     Email = "me@shiva.dev"
     GitHub = "lazydeveloper"
     Linkedin = ""
-    Twitter = "okkaduX"
+    Twitter = "SHlVA_DEV"
     Instagram = ""
     Facebook = ""
     Telegram = ""
@@ -311,6 +311,7 @@
     RSS = ""
     Meet = ""
     Docker = "shiva"
+    NPM = "~lazydeveloper"
 
   # Page global config
   # 文章页面全局配置
