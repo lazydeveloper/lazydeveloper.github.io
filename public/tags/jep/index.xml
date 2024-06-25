@@ -1,9 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>JEP - Tag - SHIVA.DEV</title>
+        <title>JEP - Tag - shiva.dev</title>
         <link>https://shiva.dev/tags/jep/</link>
-        <description>JEP - Tag - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/jep/" rel="self" type="application/rss+xml" /><item>
+        <description>JEP - Tag - shiva.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 22 May 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/jep/" rel="self" type="application/rss+xml" /><item>
     <title>String Template in Java 21</title>
     <link>https://shiva.dev/posts/java_string_template/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>

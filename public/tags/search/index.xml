@@ -1,9 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Search - Tag - SHIVA.DEV</title>
+        <title>Search - Tag - shiva.dev</title>
         <link>https://shiva.dev/tags/search/</link>
-        <description>Search - Tag - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/search/" rel="self" type="application/rss+xml" /><item>
+        <description>Search - Tag - shiva.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/search/" rel="self" type="application/rss+xml" /><item>
     <title>Add Lunr Search to Hugo site</title>
     <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>

@@ -16,7 +16,7 @@ linkedin:
 
 # 003: X 
 twitter:
-  Weight: 3
+  Weight: 2
   Prefix: https://x.com/
   Title: Twitter
   Icon:
@@ -56,7 +56,7 @@ medium:
 
 # 008: GitLab
 gitlab:
-  Weight: 8
+  Weight: 1
   Prefix: https://gitlab.com/
   Title: GitLab
   Icon:
@@ -456,7 +456,7 @@ thingiverse:
 
 # 058: Dev.To
 devto:
-  Weight: 58
+  Weight: 04
   Prefix: https://dev.to/
   Title: Dev.To
   Icon:
@@ -495,7 +495,7 @@ bilibili:
 
 # 063: Email
 email:
-  Weight: 63
+  Weight: 4
   Template: mailto:%v
   Title: Email
   Icon:
@@ -518,3 +518,12 @@ meet:
   Newtab: true
   Icon:
     Class: fa-brands fa-google fa-fw
+
+# 066: Docker
+docker:
+  Weight: 2
+  Prefix: https://hub.docker.com/u/
+  Title: Docker
+  Newtab: true
+  Icon:
+    Class: fa-brands fa-docker fa-fw

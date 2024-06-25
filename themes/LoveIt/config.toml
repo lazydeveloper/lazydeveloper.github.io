@@ -310,6 +310,7 @@
     Phone = ""
     RSS = ""
     Meet = ""
+    Docker = "shiva"
 
   # Page global config
   # 文章页面全局配置

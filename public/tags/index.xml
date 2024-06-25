@@ -1,9 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - SHIVA.DEV</title>
+        <title>Tags - Tag - shiva.dev</title>
         <link>https://shiva.dev/tags/</link>
-        <description>Tags - Tag - SHIVA.DEV</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+        <description>Tags - Tag - shiva.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Hugo</title>
     <link>https://shiva.dev/tags/hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
