@@ -101,27 +101,12 @@
         <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">String Template in Java 21</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://shiva.dev" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shiva</a>
-</span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-22">2024-05-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;244 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#what-is-string-template">What is String Template?</a></li>
-        <li><a href="#advantages-of-string-templates">Advantages of String Templates:</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h3 id="what-is-string-template">What is String Template?</h3>
+        </div><article class="page single">
+        <div id="content-container"><h1 class="single-title animate__animated animate__flipInX">String Template in Java 21</h1><div class="post-meta">
+                
+            </div><div class="details toc" id="toc-static"  data-kept="">
+                    
+                </div><div class="content" id="content"><h3 id="what-is-string-template">What is String Template?</h3>
 <p>String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. </p>
 <p><code>System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);</code></p>
 <p>Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.</p>
@@ -187,7 +172,24 @@
     <div class="post-nav"><a href="/posts/calcuate_anual_rate_of_return_using_python/" class="prev" rel="prev" title="Calculate Anual Rate Of Return In Python"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Calculate Anual Rate Of Return In Python</a>
             <a href="/posts/lunr_search_for_hugo/" class="next" rel="next" title="Add Lunr Search to Hugo site">Add Lunr Search to Hugo site<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-</article></div>
+</div>
+    </article>
+
+    <script>
+        window.onload = function() {
+            var contentContainer = document.getElementById("content-container");
+            if ("" !== "") {
+                var password = prompt("Enter password:");
+                if (password === "") {
+                    contentContainer.style.display = "block";
+                } else {
+                    alert("Incorrect password");
+                }
+            } else {
+                contentContainer.style.display = "block";
+            }
+        };
+    </script></div>
     </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://shiva.dev" target="_blank">Shiva</a></span></div>
