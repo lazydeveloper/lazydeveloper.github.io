@@ -5,7 +5,7 @@ date: 2024-07-07T13:55:20-05:00
 draft: false
 tags: ["Hugo"]
 categories: ["Development"]
-password: PASSWORD_001
+password: "1234"
 unlisted: true
 ---
 
