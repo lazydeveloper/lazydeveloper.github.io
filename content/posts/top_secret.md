@@ -1,7 +1,7 @@
 ---
 title: "Top Secret"
 description: "Hide hugo posts with a password"
-date: 2024-07-08T13:55:20-05:00
+date: 2024-07-07T13:55:20-05:00
 draft: false
 tags: ["Hugo"]
 categories: ["Development"]
