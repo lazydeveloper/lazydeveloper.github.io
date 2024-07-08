@@ -4,9 +4,17 @@
         <link>https://shiva.dev/</link>
         <description>A tech blog by Shiva Inampudi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate>
             <atom:link href="https://shiva.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Top Secret</title>
+    <link>https://shiva.dev/posts/top_secret/</link>
+    <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/posts/top_secret/</guid>
+    <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
+</item>
+<item>
     <title>Add Lunr Search to Hugo site</title>
     <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
