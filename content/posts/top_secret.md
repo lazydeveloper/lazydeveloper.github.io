@@ -6,7 +6,7 @@ draft: false
 tags: ["Hugo"]
 categories: ["Development"]
 password: "1234"
-unlisted: true
+hiddenFromHomePage: true
 ---
 
 {{< admonition type=danger title="Top Secret" open=true >}}
