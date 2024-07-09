@@ -5,6 +5,15 @@
         <description>Development - Category - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
             <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/categories/development/" rel="self" type="application/rss+xml" /><item>
+    <title>Adding Password Protection To A Hugo Post</title>
+    <link>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</link>
+    <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</guid>
+    <description><![CDATA[In this post, I&rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &ldquo;password.&rdquo; This allows you to set a unique password for each post.
+proceed with caution This method lacks complete security. Anyone with basic Hugo knowledge can access your repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach.]]></description>
+</item>
+<item>
     <title>Top Secret</title>
     <link>https://shiva.dev/posts/top_secret/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>

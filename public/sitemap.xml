@@ -2,12 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://shiva.dev/categories/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/categories/development/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/tags/hugo/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/tags/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
-            <loc>https://shiva.dev/posts/top_secret/</loc><lastmod>2024-07-08T13:53:18-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</loc><lastmod>2024-07-07T13:55:20-05:00</lastmod></url><url>
+            <loc>https://shiva.dev/categories/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/categories/development/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/hugo/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/tags/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
+            <loc>https://shiva.dev/posts/top_secret/</loc><lastmod>2024-07-08T16:30:39-04:00</lastmod></url><url>
             <loc>https://shiva.dev/posts/lunr_search_for_hugo/</loc><lastmod>2024-06-23T13:12:21-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/lunr/</loc><lastmod>2024-06-23T13:12:21-04:00</lastmod></url><url>
             <loc>https://shiva.dev/tags/search/</loc><lastmod>2024-06-23T13:12:21-04:00</lastmod></url><url>
