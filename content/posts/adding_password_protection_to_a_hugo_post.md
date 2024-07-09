@@ -27,7 +27,7 @@ Before we proceed, open the post [Top Secret](http://localhost:1313/posts/top_se
 ----
 ## 1. Add a new parameter, `password`
 To give you a sense of what I mean by "Add a new parameter" take a look at the `password` parameter at the line [#9](https://github.com/lazydeveloper/lazydeveloper.github.io/blob/1477fa46fe7425899d15470398e4405f6c0cfb0a/content/posts/top_secret.md?plain=1#L8) in the code below.
-```
+```markdown
 ---
 title: "Top Secret"
 description: "Password to open the top secret: 1234 "
@@ -49,12 +49,12 @@ It's time to write the logic, Let's add a script to the default post layout. In 
 **Add the following code snippets to your layout file (single.html).**
 
 01. Add this div at the starting of the article class. This will ensures that the content is hidden initially if a password is set.
-    ```
+    ```html
     <div id="content-container" {{- if .Params.password -}}style="display: none;"{{- end -}}>
     ```
 
 02. Now add this code at the end of your layout file. The <script> handles the password prompt and reveals the content if the correct password is entered.
-    ```
+    ```html
     <script>
             window.onload = function() {
                 var contentContainer = document.getElementById("content-container");
