@@ -13,7 +13,6 @@ In this post, I'll show you the simplest way to protect a Hugo page with a passw
 This method lacks complete security. Anyone with basic Hugo knowledge can access your repository and view the passwords. Therefore, it's advisable to avoid sharing sensitive information using this approach. For full password protection, consider using GitHub secrets or variables instead of passwords, though this topic is not covered in this post.
 {{< /admonition >}}
 
-This post do not talk about 
 
 {{< admonition type=success title="What this post cover" open=false >}}
 1. Easy method to assign a password to any Hugo post (not 100% secured)
@@ -21,7 +20,7 @@ This post do not talk about
 3. Unique password for each post
 {{< /admonition >}}
 
-Before we proceed, open the post [Top Secret](http://localhost:1313/posts/top_secret/) that is protection with a password. When prompted, enter the password `1234` to read the top secret.
+Before we proceed, open the post [Top Secret](http://localhost:1313/posts/top_secret/) that is protection with a password. When prompted, enter the password `1234` to read the top secret. 
 
 ![password-protection](https://pouch.jumpshare.com/preview/GA_t8X7rJkwOSdsolhK4H7ND9kHBOgRq7g98Vcr_R62DovJUg6TLF0gQt5140AoHfJD7SLqCLZnupx2aUWWIM4A9dVtAxDj6JHloBdAvI18)
 
