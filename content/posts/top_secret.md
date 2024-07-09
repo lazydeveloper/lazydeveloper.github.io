@@ -6,7 +6,7 @@ draft: false
 tags: ["Hugo"]
 categories: ["Development"]
 hiddenFromHomePage: true
-password: ${{ secrets.POST_PASSWORD_00 }}
+password: "1234"
 
 ---
 
