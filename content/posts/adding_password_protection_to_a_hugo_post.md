@@ -22,7 +22,7 @@ This method lacks complete security. Anyone with basic Hugo knowledge can access
 
 Before we proceed, open the post [Top Secret](http://localhost:1313/posts/top_secret/) that is protection with a password. When prompted, enter the password `1234` to read the top secret. 
 
-![password-protection](https://pouch.jumpshare.com/preview/GA_t8X7rJkwOSdsolhK4H7ND9kHBOgRq7g98Vcr_R62DovJUg6TLF0gQt5140AoHfJD7SLqCLZnupx2aUWWIM4A9dVtAxDj6JHloBdAvI18)
+![password-protection](https://global.discourse-cdn.com/standard10/uploads/gohugo/original/3X/f/8/f8f86d4073b44b9e45899e30e92b6a3b8f26fdaf.gif)
 
 ----
 ## 1. Add a new parameter, `password`
