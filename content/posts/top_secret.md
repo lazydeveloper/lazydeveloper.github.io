@@ -5,8 +5,9 @@ date: 2024-07-07T13:55:20-05:00
 draft: false
 tags: ["Hugo"]
 categories: ["Development"]
-password: "1234"
 hiddenFromHomePage: true
+password: ${{ secrets.POST_PASSWORD_00 }}
+
 ---
 
 {{< admonition type=danger title="Top Secret" open=true >}}
