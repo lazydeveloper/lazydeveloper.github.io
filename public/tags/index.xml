@@ -4,7 +4,39 @@
         <link>https://shiva.dev/tags/</link>
         <description>Tags - Tag - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux</title>
+    <link>https://shiva.dev/tags/linux/</link>
+    <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/linux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Lua</title>
+    <link>https://shiva.dev/tags/lua/</link>
+    <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/lua/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Neovim</title>
+    <link>https://shiva.dev/tags/neovim/</link>
+    <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/neovim/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Vim</title>
+    <link>https://shiva.dev/tags/vim/</link>
+    <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/tags/vim/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Hugo</title>
     <link>https://shiva.dev/tags/hugo/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
@@ -50,38 +82,6 @@
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
     <guid>https://shiva.dev/tags/jep/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>String</title>
-    <link>https://shiva.dev/tags/string/</link>
-    <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/tags/string/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Code Challenge</title>
-    <link>https://shiva.dev/tags/code-challenge/</link>
-    <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/tags/code-challenge/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Loops</title>
-    <link>https://shiva.dev/tags/loops/</link>
-    <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/tags/loops/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Python</title>
-    <link>https://shiva.dev/tags/python/</link>
-    <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/tags/python/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

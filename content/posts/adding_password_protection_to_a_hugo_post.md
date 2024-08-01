@@ -10,7 +10,7 @@ categories: ["Development"]
 In this post, I'll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called "password." This allows you to set a unique password for each post. 
 
 {{< admonition type=warning title="proceed with caution" open=true >}}
-This method lacks complete security. Anyone with basic Hugo knowledge can access your repository and view the passwords. Therefore, it's advisable to avoid sharing sensitive information using this approach. For full password protection, consider using GitHub secrets or variables instead of passwords, though this topic is not covered in this post.
+This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it's advisable to avoid sharing sensitive information using this approach. For full password protection, consider using GitHub secrets or variables instead of passwords, though this topic is not covered in this post.
 {{< /admonition >}}
 
 
@@ -21,6 +21,9 @@ This method lacks complete security. Anyone with basic Hugo knowledge can access
 {{< /admonition >}}
 
 Before we proceed, open the post [Top Secret](http://localhost:1313/posts/top_secret/) that is protection with a password. When prompted, enter the password `1234` to read the top secret. 
+
+<img src="/images/password-protection.gif" width="original_width" height="original_height" alt="password-protection">
+
 
 ![password-protection](https://global.discourse-cdn.com/standard10/uploads/gohugo/original/3X/f/8/f8f86d4073b44b9e45899e30e92b6a3b8f26fdaf.gif)
 

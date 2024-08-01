@@ -4,14 +4,32 @@
         <link>https://shiva.dev/categories/development/</link>
         <description>Development - Category - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/categories/development/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/categories/development/" rel="self" type="application/rss+xml" /><item>
+    <title>Bind Ctrl &#43; hjkl to arrow keys on a Mac Machine</title>
+    <link>https://shiva.dev/posts/bind_ctrl_hjkl_to_arrow_keys_on_mac/</link>
+    <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/posts/bind_ctrl_hjkl_to_arrow_keys_on_mac/</guid>
+    <description><![CDATA[What this post covers? So instead of reaching to arrow keys, you can just use h (as left arrow), j (as down arrow) k (as up arrow) and l (as right arrow) by hoding ctrl key.
+Before we start First things first, we need to install a free tool called Hammerspoon. This tool will allow us to configure the key bindings.
+Keyboard Settings on Mac Navigate to System Settings &gt; Keyboard &gt; Keyboard Shortcut &gt; Modifier Keys (left pane).]]></description>
+</item>
+<item>
     <title>Adding Password Protection To A Hugo Post</title>
     <link>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
     <guid>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</guid>
     <description><![CDATA[In this post, I&rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &ldquo;password.&rdquo; This allows you to set a unique password for each post.
-proceed with caution This method lacks complete security. Anyone with basic Hugo knowledge can access your repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach.]]></description>
+proceed with caution This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach.]]></description>
+</item>
+<item>
+    <title>Top Secret</title>
+    <link>https://shiva.dev/posts/password/</link>
+    <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
+    <author>Shiva</author>
+    <guid>https://shiva.dev/posts/password/</guid>
+    <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
 </item>
 <item>
     <title>Top Secret</title>
