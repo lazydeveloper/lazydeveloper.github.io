@@ -1,6 +1,6 @@
 ---
-title: "Bind Ctrl + hjkl to arrow keys on a Mac Machine"
-description: "This is how you can bind Ctrl + hjkl as arrow keys on a mac machine"
+title: "Bind Ctrl + HJKL to arrow keys on a Mac Machine"
+description: "bind Ctrl + hjkl as arrow keys on a mac machine"
 date: 2024-07-31T13:55:20-05:00
 draft: false
 tags: ["Vim", "Neovim", "Lua", "Linux"]
