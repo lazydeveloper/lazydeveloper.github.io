@@ -1,40 +1,40 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Hugo - Tag - shiva.dev</title>
-        <link>https://shiva.dev/tags/hugo/</link>
+        <link>http://localhost:1313/tags/hugo/</link>
         <description>Hugo - Tag - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Sun, 07 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>Adding Password Protection To A Hugo Post</title>
-    <link>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</link>
+    <link>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</guid>
+    <guid>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</guid>
     <description><![CDATA[In this post, I&rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &ldquo;password.&rdquo; This allows you to set a unique password for each post.
 proceed with caution This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach.]]></description>
 </item>
 <item>
     <title>Top Secret</title>
-    <link>https://shiva.dev/posts/password/</link>
+    <link>http://localhost:1313/posts/password/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/posts/password/</guid>
+    <guid>http://localhost:1313/posts/password/</guid>
     <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
 </item>
 <item>
     <title>Top Secret</title>
-    <link>https://shiva.dev/posts/top_secret/</link>
+    <link>http://localhost:1313/posts/top_secret/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/posts/top_secret/</guid>
+    <guid>http://localhost:1313/posts/top_secret/</guid>
     <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
 </item>
 <item>
     <title>Add Lunr Search to Hugo site</title>
-    <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
+    <link>http://localhost:1313/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
+    <guid>http://localhost:1313/posts/lunr_search_for_hugo/</guid>
     <description><![CDATA[What&rsquo;s covered in this post? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
 Install or update! Make sure you update or install before we start.]]></description>
 </item>

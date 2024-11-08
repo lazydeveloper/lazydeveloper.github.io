@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - shiva.dev</title>
-        <link>https://shiva.dev/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Tags - Tag - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Linux</title>
-    <link>https://shiva.dev/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/linux/</guid>
+    <guid>http://localhost:1313/tags/linux/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Lua</title>
-    <link>https://shiva.dev/tags/lua/</link>
+    <link>http://localhost:1313/tags/lua/</link>
     <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/lua/</guid>
+    <guid>http://localhost:1313/tags/lua/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Neovim</title>
-    <link>https://shiva.dev/tags/neovim/</link>
+    <link>http://localhost:1313/tags/neovim/</link>
     <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/neovim/</guid>
+    <guid>http://localhost:1313/tags/neovim/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Vim</title>
-    <link>https://shiva.dev/tags/vim/</link>
+    <link>http://localhost:1313/tags/vim/</link>
     <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/vim/</guid>
+    <guid>http://localhost:1313/tags/vim/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Hugo</title>
-    <link>https://shiva.dev/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/hugo/</guid>
+    <guid>http://localhost:1313/tags/hugo/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Lunr</title>
-    <link>https://shiva.dev/tags/lunr/</link>
+    <link>http://localhost:1313/tags/lunr/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/lunr/</guid>
+    <guid>http://localhost:1313/tags/lunr/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Search</title>
-    <link>https://shiva.dev/tags/search/</link>
+    <link>http://localhost:1313/tags/search/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/search/</guid>
+    <guid>http://localhost:1313/tags/search/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Java</title>
-    <link>https://shiva.dev/tags/java/</link>
+    <link>http://localhost:1313/tags/java/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/java/</guid>
+    <guid>http://localhost:1313/tags/java/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Java21</title>
-    <link>https://shiva.dev/tags/java21/</link>
+    <link>http://localhost:1313/tags/java21/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/java21/</guid>
+    <guid>http://localhost:1313/tags/java21/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>JEP</title>
-    <link>https://shiva.dev/tags/jep/</link>
+    <link>http://localhost:1313/tags/jep/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>https://shiva.dev/tags/jep/</guid>
+    <guid>http://localhost:1313/tags/jep/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
