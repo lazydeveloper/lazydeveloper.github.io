@@ -20,7 +20,7 @@ twitter:
   Prefix: https://x.com/
   Title: Twitter
   Icon:
-    Class: fa-brands fa-twitter fa-fw
+    Class: fa-brands fa-x-twitter fa-fw
 
 # 004: Instagram
 instagram:
