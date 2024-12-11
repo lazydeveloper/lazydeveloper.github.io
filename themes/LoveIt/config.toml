@@ -240,7 +240,7 @@ description = "A tech blog by Shiva Inampudi"
   # Social config in home page
   # 主页的社交信息设置
   [params.social]
-    Email = "me@shiva.dev"
+    Email = "i@shiva.dev"
     GitHub = "lazydeveloper"
     Linkedin = ""
     Twitter = "shiva__dev"
