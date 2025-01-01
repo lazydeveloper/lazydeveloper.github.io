@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Search - Tag - shiva.dev</title>
-        <link>http://localhost:1313/tags/search/</link>
+        <link>https://shiva.dev/tags/search/</link>
         <description>Search - Tag - shiva.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="http://localhost:1313/tags/search/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Tue, 11 Jun 2024 20:02:20 -0500</lastBuildDate><atom:link href="https://shiva.dev/tags/search/" rel="self" type="application/rss+xml" /><item>
     <title>Add Lunr Search to Hugo site</title>
-    <link>http://localhost:1313/posts/lunr_search_for_hugo/</link>
+    <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
     <author>Shiva</author>
-    <guid>http://localhost:1313/posts/lunr_search_for_hugo/</guid>
+    <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
     <description><![CDATA[What&rsquo;s covered in this post? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
 Install or update! Make sure you update or install before we start.]]></description>
 </item>
