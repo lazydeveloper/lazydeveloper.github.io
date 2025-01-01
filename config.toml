@@ -46,7 +46,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # Author config
 [author]
   name = "Shiva"
-  email = "me@shiva.dev"
+  email = "i@shiva.dev"
   link = "https://shiva.dev"
 
 [markup]
