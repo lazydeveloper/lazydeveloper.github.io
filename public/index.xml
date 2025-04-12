@@ -1,73 +1,119 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>shiva.dev</title>
-        <link>https://shiva.dev/</link>
+        <link>http://localhost:1313/</link>
         <description>A tech blog by Shiva Inampudi</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>me@shiva.dev (Shiva)</managingEditor>
-            <webMaster>me@shiva.dev (Shiva)</webMaster><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate>
-            <atom:link href="https://shiva.dev/index.xml" rel="self" type="application/rss+xml" />
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 31 Jul 2024 13:55:20 -0500</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Bind Ctrl &#43; HJKL to arrow keys on a Mac Machine</title>
-    <link>https://shiva.dev/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</link>
+    <link>http://localhost:1313/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</link>
     <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</guid>
-    <description><![CDATA[What this post covers? So instead of reaching to arrow keys, you can just use h (as left arrow), j (as down arrow) k (as up arrow) and l (as right arrow) by hoding ctrl key.
-Before we start First things first, we need to install a free tool called Hammerspoon. This tool will allow us to configure the key bindings.
-Keyboard Settings on Mac Navigate to System Settings &gt; Keyboard &gt; Keyboard Shortcut &gt; Modifier Keys (left pane).]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</guid>
+    <description><![CDATA[<h3 id="what-this-post-covers">What this post covers?</h3>
+<p>So instead of reaching to arrow keys, you can just use h (as left arrow), j (as down arrow) k (as up arrow) and l (as right arrow) by hoding ctrl key.</p>
+<h3 id="before-we-start">Before we start</h3>
+<p>First things first, we need to install a free tool called Hammerspoon. This tool will allow us to configure the key bindings.</p>
+<h2 id="keyboard-settings-on-mac">Keyboard Settings on Mac</h2>
+<p>Navigate to System Settings &gt; Keyboard &gt; Keyboard Shortcut &gt; Modifier Keys (left pane). Select your keyboard, and for the Caps Lock key, choose Control from the drop-down menu.</p>]]></description>
 </item>
 <item>
     <title>Adding Password Protection To A Hugo Post</title>
-    <link>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</link>
+    <link>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</guid>
-    <description><![CDATA[In this post, I&rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &ldquo;password.&rdquo; This allows you to set a unique password for each post.
-proceed with caution This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach.]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</guid>
+    <description><![CDATA[<p>In this post, I&rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &ldquo;password.&rdquo; This allows you to set a unique password for each post.</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>proceed with caution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it&rsquo;s advisable to avoid sharing sensitive information using this approach. For full password protection, consider using GitHub secrets or variables instead of passwords, though this topic is not covered in this post.</div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>What this post cover<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>Easy method to assign a password to any Hugo post (not 100% secured)</li>
+<li>Users will be prompted to enter a password to access the post.</li>
+<li>Unique password for each post</li>
+</ol>
+</div>
+        </div>
+    </div>
+<p>Before we proceed, open the post <a href="http://localhost:1313/posts/top_secret/" target="_blank" rel="noopener noreffer">Top Secret</a>
+ that is protection with a password. When prompted, enter the password <code>1234</code> to read the top secret.</p>]]></description>
 </item>
 <item>
     <title>Top Secret</title>
-    <link>https://shiva.dev/posts/password/</link>
+    <link>http://localhost:1313/posts/password/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/password/</guid>
-    <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/password/</guid>
+    <description><![CDATA[<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw" aria-hidden="true"></i>Top Secret<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">1234567890</div>
+        </div>
+    </div>
+<p>just kidding ;)</p>]]></description>
 </item>
 <item>
     <title>Top Secret</title>
-    <link>https://shiva.dev/posts/top_secret/</link>
+    <link>http://localhost:1313/posts/top_secret/</link>
     <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/top_secret/</guid>
-    <description><![CDATA[Top Secret 1234567890 just kidding ;)]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/top_secret/</guid>
+    <description><![CDATA[<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw" aria-hidden="true"></i>Top Secret<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">1234567890</div>
+        </div>
+    </div>
+<p>just kidding ;)</p>]]></description>
 </item>
 <item>
     <title>Add Lunr Search to Hugo site</title>
-    <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
+    <link>http://localhost:1313/posts/lunr_search_for_hugo/</link>
     <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
-    <description><![CDATA[What&rsquo;s covered in this post? Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme Loveit I&rsquo;m using on this website. With that being said, this post will cover how I integrate lurn on my website - for demo, go ahead and search for something on this website :)
-Install or update! Make sure you update or install before we start.]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/lunr_search_for_hugo/</guid>
+    <description><![CDATA[<h3 id="whats-covered-in-this-post">What&rsquo;s covered in this post?</h3>
+<p>Hugo ships with out search, yet I love it. However, I&rsquo;ve managed to integrate lunr search that is supported by the theme <a href="https://hugoloveit.com/" target="_blank" rel="noopener noreffer">Loveit</a>
+ I&rsquo;m using on this website. With that being said, this post will cover how I integrate <code>lurn</code> on <a href="https://shiva.dev/" target="_blank" rel="noopener noreffer">my website</a>
+ - for demo, go ahead and search for something on this website :)</p>
+<h3 id="install-or-update">Install or update!</h3>
+<p>Make sure you update or install before we start.</p>]]></description>
 </item>
 <item>
     <title>String Template in Java 21</title>
-    <link>https://shiva.dev/posts/java_string_template/</link>
+    <link>http://localhost:1313/posts/java_string_template/</link>
     <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/java_string_template/</guid>
-    <description><![CDATA[What is String Template? String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);
-Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/java_string_template/</guid>
+    <description><![CDATA[<h3 id="what-is-string-template">What is String Template?</h3>
+<p>String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. </p>
+<p><code>System.out.println(arr[i] + &quot; &quot; + &quot;From for loop&quot;);</code></p>
+<p>Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.</p>]]></description>
 </item>
 <item>
     <title>Calculate Anual Rate Of Return In Python</title>
-    <link>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</link>
+    <link>http://localhost:1313/posts/calcuate_anual_rate_of_return_using_python/</link>
     <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-    <author>Shiva</author>
-    <guid>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</guid>
-    <description><![CDATA[Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.
-We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.
-For instance, if we start with a principal amount of $100 and an annual rate of return of 5%, the first year&rsquo;s increase will be $5.]]></description>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/calcuate_anual_rate_of_return_using_python/</guid>
+    <description><![CDATA[<p>Hey there! We&rsquo;re going to work on a challenge together where we&rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.</p>
+<p>We&rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.</p>
+<p>For instance, if we start with a principal amount of $100 and an annual rate of return of 5%, the first year&rsquo;s increase will be $5. The second year, the increase will be 5% of the new amount, which is $105, resulting in an increase of $5.25.</p>]]></description>
 </item>
 </channel>
 </rss>

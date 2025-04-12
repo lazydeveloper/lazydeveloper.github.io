@@ -15,7 +15,7 @@
                 {{- . -}}
             </language>
         {{- end -}}
-        {{- with .Site.Author.email -}}
+        {{- with .Site.Params.Author.email -}}
             <managingEditor>
                 {{- . }}{{ with $.Site.Author.name }} ({{ . }}){{ end -}}
             </managingEditor>
