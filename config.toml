@@ -52,6 +52,8 @@ ignoreLogs = ['warning-goldmark-raw-html']
   email = "i@shiva.dev"
   link = "https://shiva.dev"
 
+[params]
+
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]

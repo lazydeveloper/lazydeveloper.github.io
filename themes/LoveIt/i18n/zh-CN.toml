@@ -124,7 +124,7 @@ other = "预计阅读 {{ .Count }} 分钟"
 other = "次阅读"
 
 [author]
-other = "作者"
+other = "Shiva"
 
 [updatedOnDate]
 other = "更新于 {{ .Date }}"

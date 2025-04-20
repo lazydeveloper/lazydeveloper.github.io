@@ -120,7 +120,9 @@ other = "{{ .Count }} минута"
 other = "прегледа"
 
 [author]
-other = "Аутор"
+  name = "Shiva"
+  email = "i@shiva.dev"
+  link = "https://shiva.dev"
 
 [updatedOnDate]
 other = "Ажурирано {{ .Date }}"

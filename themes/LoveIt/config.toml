@@ -114,7 +114,7 @@ description = "A tech blog by Shiva Inampudi"
     copyright = true
     # whether to show the author
     # 是否显示作者
-    author = true
+    author = "Shiva"
     # site creation time
     # 网站创立年份
     since = 2019

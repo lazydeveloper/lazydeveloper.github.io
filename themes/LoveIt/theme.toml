@@ -28,8 +28,9 @@ features = [
 min_version = "0.62.0"
 
 [author]
-  name = "Dillon"
-  homepage = "https://dillonzq.com/"
+  name = "Shiva"
+  email = "i@shiva.dev"
+  link = "https://shiva.dev"
 
 [original]
   name = "Fastbyte01"
