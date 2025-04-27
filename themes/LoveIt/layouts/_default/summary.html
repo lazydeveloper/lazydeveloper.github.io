@@ -60,7 +60,9 @@
 
     {{- /* Footer */ -}}
     <div class="post-footer">
-        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
+        {{- /* <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a> */ -}} {{/* Commented out the Read More link */}}
+        {{- /* Commented out the tags section */ -}}
+        {{- /*
         {{- with .Params.tags -}}
             <div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;
@@ -71,5 +73,6 @@
                 {{- end -}}
             </div>
         {{- end -}}
+        */ -}}
     </div>
 </article>

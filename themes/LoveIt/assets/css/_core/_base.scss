@@ -101,16 +101,26 @@ h1, h2, h3, h4, h5, h6 {
   border: none; /* Removed redundant outline from the post list */
 }
 
-.current-post-item .content {
-  display: none;
+.current-posts .current-post-item .content {
+  display: none !important; /* Ensure .content inside .current-post-item is hidden */
 }
 
 .single.summary {
+  position: relative; /* Needed for absolute positioning of the overlay */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   padding: 1rem; /* Add padding inside the post item */
   border-radius: 8px; /* Round the corners */
+  padding-top: 0.5rem; /* Reduced top padding */
 }
 
 .single.summary:hover {
   background-color: #e0e0e0; /* Change to a dull color on hover */
+}
+
+.content:not(article.single .content) {
+  display: none; /* Hide all .content except those inside article.single */
+}
+
+.single.summary .content p {
+  line-height: 1.6; /* Adjust line height for better readability */
 }

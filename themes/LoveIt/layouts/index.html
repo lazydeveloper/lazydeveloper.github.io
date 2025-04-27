@@ -34,10 +34,12 @@
             {{- end -}}
 
             <div class="current-section">
-                <h2 class="current-title">Current</h2>
+                <h2 class="current-title">Recent...</h2>
                 <div class="current-posts">
                     {{- range $pages.Pages -}}
-                        {{- .Render "summary" -}}
+                        <div class="current-post-item">
+                          {{- .Render "summary" -}}
+                        </div>
                     {{- end -}}
                 </div>
             </div>
