@@ -1,6 +1,7 @@
 html {
   font-family: $global-font-family;
   font-weight: $global-font-weight;
+  color: $global-font-color;
   font-display: swap;
   font-size: $global-font-size;
   line-height: $global-line-height;
@@ -58,4 +59,58 @@ body {
 
 img {
   @include object-fit(contain);
+}
+
+
+// Font settings by lazydeveloper
+h1, h2, h3, h4, h5, h6 {
+  font-family: $global-font-family;
+  font-size: $global-heading-font-size;
+  font-weight: $global-heading-font-weight;
+  color: $global-heading-color;
+  line-height: 1; // Slightly tighter for headings
+}
+
+.current-section {
+  margin-top: .5rem; /* Reduced top margin to minimize gap */
+  border: 1px solid #ccc; /* Outline around the section */
+  padding: 1rem; /* Add padding inside the section */
+  margin-bottom: 1.5rem; /* Add spacing below the section */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.current-section .content {
+  display: none;
+}
+.current-title {
+  margin-bottom: 0.5rem; /* Reduced bottom margin to minimize gap */
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; /* Line separating title and posts */
+  padding-bottom: 0.5rem; /* Add padding below the title */
+  width: 100%; /* Extend the line to touch the outline */
+  margin-left: -1rem; /* Align the line with the outline */
+  padding-top: 0.5!important; /* Apply py-2 settings */
+  padding-bottom: 0.5rem !important; /* Apply py-2 settings */
+  padding-right: 1rem !important; /* Apply px-3 settings */
+  padding-left: 1rem !important; /* Apply px-3 settings */
+}
+
+.current-posts-item {
+  margin-top: .5rem; /* Add spacing between posts */
+  border: none; /* Removed redundant outline from the post list */
+}
+
+.current-post-item .content {
+  display: none;
+}
+
+.single.summary {
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  padding: 1rem; /* Add padding inside the post item */
+  border-radius: 8px; /* Round the corners */
+}
+
+.single.summary:hover {
+  background-color: #e0e0e0; /* Change to a dull color on hover */
 }

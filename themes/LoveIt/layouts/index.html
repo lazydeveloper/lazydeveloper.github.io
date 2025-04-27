@@ -32,9 +32,16 @@
             {{- else -}}
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
-            {{- range $pages.Pages -}}
-                {{- .Render "summary" -}}
-            {{- end -}}
+
+            <div class="current-section">
+                <h2 class="current-title">Current</h2>
+                <div class="current-posts">
+                    {{- range $pages.Pages -}}
+                        {{- .Render "summary" -}}
+                    {{- end -}}
+                </div>
+            </div>
+
             {{- partial "paginator.html" . -}}
         {{- end -}}
     </div>
