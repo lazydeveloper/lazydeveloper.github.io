@@ -145,7 +145,8 @@ header {
   @include transform(rotate(225deg));
 }
 
-#header-desktop {
+#header-desktop,
+#header-mobile {
   display: block;
   position: fixed;
   height: $header-height;

@@ -113,6 +113,31 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0.5rem; /* Reduced top padding */
 }
 
+.summary-link-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Place overlay above static content */
+  /* Make the overlay transparent, it's just for capturing clicks */
+  background-color: rgba(0,0,0,0); 
+}
+
+/* Ensure original links are visually below the overlay for click capture */
+.single.summary a:not(.summary-link-overlay) {
+  position: relative; /* Needed for z-index */
+  z-index: 0; /* Place most original links below the overlay */
+}
+
+/* Specifically raise Author and Category links above the overlay */
+.single.summary .post-author a,
+.single.summary .post-category a {
+  z-index: 2; /* Higher than the overlay (z-index: 1) */
+  /* Ensure they remain visually distinct if needed */
+  text-decoration: underline;
+}
+
 .single.summary:hover {
   background-color: #e0e0e0; /* Change to a dull color on hover */
 }
@@ -123,4 +148,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .single.summary .content p {
   line-height: 1.6; /* Adjust line height for better readability */
+}
+
+/* Hover effect for social icons in profile */
+.home-profile .links a {
+  display: inline-block; /* Ensure proper spacing and hover area */
+  margin: 0 0.5rem; /* Add some horizontal spacing */
+  color: inherit; /* Inherit default color */
+}
+
+/* Target the icon inside the link */
+.home-profile .links a i,
+.home-profile .links a svg { /* Target both FontAwesome and SVG icons */
+  transition: transform 0.2s ease-in-out; /* Smooth transition for scaling */
+}
+
+.home-profile .links a:hover i,
+.home-profile .links a:hover svg { /* Apply effect on icon when link is hovered */
+  transform: scale(1.5); /* Slightly enlarge the icon */
+}
+
+/* Hover effect for header menu item icons */
+.menu .menu-item i,
+.menu .menu-item svg { /* Target icons in both desktop and mobile menus */
+  transition: transform 0.2s ease-in-out; /* Only transition transform now */
+  display: inline-block; /* Ensure transform works correctly */
+  filter: drop-shadow(0 0 4px #aaa); /* Apply glow by default */
+}
+
+.menu .menu-item:hover i,
+.menu .menu-item:hover svg { /* Apply effect on icon when menu item link is hovered */
+  transform: scale(1.2); /* Slightly enlarge the icon */
+  /* Glow is now in the base state */
 }

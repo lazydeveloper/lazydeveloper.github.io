@@ -1,6 +1,9 @@
 {{- $params := .Params | merge .Site.Params.page -}}
 
 <article class="single summary" itemscope itemtype="http://schema.org/Article">
+    {{- /* Add an overlay link that covers the entire article */ -}}
+    <a href="{{ .RelPermalink }}" class="summary-link-overlay" aria-label="{{ .Title }}"></a>
+
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
