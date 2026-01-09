@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on shiva.dev</title>
-    <link>http://localhost:1313/categories/development/</link>
+    <link>https://shiva.dev/categories/development/</link>
     <description>Recent content in Development on shiva.dev</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 01 Aug 2024 21:45:43 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shiva.dev/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bind Ctrl &#43; HJKL to arrow keys on a Mac Machine</title>
-      <link>http://localhost:1313/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</link>
+      <link>https://shiva.dev/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</link>
       <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</guid>
+      <guid>https://shiva.dev/posts/bind_ctrl_&#43;&#43;hjkl_to_arrow_keys_on_a_mac/</guid>
       <description>&lt;h3 id=&#34;what-this-post-covers&#34;&gt;What this post covers?&lt;/h3&gt;&#xA;&lt;p&gt;So instead of reaching to arrow keys, you can just use h (as left arrow), j (as down arrow) k (as up arrow) and l (as right arrow) by hoding ctrl key.&lt;/p&gt;&#xA;&lt;h3 id=&#34;before-we-start&#34;&gt;Before we start&lt;/h3&gt;&#xA;&lt;p&gt;First things first, we need to install a free tool called Hammerspoon. This tool will allow us to configure the key bindings.&lt;/p&gt;&#xA;&lt;h2 id=&#34;keyboard-settings-on-mac&#34;&gt;Keyboard Settings on Mac&lt;/h2&gt;&#xA;&lt;p&gt;Navigate to System Settings &amp;gt; Keyboard &amp;gt; Keyboard Shortcut &amp;gt; Modifier Keys (left pane). Select your keyboard, and for the Caps Lock key, choose Control from the drop-down menu.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adding Password Protection To A Hugo Post</title>
-      <link>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</link>
+      <link>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</link>
       <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/adding_password_protection_to_a_hugo_post/</guid>
+      <guid>https://shiva.dev/posts/adding_password_protection_to_a_hugo_post/</guid>
       <description>&lt;p&gt;In this post, I&amp;rsquo;ll show you the simplest way to protect a Hugo page with a password by using front matter and adding a new parameter called &amp;ldquo;password.&amp;rdquo; This allows you to set a unique password for each post.&lt;/p&gt;&#xA;&lt;div class=&#34;details admonition warning open&#34;&gt;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;            &lt;i class=&#34;icon fas fa-exclamation-triangle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;proceed with caution&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &lt;/div&gt;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;This method lacks complete security. Anyone with basic computer knowledge can access your post or the repository and view the passwords. Therefore, it&amp;rsquo;s advisable to avoid sharing sensitive information using this approach. For full password protection, consider using GitHub secrets or variables instead of passwords, though this topic is not covered in this post.&lt;/div&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;div class=&#34;details admonition success&#34;&gt;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;            &lt;i class=&#34;icon fas fa-check-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;What this post cover&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &lt;/div&gt;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;&lt;ol&gt;&#xA;&lt;li&gt;Easy method to assign a password to any Hugo post (not 100% secured)&lt;/li&gt;&#xA;&lt;li&gt;Users will be prompted to enter a password to access the post.&lt;/li&gt;&#xA;&lt;li&gt;Unique password for each post&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;p&gt;Before we proceed, open the post &lt;a href=&#34;http://localhost:1313/posts/top_secret/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Top Secret&lt;/a&gt;&#xA; that is protection with a password. When prompted, enter the password &lt;code&gt;1234&lt;/code&gt; to read the top secret.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Top Secret</title>
-      <link>http://localhost:1313/posts/password/</link>
+      <link>https://shiva.dev/posts/password/</link>
       <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/password/</guid>
+      <guid>https://shiva.dev/posts/password/</guid>
       <description>&lt;div class=&#34;details admonition danger open&#34;&gt;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;            &lt;i class=&#34;icon fas fa-skull-crossbones fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Top Secret&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &lt;/div&gt;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;1234567890&lt;/div&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;p&gt;just kidding ;)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Top Secret</title>
-      <link>http://localhost:1313/posts/top_secret/</link>
+      <link>https://shiva.dev/posts/top_secret/</link>
       <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/top_secret/</guid>
+      <guid>https://shiva.dev/posts/top_secret/</guid>
       <description>&lt;div class=&#34;details admonition danger open&#34;&gt;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;            &lt;i class=&#34;icon fas fa-skull-crossbones fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Top Secret&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &lt;/div&gt;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;1234567890&lt;/div&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;p&gt;just kidding ;)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Add Lunr Search to Hugo site</title>
-      <link>http://localhost:1313/posts/lunr_search_for_hugo/</link>
+      <link>https://shiva.dev/posts/lunr_search_for_hugo/</link>
       <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/lunr_search_for_hugo/</guid>
+      <guid>https://shiva.dev/posts/lunr_search_for_hugo/</guid>
       <description>&lt;h3 id=&#34;whats-covered-in-this-post&#34;&gt;What&amp;rsquo;s covered in this post?&lt;/h3&gt;&#xA;&lt;p&gt;Hugo ships with out search, yet I love it. However, I&amp;rsquo;ve managed to integrate lunr search that is supported by the theme &lt;a href=&#34;https://hugoloveit.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Loveit&lt;/a&gt;&#xA; I&amp;rsquo;m using on this website. With that being said, this post will cover how I integrate &lt;code&gt;lurn&lt;/code&gt; on &lt;a href=&#34;https://shiva.dev/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;my website&lt;/a&gt;&#xA; - for demo, go ahead and search for something on this website :)&lt;/p&gt;&#xA;&lt;h3 id=&#34;install-or-update&#34;&gt;Install or update!&lt;/h3&gt;&#xA;&lt;p&gt;Make sure you update or install before we start.&lt;/p&gt;</description>
     </item>
   </channel>

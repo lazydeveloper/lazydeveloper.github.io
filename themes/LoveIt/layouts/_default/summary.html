@@ -25,6 +25,14 @@
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h1>
 
+    {{- /* Removed conditional display - Description always shown if present */ -}}
+    <div class="content">
+        {{- /* Display description from front matter if available */ -}}
+        {{- with .Params.description -}}
+            <p>{{ . | safeHTML }}</p> {{/* Display the description */}}
+        {{- end -}}
+    </div>
+
     {{- /* Meta */ -}}
     <div class="post-meta">
         {{- $author := $params.author | default .Site.Params.Author.name | default (T "author") -}}
@@ -50,15 +58,6 @@
                 {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
             </span>
         {{- end -}}
-    </div>
-
-    {{- /* Summary content */ -}}
-    <div class="content">
-        {{- /* Display description from front matter if available */ -}}
-        {{- with .Params.description -}}
-            <p>{{ . | safeHTML }}</p> {{/* Display the description */}}
-        {{- end -}}
-        {{- /* Removed the original summary rendering logic */ -}}
     </div>
 
     {{- /* Footer */ -}}

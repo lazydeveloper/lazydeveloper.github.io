@@ -73,10 +73,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .current-section {
   margin-top: .5rem; /* Reduced top margin to minimize gap */
-  border: 1px solid #ccc; /* Outline around the section */
+  border: 1px solid #ccc; /* Light theme border */
   padding: 1rem; /* Add padding inside the section */
   margin-bottom: 1.5rem; /* Add spacing below the section */
   border-radius: 10px; /* Rounded corners */
+
+  [theme=dark] & {
+    border: 1px solid #555; /* Dark theme border */
+  }
 }
 
 .current-section .content {
@@ -86,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem; /* Reduced bottom margin to minimize gap */
   font-size: 1.2rem;
   font-weight: bold;
-  border-bottom: 1px solid #ccc; /* Line separating title and posts */
+  border-bottom: 1px solid #ccc; /* Light theme border */
   padding-bottom: 0.5rem; /* Add padding below the title */
   width: 100%; /* Extend the line to touch the outline */
   margin-left: -1rem; /* Align the line with the outline */
@@ -94,6 +98,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.5rem !important; /* Apply py-2 settings */
   padding-right: 1rem !important; /* Apply px-3 settings */
   padding-left: 1rem !important; /* Apply px-3 settings */
+
+  [theme=dark] & {
+    border-bottom: 1px solid #555; /* Dark theme border */
+  }
 }
 
 .current-posts-item {
@@ -101,9 +109,10 @@ h1, h2, h3, h4, h5, h6 {
   border: none; /* Removed redundant outline from the post list */
 }
 
-.current-posts .current-post-item .content {
-  display: none !important; /* Ensure .content inside .current-post-item is hidden */
-}
+// to hide the content of the current posts on the homepage
+// .current-posts .current-post-item .content {
+// display: none !important; /* Ensure .content inside .current-post-item is hidden */
+// }
 
 .single.summary {
   position: relative; /* Needed for absolute positioning of the overlay */
@@ -138,16 +147,37 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+/* Summary hover effect */
 .single.summary:hover {
-  background-color: #e0e0e0; /* Change to a dull color on hover */
+  background-color: #e0e0e0; /* Light theme hover */
+
+  [theme=dark] & {
+    background-color: #3a3a3a; /* Dark theme hover - slightly lighter dark */
+  }
 }
 
 .content:not(article.single .content) {
   display: none; /* Hide all .content except those inside article.single */
 }
 
+.single.summary .single-title {
+  margin-bottom: 0.25rem; /* Reduce bottom margin (adjust value as needed) */
+}
+
 .single.summary .content p {
-  line-height: 1.6; /* Adjust line height for better readability */
+  /* Inherit font settings from base paragraph styles */
+  font-family: inherit;
+  font-size: 10;
+  font-weight: inherit;
+  line-height: 1.4; /* Slightly adjust line-height if needed */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0.5rem; /* Add some space below description */
+
+  /* Use meta text color (assuming theme variables) */
+  color: $global-font-secondary-color;
+  [theme=dark] & {
+    color: $global-font-secondary-color-dark;
+  }
 }
 
 /* Hover effect for social icons in profile */
@@ -168,16 +198,20 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.5); /* Slightly enlarge the icon */
 }
 
-/* Hover effect for header menu item icons */
-.menu .menu-item i,
-.menu .menu-item svg { /* Target icons in both desktop and mobile menus */
-  transition: transform 0.2s ease-in-out; /* Only transition transform now */
-  display: inline-block; /* Ensure transform works correctly */
-  filter: drop-shadow(0 0 4px #aaa); /* Apply glow by default */
+/* Glow effect specifically for GitHub icon in header */
+.menu .menu-item-github i,
+.menu .menu-item-github svg { /* Target only GitHub icon */
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+  filter: drop-shadow(0 0 4px #aaa); /* Light theme glow */
+
+  [theme=dark] & {
+    filter: drop-shadow(0 0 4px #eee); /* Dark theme glow - lighter gray */
+  }
 }
 
-.menu .menu-item:hover i,
-.menu .menu-item:hover svg { /* Apply effect on icon when menu item link is hovered */
+/* Hover effect specifically for GitHub icon */
+.menu .menu-item-github:hover i,
+.menu .menu-item-github:hover svg { /* Apply effect on icon when GitHub link is hovered */
   transform: scale(1.2); /* Slightly enlarge the icon */
-  /* Glow is now in the base state */
 }
