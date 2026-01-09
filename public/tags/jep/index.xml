@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JEP on shiva.dev</title>
-    <link>http://localhost:1313/tags/jep/</link>
+    <link>https://shiva.dev/tags/jep/</link>
     <description>Recent content in JEP on shiva.dev</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 23 Jun 2024 13:12:21 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/jep/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shiva.dev/tags/jep/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>String Template in Java 21</title>
-      <link>http://localhost:1313/posts/java_string_template/</link>
+      <link>https://shiva.dev/posts/java_string_template/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/java_string_template/</guid>
+      <guid>https://shiva.dev/posts/java_string_template/</guid>
       <description>&lt;h3 id=&#34;what-is-string-template&#34;&gt;What is String Template?&lt;/h3&gt;&#xA;&lt;p&gt;String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. &lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;System.out.println(arr[i] + &amp;quot; &amp;quot; + &amp;quot;From for loop&amp;quot;);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.&lt;/p&gt;</description>
     </item>
   </channel>
