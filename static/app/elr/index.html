@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ELR Fare Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#f6f7fb;
+      color:#111;
+    }
+
+    .wrap{ max-width:620px; margin:44px auto; padding:0 16px; }
+
+    .card{
+      background:#fff;
+      border:1px solid #e7e9f3;
+      border-radius:16px;
+      box-shadow:0 10px 26px rgba(20,20,50,.06);
+      padding:20px;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:20px;
+      text-align:center;
+    }
+
+    .helper{
+      font-size:13px;
+      color:#555;
+      margin-bottom:8px;
+    }
+
+    /* === Combo === */
+    .combo{
+      position:relative;
+      border:1px solid #cfd5e6;
+      border-radius:12px;
+      padding:6px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      background:#fff;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .combo:focus-within{
+      border-color:#5b7cff;
+      box-shadow:0 0 0 3px rgba(91,124,255,.15);
+    }
+
+    input{
+      flex:1;
+      border:none;
+      outline:none;
+      font-size:15px;
+      padding:6px;
+      min-width:40px;
+      background:transparent;
+    }
+
+    /* tighten spacing when chip exists */
+    .combo.has-chip{ gap:2px; }
+    .combo.has-chip input{ padding-left:0; }
+
+    /* === Success glow (final selection) === */
+    .combo.success{
+      border-color: rgba(38,200,124,.9);
+      box-shadow:
+        0 0 0 3px rgba(38,200,124,.18),
+        0 10px 26px rgba(38,200,124,.10);
+      background:#fff;
+    }
+
+    /* === Shake (invalid input) === */
+    @keyframes shakeX{
+      0%{transform:translateX(0)}
+      15%{transform:translateX(-6px)}
+      30%{transform:translateX(6px)}
+      45%{transform:translateX(-5px)}
+      60%{transform:translateX(5px)}
+      75%{transform:translateX(-3px)}
+      90%{transform:translateX(3px)}
+      100%{transform:translateX(0)}
+    }
+
+    .combo.shake{
+      animation:shakeX 260ms ease-in-out;
+      border-color:#ff6b6b;
+      box-shadow:0 0 0 3px rgba(255,107,107,.18);
+    }
+
+    /* === Selected chip === */
+    .selChip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #dfe4f2;
+      color:#111;
+      font-weight:700;
+      font-size:13px;
+      white-space:nowrap;
+      user-select:none;
+    }
+
+    .selChip button{
+      background:none;
+      border:none;
+      font-size:16px;
+      cursor:pointer;
+      line-height:1;
+      padding:0 2px;
+      color:#111;
+    }
+
+    /* === Destination picker === */
+    .picker{
+      position:absolute;
+      left:0;
+      right:0;
+      top:calc(100% + 6px);
+      background:#fff;
+      border:1px solid #e7e9f3;
+      border-radius:14px;
+      box-shadow:0 14px 30px rgba(20,20,50,.12);
+      padding:10px;
+      display:none;
+      z-index:20;
+    }
+
+    .picker.open{ display:block; }
+
+    .pickerTitle{
+      font-size:11px;
+      color:#666;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .pickerGrid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .destChip{
+      border:1px solid #dfe4f2;
+      background:#fff;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:700;
+      cursor:pointer;
+      font-size:13px;
+      color:#111;
+    }
+
+    .destChip:hover{
+      background:#f3f5ff;
+      border-color:#cfd7ff;
+    }
+
+    /* === Result === */
+    .result{
+      margin-top:16px;
+      padding:14px;
+      background:#fafbff;
+      border-radius:14px;
+      border:1px solid #e7e9f3;
+    }
+
+    .result .k{ font-size:12px;color:#444; }
+    .result .v{ font-size:28px;font-weight:800; }
+    .result .note{
+      margin-top:6px;
+      font-size:12px;
+      color:#555;
+      line-height:1.4;
+    }
+
+    /* === Footer === */
+    .footer-credit{
+      margin-top:20px;
+      font-size:11px;
+      color:#777;
+      text-align:right;
+    }
+
+    .footer-credit a{
+      color:#555;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .footer-credit a:hover{
+      text-decoration:underline;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+<div class="card">
+
+<h1>ELR Fare Calculator</h1>
+<div class="helper">Enter miles or pick a destination.</div>
+
+<div class="combo" id="combo">
+  <span id="chip" class="selChip" style="display:none;">
+    <span id="chipText"></span>
+    <button id="clearBtn" type="button">×</button>
+  </span>
+
+  <input
+    id="entry"
+    type="text"
+    inputmode="numeric"
+    placeholder="Where to?"
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"
+  >
+
+  <div id="picker" class="picker">
+    <div class="pickerTitle">Destination</div>
+    <div class="pickerGrid">
+      <button class="destChip" data-dest="EWR">EWR</button>
+      <button class="destChip" data-dest="PHL">PHL</button>
+      <button class="destChip" data-dest="JFK">JFK</button>
+      <button class="destChip" data-dest="LGA">LGA</button>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="k">ELR Fare Price</div>
+  <div class="v" id="price">$0</div>
+  <div class="note" id="priceNote">Enter miles or select a destination to see pricing.</div>
+</div>
+
+<div class="footer-credit">
+  built by <a href="https://www.shiva.dev" target="_blank">shiva</a>
+</div>
+
+</div>
+</div>
+
+<script>
+const fares={EWR:40,PHL:120,JFK:135,LGA:135};
+
+const entry=document.getElementById("entry");
+const chip=document.getElementById("chip");
+const chipText=document.getElementById("chipText");
+const clearBtn=document.getElementById("clearBtn");
+const picker=document.getElementById("picker");
+const price=document.getElementById("price");
+const priceNote=document.getElementById("priceNote");
+const combo=document.getElementById("combo");
+
+let state="none";        // none | preview | final
+let selectionType=null; // miles | dest
+let milesDraft="";      // stores miles so input stays empty
+
+function calcMiles(m){
+  if(m<1)return 5;
+  if(m<=10)return Math.round(5+m);
+  if(m<=15)return Math.round(5+m*1.1);
+  if(m<=20)return Math.round(5+m*1.2);
+  return Math.round(5+m*1.3);
+}
+
+function milesFormula(m){
+  if(m<=10)return"Fare = $5 + miles";
+  if(m<=15)return"Fare = $5 + (miles × 1.1)";
+  if(m<=20)return"Fare = $5 + (miles × 1.2)";
+  return"Fare = $5 + (miles × 1.3)";
+}
+
+function openPicker(o){ picker.classList.toggle("open",o); }
+
+function showChip(t){
+  chipText.textContent=t;
+  chip.style.display="inline-flex";
+  combo.classList.add("has-chip");
+}
+
+function hideChip(){
+  chip.style.display="none";
+  chipText.textContent="";
+  combo.classList.remove("has-chip");
+}
+
+function sync(){
+  entry.readOnly=state==="final";
+  entry.placeholder=state==="none"&&milesDraft===""?"Where to?":"";
+  combo.classList.toggle("success",state==="final");
+}
+
+function resetAll(){
+  state="none";
+  selectionType=null;
+  milesDraft="";
+  entry.value="";
+  hideChip();
+  price.textContent="$0";
+  priceNote.textContent="Enter miles or select a destination to see pricing.";
+  openPicker(false);
+  sync();
+}
+
+function shake(){
+  combo.classList.remove("shake");
+  void combo.offsetWidth;
+  combo.classList.add("shake");
+  combo.addEventListener("animationend",()=>combo.classList.remove("shake"),{once:true});
+}
+
+function renderMiles(){
+  if(!milesDraft){ resetAll(); openPicker(true); return; }
+  state="preview"; selectionType="miles";
+  entry.value="";
+  showChip(milesDraft+" mi");
+  price.textContent="$"+calcMiles(+milesDraft);
+  priceNote.textContent=milesFormula(+milesDraft);
+  openPicker(false);
+  sync();
+}
+
+entry.addEventListener("focus",()=>state==="none"&&openPicker(true));
+entry.addEventListener("click",()=>state==="none"&&openPicker(true));
+
+entry.addEventListener("beforeinput",(e)=>{
+  if(state==="final")return;
+
+  if(e.inputType==="insertText"){
+    const ch=e.data;
+    if(!/^\d$/.test(ch) || (milesDraft===""&&ch==="0")){
+      e.preventDefault(); shake(); return;
+    }
+    e.preventDefault();
+    milesDraft+=ch;
+    renderMiles();
+  }
+
+  if(e.inputType==="deleteContentBackward"){
+    e.preventDefault();
+    milesDraft=milesDraft.slice(0,-1);
+    milesDraft?renderMiles():resetAll();
+  }
+});
+
+document.querySelectorAll(".destChip").forEach(b=>{
+  b.addEventListener("mousedown",e=>e.preventDefault());
+  b.addEventListener("click",()=>{
+    if(state==="final")return;
+    milesDraft="";
+    state="final"; selectionType="dest";
+    showChip(b.dataset.dest);
+    price.textContent="$"+fares[b.dataset.dest];
+    priceNote.textContent="Fare = Fixed fare (tolls included)";
+    openPicker(false);
+    sync();
+  });
+});
+
+entry.addEventListener("keydown",(e)=>{
+  if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
+  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
+});
+
+clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
+
+document.addEventListener("click",e=>!combo.contains(e.target)&&openPicker(false));
+
+sync();
+</script>
+
+</body>
+</html>
