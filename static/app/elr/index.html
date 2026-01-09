@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
 
   <style>
     *{ box-sizing:border-box; }
@@ -192,22 +192,64 @@
     }
 
     /* === Footer === */
-    .footer-credit{
+    .footer-bar{
       margin-top:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
       font-size:11px;
       color:#777;
-      text-align:right;
     }
 
-    .footer-credit a{
+    #timestamp{
+      font-family:"Source Code Pro",Consolas,"SFMono-Regular",Menlo,monospace;
+      letter-spacing:0px;
+      font-size:10px;
+    }
+
+    .footer-bar a{
       color:#555;
       text-decoration:none;
       font-weight:600;
     }
 
-    .footer-credit a:hover{
-      text-decoration:underline;
+    .signature{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      font-size:11px;
+      color:#333;
     }
+
+    .sig-dot{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      color:#444;
+      font-weight:400;
+    }
+
+    .sig-dot .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#ff9f43,#ff6b6b);
+      box-shadow:0 0 0 2px rgba(255,107,107,0.18);
+    }
+
+    .sig-dot .sig-name{
+      font-weight:700;
+      color:#333;
+    }
+
+    /* blinking time separator */
+    .sec{
+      display:inline;
+      transition: opacity .15s ease;
+    }
+    .sec.off{ opacity:0.15; }
   </style>
 </head>
 
@@ -246,14 +288,25 @@
   </div>
 </div>
 
+<!-- Max miles message -->
+<div id="maxMilesMsg" style="display:none;margin-top:8px;font-size:12px;color:#d93025;font-weight:700;">
+  Max 3999 miles
+</div>
+
 <div class="result">
   <div class="k">ELR Fare Price</div>
   <div class="v" id="price">$0</div>
   <div class="note" id="priceNote">Enter miles or select a destination to see pricing.</div>
 </div>
 
-<div class="footer-credit">
-  built by <a href="https://www.shiva.dev" target="_blank">shiva</a>
+<div class="footer-bar">
+  <div id="timestamp"></div>
+  <div class="signature">
+    <span class="sig-dot">
+      <span class="dot"></span>
+      built by <a class="sig-name" href="https://www.shiva.dev" target="_blank" style="text-decoration:underline;">Shiva</a>
+    </span>
+  </div>
 </div>
 
 </div>
@@ -270,11 +323,17 @@ const picker=document.getElementById("picker");
 const price=document.getElementById("price");
 const priceNote=document.getElementById("priceNote");
 const combo=document.getElementById("combo");
+const maxMilesMsg=document.getElementById("maxMilesMsg");
+const timestampEl=document.getElementById("timestamp");
 
 let state="none";        // none | preview | final
 let selectionType=null; // miles | dest
 let milesDraft="";      // stores miles so input stays empty
-let skipDeleteBeforeinput=false; // avoids double-handling backspace
+const MAX_MILES = 3999;
+
+function showMaxMiles(show){
+  maxMilesMsg.style.display = show ? "block" : "none";
+}
 
 function calcMiles(m){
   if(m<1)return 5;
@@ -319,6 +378,7 @@ function resetAll(){
   hideChip();
   price.textContent="$0";
   priceNote.textContent="Enter miles or select a destination to see pricing.";
+  showMaxMiles(false);
   openPicker(false);
   sync();
 }
@@ -332,6 +392,14 @@ function shake(){
 
 function renderMiles(){
   if(!milesDraft){ resetAll(); openPicker(true); return; }
+
+  if(Number(milesDraft) > MAX_MILES){
+    showMaxMiles(true);
+    shake();
+    return;
+  }
+  showMaxMiles(false);
+
   state="preview"; selectionType="miles";
   entry.value="";
   showChip(milesDraft+" mi");
@@ -339,12 +407,6 @@ function renderMiles(){
   priceNote.textContent=milesFormula(+milesDraft);
   openPicker(false);
   sync();
-}
-
-function handleMilesBackspace(){
-  if(!milesDraft)return;
-  milesDraft=milesDraft.slice(0,-1);
-  milesDraft?renderMiles():resetAll();
 }
 
 entry.addEventListener("focus",()=>state==="none"&&openPicker(true));
@@ -364,9 +426,14 @@ entry.addEventListener("beforeinput",(e)=>{
   }
 
   if(e.inputType==="deleteContentBackward"){
-    if(skipDeleteBeforeinput){ skipDeleteBeforeinput=false; return; }
     e.preventDefault();
-    handleMilesBackspace();
+    milesDraft=milesDraft.slice(0,-1);
+    if(!milesDraft){
+      showMaxMiles(false);
+      resetAll();
+    } else {
+      renderMiles();
+    }
   }
 });
 
@@ -375,6 +442,7 @@ document.querySelectorAll(".destChip").forEach(b=>{
   b.addEventListener("click",()=>{
     if(state==="final")return;
     milesDraft="";
+    showMaxMiles(false);
     state="final"; selectionType="dest";
     showChip(b.dataset.dest);
     price.textContent="$"+fares[b.dataset.dest];
@@ -386,20 +454,44 @@ document.querySelectorAll(".destChip").forEach(b=>{
 
 entry.addEventListener("keydown",(e)=>{
   if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
-  if(e.key==="Backspace"){
-    if(state==="final"){ e.preventDefault(); resetAll(); openPicker(true); return; }
-    if(milesDraft){
-      e.preventDefault();
-      skipDeleteBeforeinput=true;
-      setTimeout(()=>skipDeleteBeforeinput=false,0);
-      handleMilesBackspace();
-    }
-  }
+  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
 });
 
 clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
 
 document.addEventListener("click",e=>!combo.contains(e.target)&&openPicker(false));
+
+/* ===== Timestamp: "Jan 09, 5:33pm" with blinking colon ===== */
+function pad2(n){ return String(n).padStart(2,"0"); }
+
+function formatStamp(d){
+  const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const MMM=months[d.getMonth()];
+  const DD=pad2(d.getDate());
+
+  let hh=d.getHours();
+  const ampm = hh>=12 ? "pm" : "am";
+  hh = hh%12; if(hh===0) hh=12;
+
+  const mm=pad2(d.getMinutes());
+
+  return `${MMM} ${DD}, ${hh}<span class="sec" id="blinkColon">:</span>${mm}${ampm}`;
+}
+
+function tick(){
+  const now=new Date();
+  timestampEl.innerHTML = formatStamp(now);
+
+  // blink the colon each second to indicate ticking time
+  const colonEl=document.getElementById("blinkColon");
+  if(colonEl){
+    if(now.getSeconds()%2===0) colonEl.classList.add("off");
+    else colonEl.classList.remove("off");
+  }
+}
+
+tick();
+setInterval(tick, 1000);
 
 sync();
 </script>
