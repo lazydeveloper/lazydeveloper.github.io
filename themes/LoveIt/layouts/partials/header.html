@@ -1,4 +1,4 @@
-{{- /* Determine multilingual support without relying on Hugo version-specific helpers */ -}}
+{{- /* Determine multilingual support without deprecated properties */ -}}
 {{- $isMultilingual := or (gt (len .Sites) 1) (gt (len .AllTranslations) 0) -}}
 
 {{- /* Desktop header */ -}}
