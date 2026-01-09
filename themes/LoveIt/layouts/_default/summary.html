@@ -1,6 +1,9 @@
 {{- $params := .Params | merge .Site.Params.page -}}
 
 <article class="single summary" itemscope itemtype="http://schema.org/Article">
+    {{- /* Add an overlay link that covers the entire article */ -}}
+    <a href="{{ .RelPermalink }}" class="summary-link-overlay" aria-label="{{ .Title }}"></a>
+
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
@@ -21,6 +24,14 @@
     <h1 class="single-title" itemprop="name headline">
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h1>
+
+    {{- /* Removed conditional display - Description always shown if present */ -}}
+    <div class="content">
+        {{- /* Display description from front matter if available */ -}}
+        {{- with .Params.description -}}
+            <p>{{ . | safeHTML }}</p> {{/* Display the description */}}
+        {{- end -}}
+    </div>
 
     {{- /* Meta */ -}}
     <div class="post-meta">
@@ -49,18 +60,11 @@
         {{- end -}}
     </div>
 
-    {{- /* Summary content */ -}}
-    <div class="content">
-        {{- with .Summary -}}
-            {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
-        {{- else -}}
-            {{- .Description | safeHTML -}}
-        {{- end -}}
-    </div>
-
     {{- /* Footer */ -}}
     <div class="post-footer">
-        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
+        {{- /* <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a> */ -}} {{/* Commented out the Read More link */}}
+        {{- /* Commented out the tags section */ -}}
+        {{- /*
         {{- with .Params.tags -}}
             <div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;
@@ -71,5 +75,6 @@
                 {{- end -}}
             </div>
         {{- end -}}
+        */ -}}
     </div>
 </article>
