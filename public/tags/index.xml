@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on shiva.dev</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://shiva.dev/tags/</link>
     <description>Recent content in Tags on shiva.dev</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 01 Aug 2024 21:45:43 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shiva.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://shiva.dev/tags/linux/</link>
       <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://shiva.dev/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Lua</title>
-      <link>http://localhost:1313/tags/lua/</link>
+      <link>https://shiva.dev/tags/lua/</link>
       <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/lua/</guid>
+      <guid>https://shiva.dev/tags/lua/</guid>
       <description></description>
     </item>
     <item>
       <title>Neovim</title>
-      <link>http://localhost:1313/tags/neovim/</link>
+      <link>https://shiva.dev/tags/neovim/</link>
       <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/neovim/</guid>
+      <guid>https://shiva.dev/tags/neovim/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>http://localhost:1313/tags/vim/</link>
+      <link>https://shiva.dev/tags/vim/</link>
       <pubDate>Wed, 31 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/vim/</guid>
+      <guid>https://shiva.dev/tags/vim/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/tags/hugo/</link>
+      <link>https://shiva.dev/tags/hugo/</link>
       <pubDate>Sun, 07 Jul 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/hugo/</guid>
+      <guid>https://shiva.dev/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Lunr</title>
-      <link>http://localhost:1313/tags/lunr/</link>
+      <link>https://shiva.dev/tags/lunr/</link>
       <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/lunr/</guid>
+      <guid>https://shiva.dev/tags/lunr/</guid>
       <description></description>
     </item>
     <item>
       <title>Search</title>
-      <link>http://localhost:1313/tags/search/</link>
+      <link>https://shiva.dev/tags/search/</link>
       <pubDate>Tue, 11 Jun 2024 20:02:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/search/</guid>
+      <guid>https://shiva.dev/tags/search/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
+      <link>https://shiva.dev/tags/java/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
+      <guid>https://shiva.dev/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Java21</title>
-      <link>http://localhost:1313/tags/java21/</link>
+      <link>https://shiva.dev/tags/java21/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/java21/</guid>
+      <guid>https://shiva.dev/tags/java21/</guid>
       <description></description>
     </item>
     <item>
       <title>JEP</title>
-      <link>http://localhost:1313/tags/jep/</link>
+      <link>https://shiva.dev/tags/jep/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/jep/</guid>
+      <guid>https://shiva.dev/tags/jep/</guid>
       <description></description>
     </item>
     <item>
       <title>String</title>
-      <link>http://localhost:1313/tags/string/</link>
+      <link>https://shiva.dev/tags/string/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/string/</guid>
+      <guid>https://shiva.dev/tags/string/</guid>
       <description></description>
     </item>
     <item>
       <title>Code Challenge</title>
-      <link>http://localhost:1313/tags/code-challenge/</link>
+      <link>https://shiva.dev/tags/code-challenge/</link>
       <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/code-challenge/</guid>
+      <guid>https://shiva.dev/tags/code-challenge/</guid>
       <description></description>
     </item>
     <item>
       <title>Loops</title>
-      <link>http://localhost:1313/tags/loops/</link>
+      <link>https://shiva.dev/tags/loops/</link>
       <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/loops/</guid>
+      <guid>https://shiva.dev/tags/loops/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://shiva.dev/tags/python/</link>
       <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://shiva.dev/tags/python/</guid>
       <description></description>
     </item>
   </channel>

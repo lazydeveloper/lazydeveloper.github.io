@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on shiva.dev</title>
-    <link>http://localhost:1313/categories/programming/</link>
+    <link>https://shiva.dev/categories/programming/</link>
     <description>Recent content in Programming on shiva.dev</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 23 Jun 2024 13:12:21 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shiva.dev/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>String Template in Java 21</title>
-      <link>http://localhost:1313/posts/java_string_template/</link>
+      <link>https://shiva.dev/posts/java_string_template/</link>
       <pubDate>Wed, 22 May 2024 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/java_string_template/</guid>
+      <guid>https://shiva.dev/posts/java_string_template/</guid>
       <description>&lt;h3 id=&#34;what-is-string-template&#34;&gt;What is String Template?&lt;/h3&gt;&#xA;&lt;p&gt;String Template is a process of substituting values of variables into placeholders in a string. In the past, we relied on string concatenation to format output for print statements. &lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;System.out.println(arr[i] + &amp;quot; &amp;quot; + &amp;quot;From for loop&amp;quot;);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Now this will change from Java 21 as String Template is here. String templates offer a more elegant approach by letting you embed expressions directly within the string. This improves readability and maintainability of your code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calculate Anual Rate Of Return In Python</title>
-      <link>http://localhost:1313/posts/calcuate_anual_rate_of_return_using_python/</link>
+      <link>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</link>
       <pubDate>Sat, 04 Mar 2023 13:55:20 -0500</pubDate>
-      <guid>http://localhost:1313/posts/calcuate_anual_rate_of_return_using_python/</guid>
+      <guid>https://shiva.dev/posts/calcuate_anual_rate_of_return_using_python/</guid>
       <description>&lt;p&gt;Hey there! We&amp;rsquo;re going to work on a challenge together where we&amp;rsquo;ll be writing a program called invest.py. The goal of this program is to track the growing amount of an investment over time.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll start with an initial deposit, also known as the principal amount. Each year, this amount will increase by a fixed percentage called the annual rate of return.&lt;/p&gt;&#xA;&lt;p&gt;For instance, if we start with a principal amount of $100 and an annual rate of return of 5%, the first year&amp;rsquo;s increase will be $5. The second year, the increase will be 5% of the new amount, which is $105, resulting in an increase of $5.25.&lt;/p&gt;</description>
     </item>
   </channel>
