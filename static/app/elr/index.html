@@ -326,6 +326,8 @@ const priceNote=document.getElementById("priceNote");
 const combo=document.getElementById("combo");
 const maxMilesMsg=document.getElementById("maxMilesMsg");
 const timestampEl=document.getElementById("timestamp");
+const GHOST="\u200b"; // zero-width char to ensure mobile backspace fires
+let skipDeleteBeforeinput=false;
 
 let state="none";        // none | preview | final
 let selectionType=null; // miles | dest
@@ -402,7 +404,7 @@ function renderMiles(){
   showMaxMiles(false);
 
   state="preview"; selectionType="miles";
-  entry.value="";
+  entry.value=GHOST; // keep a ghost char so mobile backspace triggers
   showChip(milesDraft+" mi");
   price.textContent="$"+calcMiles(+milesDraft);
   priceNote.textContent=milesFormula(+milesDraft);
@@ -427,6 +429,7 @@ entry.addEventListener("beforeinput",(e)=>{
   }
 
   if(e.inputType==="deleteContentBackward"){
+    if(skipDeleteBeforeinput){ skipDeleteBeforeinput=false; return; }
     e.preventDefault();
     milesDraft=milesDraft.slice(0,-1);
     if(!milesDraft){
@@ -455,7 +458,21 @@ document.querySelectorAll(".destChip").forEach(b=>{
 
 entry.addEventListener("keydown",(e)=>{
   if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
-  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
+  if(e.key==="Backspace"){
+    if(state==="final"){ e.preventDefault(); resetAll(); openPicker(true); return; }
+    if(milesDraft){
+      e.preventDefault();
+      skipDeleteBeforeinput=true;
+      setTimeout(()=>skipDeleteBeforeinput=false,0);
+      milesDraft=milesDraft.slice(0,-1);
+      if(!milesDraft){
+        showMaxMiles(false);
+        resetAll();
+      } else {
+        renderMiles();
+      }
+    }
+  }
 });
 
 clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
