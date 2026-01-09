@@ -269,6 +269,7 @@ const clearBtn=document.getElementById("clearBtn");
 const picker=document.getElementById("picker");
 const price=document.getElementById("price");
 const priceNote=document.getElementById("priceNote");
+const noteDefaultColor="#555";
 const combo=document.getElementById("combo");
 
 let state="none";        // none | preview | final
@@ -319,6 +320,7 @@ function resetAll(){
   hideChip();
   price.textContent="$0";
   priceNote.textContent="Enter miles or select a destination to see pricing.";
+   priceNote.style.color=noteDefaultColor;
   openPicker(false);
   sync();
 }
@@ -337,6 +339,7 @@ function renderMiles(){
   showChip(milesDraft+" mi");
   price.textContent="$"+calcMiles(+milesDraft);
   priceNote.textContent=milesFormula(+milesDraft);
+  priceNote.style.color=noteDefaultColor;
   openPicker(false);
   sync();
 }
@@ -359,7 +362,14 @@ entry.addEventListener("beforeinput",(e)=>{
       e.preventDefault(); shake(); return;
     }
     e.preventDefault();
-    milesDraft+=ch;
+    const nextDraft=milesDraft+ch;
+    if(+nextDraft>3999){
+      priceNote.textContent="Max 3999 miles.";
+      priceNote.style.color="#d32f2f";
+      shake();
+      return;
+    } // enforce max miles
+    milesDraft=nextDraft;
     renderMiles();
   }
 
@@ -379,6 +389,7 @@ document.querySelectorAll(".destChip").forEach(b=>{
     showChip(b.dataset.dest);
     price.textContent="$"+fares[b.dataset.dest];
     priceNote.textContent="Fare = Fixed fare (tolls included)";
+    priceNote.style.color=noteDefaultColor;
     openPicker(false);
     sync();
   });
