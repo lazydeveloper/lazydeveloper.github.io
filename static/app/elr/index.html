@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ELR Fare Calculator</title>
+  <title>ELR Fare Estimate</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@500&family=JetBrains+Mono:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
   <style>
     *{ box-sizing:border-box; }
@@ -29,11 +29,12 @@
       padding:20px;
     }
 
-    h1{
-      margin:0 0 18px;
-      font-size:20px;
-      text-align:center;
-    }
+h1{
+  margin:0 0 18px;
+  font-size:20px;
+  text-align:center;
+  font-family:"Poppins","Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
 
     .helper{
       font-size:13px;
@@ -41,66 +42,93 @@
       margin-bottom:8px;
     }
 
-    /* === Combo === */
-    .combo{
-      position:relative;
+    /* Mapbox fields */
+    .mapbox-fields{ display:flex; flex-direction:column; gap:10px; margin-bottom:12px; }
+    .mapbox-fields label{ display:block; font-size:12px; font-weight:700; color:#333; margin-bottom:4px; }
+
+    .mapbox-row-full{ width:100%; }
+    .mapbox-suggestions{ position:relative; }
+
+    .mapbox-field{
+      width:100%;
       border:1px solid #cfd5e6;
-      border-radius:12px;
-      padding:6px;
-      display:flex;
-      align-items:center;
-      gap:6px;
-      background:#fff;
-      transition:border-color .2s ease, box-shadow .2s ease;
-    }
-
-    .combo:focus-within{
-      border-color:#5b7cff;
-      box-shadow:0 0 0 3px rgba(91,124,255,.15);
-    }
-
-    input{
-      flex:1;
-      border:none;
-      outline:none;
+      border-radius:10px;
+      padding:14px 12px;
       font-size:15px;
-      padding:6px;
-      min-width:40px;
-      background:transparent;
-    }
-
-    /* tighten spacing when chip exists */
-    .combo.has-chip{ gap:2px; }
-    .combo.has-chip input{ padding-left:0; }
-
-    /* === Success glow (final selection) === */
-    .combo.success{
-      border-color: rgba(38,200,124,.9);
-      box-shadow:
-        0 0 0 3px rgba(38,200,124,.18),
-        0 10px 26px rgba(38,200,124,.10);
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:#fff;
     }
 
-    /* === Shake (invalid input) === */
-    @keyframes shakeX{
-      0%{transform:translateX(0)}
-      15%{transform:translateX(-6px)}
-      30%{transform:translateX(6px)}
-      45%{transform:translateX(-5px)}
-      60%{transform:translateX(5px)}
-      75%{transform:translateX(-3px)}
-      90%{transform:translateX(3px)}
-      100%{transform:translateX(0)}
+    .mapbox-chip-inline{
+      position:absolute;
+      left:10px;
+      top:50%;
+      transform:translateY(-50%);
+      display:none;
+      pointer-events:auto;
+    }
+    .mapbox-chip-inline .selChip{ margin:0; background:#f7f8ff; }
+    .mapbox-field.has-inline-chip{ padding-left:144px; }
+
+    .mapbox-suggestions ul{
+      list-style:none;
+      margin:6px 0 0;
+      padding:6px;
+      border:1px solid #e0e5f3;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(20,20,50,.08);
+    }
+    .mapbox-suggestions button{
+      width:100%; text-align:left; border:none; background:none; padding:8px 8px; border-radius:8px; font-size:14px; cursor:pointer;
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    .mapbox-suggestions button:hover{ background:#f2f5ff; }
+
+    .schedule-control{ position:relative; }
+    .schedule-input{ padding-left:60px; }
+    .swap-inline{
+      position:absolute;
+      left:12px;
+      top:50%;
+      transform:translateY(-50%);
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      border:1px solid #cfd5e6;
+      background:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow:0 6px 16px rgba(20,20,50,.08);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      z-index:2;
+    }
+    .swap-inline:disabled{ opacity:0.4; cursor:default; box-shadow:none; }
+    .swap-inline:not(:disabled):hover{ transform:translateY(-50%) translateY(-2px); box-shadow:0 8px 18px rgba(20,20,50,.12); background:#f6f8ff; }
+
+    /* Trip card */
+.trip-card{
+      margin-top:16px;
+      padding:18px;
+      background:#5F78C9;
+      border-radius:14px;
+      border:1px solid #4d62aa;
+      text-align:center;
+    }
+    .metric .k{ font-size:13px;color:#FFFFFF; margin-bottom:6px; }
+    .metric .v{ font-size:38px;font-weight:800;color:#FFFFFF; font-family:"JetBrains Mono","Source Code Pro",monospace; }
+    .metric .note{
+      margin-top:8px;
+      font-size:15px;
+      color:#FFFFFF;
+      line-height:1.4;
+      min-height:14px;
     }
 
-    .combo.shake{
-      animation:shakeX 260ms ease-in-out;
-      border-color:#ff6b6b;
-      box-shadow:0 0 0 3px rgba(255,107,107,.18);
-    }
-
-    /* === Selected chip === */
+    /* Selected chip */
     .selChip{
       display:inline-flex;
       align-items:center;
@@ -110,146 +138,23 @@
       background:#fff;
       border:1px solid #dfe4f2;
       color:#111;
-      font-weight:700;
-      font-size:13px;
+      font-weight:400;
+      font-size:14px;
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       white-space:nowrap;
       user-select:none;
     }
+    .selChip button{ background:none; border:none; font-size:16px; cursor:pointer; line-height:1; padding:0 2px; color:#111; }
 
-    
-    .selChip button{
-      background:none;
-      border:none;
-      font-size:16px;
-      cursor:pointer;
-      line-height:1;
-      padding:0 2px;
-      color:#111;
-    }
-
-    /* === Destination picker === */
-    .picker{
-      position:absolute;
-      left:0;
-      right:0;
-      top:calc(100% + 6px);
-      background:#fff;
-      border:1px solid #e7e9f3;
-      border-radius:14px;
-      box-shadow:0 14px 30px rgba(20,20,50,.12);
-      padding:10px;
-      display:none;
-      z-index:20;
-    }
-
-    .picker.open{ display:block; }
-
-    .pickerTitle{
-      font-size:11px;
-      color:#666;
-      margin-bottom:8px;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
-
-    .pickerGrid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .destChip{
-      border:1px solid #dfe4f2;
-      background:#fff;
-      border-radius:999px;
-      padding:8px 12px;
-      font-weight:700;
-      cursor:pointer;
-      font-size:13px;
-      color:#111;
-    }
-
-    .destChip:hover{
-      background:#f3f5ff;
-      border-color:#cfd7ff;
-    }
-
-    /* === Result === */
-    .result{
-      margin-top:16px;
-      padding:14px;
-      background:#fafbff;
-      border-radius:14px;
-      border:1px solid #e7e9f3;
-    }
-
-    .result .k{ font-size:12px;color:#444; }
-    .result .v{ font-size:28px;font-weight:800; }
-    .result .note{
-      margin-top:6px;
-      font-size:12px;
-      color:#555;
-      line-height:1.4;
-    }
-
-    /* === Footer === */
-    .footer-bar{
-      margin-top:20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      font-size:11px;
-      color:#777;
-    }
-
-    #timestamp{
-      font-family:"Source Code Pro",Consolas,"SFMono-Regular",Menlo,monospace;
-      letter-spacing:0px;
-      font-size:10px;
-    }
-
-    .footer-bar a{
-      color:#555;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .signature{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-      font-size:11px;
-      color:#333;
-    }
-
-    .sig-dot{
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      color:#444;
-      font-weight:400;
-    }
-
-    .sig-dot .dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:linear-gradient(135deg,#ff9f43,#ff6b6b);
-      box-shadow:0 0 0 2px rgba(255,107,107,0.18);
-    }
-
-    .sig-dot .sig-name{
-      font-weight:700;
-      color:#333;
-    }
-
-    /* blinking time separator */
-    .sec{
-      display:inline;
-      transition: opacity .15s ease;
-    }
+    /* Footer */
+    .footer-bar{ margin-top:20px; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:11px; color:#777; }
+    #timestamp{ font-family:"Source Code Pro",Consolas,"SFMono-Regular",Menlo,monospace; letter-spacing:0px; font-size:10px; }
+    .footer-bar a{ color:#555; text-decoration:none; font-weight:600; }
+    .signature{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:11px; color:#333; }
+    .sig-dot{ display:inline-flex; align-items:center; gap:4px; color:#444; font-weight:400; }
+    .sig-dot .dot{ width:8px; height:8px; border-radius:50%; background:linear-gradient(135deg,#ff9f43,#ff6b6b); box-shadow:0 0 0 2px rgba(255,107,107,0.18); }
+    .sig-dot .sig-name{ font-weight:700; color:#333; }
+    .sec{ display:inline; transition: opacity .15s ease; }
     .sec.off{ opacity:0.15; }
   </style>
 </head>
@@ -258,46 +163,76 @@
 <div class="wrap">
 <div class="card">
 
-<h1>ELR Fare Calculator</h1>
-<div class="helper">Enter miles or pick a destination.</div>
+<h1>ELR Fare Estimate</h1>
+<div class="helper"></div>
 
-<div class="combo" id="combo">
-  <span id="chip" class="selChip" style="display:none;">
-    <span id="chipText"></span>
-    <button id="clearBtn" type="button">×</button>
-  </span>
-
-  <input
-    id="entry"
-    type="text"
-    inputmode="numeric"
-    placeholder="Where to?"
-    autocomplete="off"
-    autocorrect="off"
-    autocapitalize="off"
-    spellcheck="false"
-  >
-
-  <div id="picker" class="picker">
-    <div class="pickerTitle">Destination</div>
-    <div class="pickerGrid">
-      <button class="destChip" data-dest="EWR">EWR</button>
-      <button class="destChip" data-dest="PHL">PHL</button>
-      <button class="destChip" data-dest="JFK">JFK</button>
-      <button class="destChip" data-dest="LGA">LGA</button>
-    </div>
+<div class="trip-card" id="tripCard">
+  <div class="metric">
+    <div class="v" id="price">$0</div>
+    <div class="note" id="priceNote"><span id="distanceValue">--</span> miles driving</div>
   </div>
 </div>
 
-<!-- Max miles message -->
-<div id="maxMilesMsg" style="display:none;margin-top:8px;font-size:12px;color:#d93025;font-weight:700;">
-  Max 3999 miles
-</div>
+<div style="height:12px;"></div>
 
-<div class="result">
-  <div class="k">ELR Fare Price</div>
-  <div class="v" id="price">$0</div>
-  <div class="note" id="priceNote">Enter miles or select a destination to see pricing.</div>
+<div class="mapbox-fields">
+  <div class="mapbox-row-full">
+    <label for="toLocation">Pickup</label>
+    <div class="mapbox-suggestions">
+      <input
+        id="toLocation"
+        class="mapbox-field"
+        type="text"
+        placeholder="Start typing a location"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      >
+      <div id="toChipWrapper" class="mapbox-chip-inline">
+        <span id="toChip" class="selChip" style="display:none;">
+          <span id="toChipText"></span>
+          <button id="toChipClear" type="button">×</button>
+        </span>
+      </div>
+      <div id="toResults"></div>
+    </div>
+  </div>
+  <div class="mapbox-row-full">
+    <label for="fromLocation">Drop Off</label>
+    <div class="mapbox-suggestions">
+      <input
+        id="fromLocation"
+        class="mapbox-field"
+        type="text"
+        placeholder="Start typing a location"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      >
+      <div id="fromChipWrapper" class="mapbox-chip-inline">
+        <span id="fromChip" class="selChip" style="display:none;">
+          <span id="fromChipText"></span>
+          <button id="fromChipClear" type="button">×</button>
+        </span>
+      </div>
+      <div id="fromResults"></div>
+    </div>
+  </div>
+  <div class="mapbox-row-full" style="display:flex;align-items:flex-end;gap:12px;">
+    <div style="flex:1;">
+      <label for="scheduleInput">Pickup Time</label>
+      <div class="schedule-control">
+        <button id="swapBtn" class="swap-inline" type="button" aria-label="Swap From and To" disabled>⇅</button>
+        <input
+          id="scheduleInput"
+          class="schedule-input mapbox-field"
+          type="datetime-local"
+        >
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="footer-bar">
@@ -314,26 +249,48 @@
 </div>
 
 <script>
-const fares={EWR:40,PHL:120,JFK:135,LGA:135};
+const MAPBOX_ACCESS_TOKEN=window.MAPBOX_ACCESS_TOKEN||"pk.eyJ1IjoibGF6eWRldmVsb3BlciIsImEiOiJjbWthNWQyeDkyMGF2M21vdXZtdHNqNHJhIn0.3gbi1sLzpHP6zgADFNXePg";
+const MAPBOX_SESSION_TOKEN=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2));
+const MAPBOX_COUNTRY="US";
+const MAPBOX_BBOX="-75.563587,38.788657,-73.88506,41.357423"; // New Jersey bounds
+const SUGGEST_LIMIT=5;
+const MAX_MILES=3999;
 
-const entry=document.getElementById("entry");
-const chip=document.getElementById("chip");
-const chipText=document.getElementById("chipText");
-const clearBtn=document.getElementById("clearBtn");
-const picker=document.getElementById("picker");
+const timestampEl=document.getElementById("timestamp");
+const distanceValue=document.getElementById("distanceValue");
+const distanceNote=document.getElementById("distanceNote");
 const price=document.getElementById("price");
 const priceNote=document.getElementById("priceNote");
+<<<<<<< Updated upstream
 const combo=document.getElementById("combo");
 const maxMilesMsg=document.getElementById("maxMilesMsg");
 const timestampEl=document.getElementById("timestamp");
-const GHOST="\u200b"; // zero-width char to ensure mobile backspace fires
-let skipDeleteBeforeinput=false;
+=======
+const fromLocation=document.getElementById("fromLocation");
+const fromResults=document.getElementById("fromResults");
+const fromChipWrapper=document.getElementById("fromChipWrapper");
+const fromChip=document.getElementById("fromChip");
+const fromChipText=document.getElementById("fromChipText");
+const fromChipClear=document.getElementById("fromChipClear");
+const toLocation=document.getElementById("toLocation");
+const toResults=document.getElementById("toResults");
+const toChipWrapper=document.getElementById("toChipWrapper");
+const toChip=document.getElementById("toChip");
+const toChipText=document.getElementById("toChipText");
+const toChipClear=document.getElementById("toChipClear");
+const swapBtn=document.getElementById("swapBtn");
+const scheduleInput=document.getElementById("scheduleInput");
+>>>>>>> Stashed changes
 
-let state="none";        // none | preview | final
-let selectionType=null; // miles | dest
-let milesDraft="";      // stores miles so input stays empty
-const MAX_MILES = 3999;
+let mapboxAbortController=null;
+let distanceAbortController=null;
+const selectedPlaces={from:null,to:null};
+const mapboxFields={
+  from:{key:"from",input:fromLocation,results:fromResults,chipWrapper:fromChipWrapper,chip:fromChip,chipText:fromChipText,chipClear:fromChipClear},
+  to:{key:"to",input:toLocation,results:toResults,chipWrapper:toChipWrapper,chip:toChip,chipText:toChipText,chipClear:toChipClear}
+};
 
+<<<<<<< Updated upstream
 function showMaxMiles(show){
   maxMilesMsg.style.display = show ? "block" : "none";
 }
@@ -404,7 +361,7 @@ function renderMiles(){
   showMaxMiles(false);
 
   state="preview"; selectionType="miles";
-  entry.value=GHOST; // keep a ghost char so mobile backspace triggers
+  entry.value="";
   showChip(milesDraft+" mi");
   price.textContent="$"+calcMiles(+milesDraft);
   priceNote.textContent=milesFormula(+milesDraft);
@@ -429,7 +386,6 @@ entry.addEventListener("beforeinput",(e)=>{
   }
 
   if(e.inputType==="deleteContentBackward"){
-    if(skipDeleteBeforeinput){ skipDeleteBeforeinput=false; return; }
     e.preventDefault();
     milesDraft=milesDraft.slice(0,-1);
     if(!milesDraft){
@@ -458,21 +414,7 @@ document.querySelectorAll(".destChip").forEach(b=>{
 
 entry.addEventListener("keydown",(e)=>{
   if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
-  if(e.key==="Backspace"){
-    if(state==="final"){ e.preventDefault(); resetAll(); openPicker(true); return; }
-    if(milesDraft){
-      e.preventDefault();
-      skipDeleteBeforeinput=true;
-      setTimeout(()=>skipDeleteBeforeinput=false,0);
-      milesDraft=milesDraft.slice(0,-1);
-      if(!milesDraft){
-        showMaxMiles(false);
-        resetAll();
-      } else {
-        renderMiles();
-      }
-    }
-  }
+  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
 });
 
 clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
@@ -480,39 +422,301 @@ clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
 document.addEventListener("click",e=>!combo.contains(e.target)&&openPicker(false));
 
 /* ===== Timestamp: "Jan 09, 5:33pm" with blinking colon ===== */
+=======
+// Timestamp
+>>>>>>> Stashed changes
 function pad2(n){ return String(n).padStart(2,"0"); }
-
 function formatStamp(d){
   const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const MMM=months[d.getMonth()];
   const DD=pad2(d.getDate());
-
   let hh=d.getHours();
   const ampm = hh>=12 ? "pm" : "am";
   hh = hh%12; if(hh===0) hh=12;
-
   const mm=pad2(d.getMinutes());
-
   return `${MMM} ${DD}, ${hh}<span class="sec" id="blinkColon">:</span>${mm}${ampm}`;
 }
-
 function tick(){
   const now=new Date();
   timestampEl.innerHTML = formatStamp(now);
-
-  // blink the colon each second to indicate ticking time
   const colonEl=document.getElementById("blinkColon");
   if(colonEl){
     if(now.getSeconds()%2===0) colonEl.classList.add("off");
     else colonEl.classList.remove("off");
   }
 }
-
 tick();
 setInterval(tick, 1000);
 
-sync();
-</script>
+// Utils
+function roundToFiveMinutes(d){ const ms=1000*60*5; return new Date(Math.round(d.getTime()/ms)*ms); }
+function addHours(d,h){ return new Date(d.getTime()+h*60*60*1000); }
+function toLocalInput(d){
+  const pad=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
 
+function normalizeLocationText(text){
+  if(!text) return text;
+  let t=text.replace(/,\s*(United States|USA|United States of America)\.?$/i,"");
+  t=t.replace(/\bNew Jersey\b/gi,"NJ");
+  return t.trim();
+}
+
+function abbreviateLocation(text){
+  if(!text) return text;
+  const map={
+    "Avenue":"Ave",
+    "Street":"St",
+    "Road":"Rd",
+    "Drive":"Dr",
+    "Lane":"Ln",
+    "Court":"Ct",
+    "Boulevard":"Blvd",
+    "Parkway":"Pkwy",
+    "Highway":"Hwy",
+    "West":"W",
+    "East":"E",
+    "North":"N",
+    "South":"S"
+  };
+  const pattern=new RegExp(`\\b(${Object.keys(map).join("|")})\\b`,"gi");
+  return text.replace(pattern,(m)=>map[m.charAt(0).toUpperCase()+m.slice(1).toLowerCase()]||m);
+}
+
+function formatSuggestionLabel(item, selectionValue, headline){
+  const addr = item.full_address?.split(",")[0]?.trim() || item.name || item.context?.address?.name || headline;
+  const city=item.context?.place?.name;
+  const state=normalizeLocationText(item.context?.region?.abbr || item.context?.region?.name || "");
+  const tail=[city,state].filter(Boolean).join(", ");
+  const labelParts=[];
+  if(addr) labelParts.push(addr);
+  if(tail) labelParts.push(tail);
+  const label=abbreviateLocation(labelParts.join(" ").trim());
+  return label || selectionValue || headline || "Unknown";
+}
+
+function calcFare(miles){
+  if(miles<1)return 5;
+  if(miles<=10)return Math.round(5+miles);
+  if(miles<=15)return Math.round(5+miles*1.1);
+  if(miles<=20)return Math.round(5+miles*1.2);
+  return Math.round(5+miles*1.3);
+}
+function fareFormulaText(miles){
+  if(miles<=10)return"Fare = $5 + miles (rounded)";
+  if(miles<=15)return"Fare = $5 + (miles × 1.1), rounded";
+  if(miles<=20)return"Fare = $5 + (miles × 1.2), rounded";
+  return"Fare = $5 + (miles × 1.3), rounded";
+}
+
+function showChip(field,text){
+  field.chipText.textContent=text;
+  field.chip.style.display="inline-flex";
+  field.chipWrapper.style.display="block";
+  field.input.classList.add("has-inline-chip");
+  field.input.dataset.selected=text;
+  field.input.value="";
+  field.input.placeholder="";
+}
+function hideChip(field){
+  field.chip.style.display="none";
+  field.chipText.textContent="";
+  field.chipWrapper.style.display="none";
+  field.input.classList.remove("has-inline-chip");
+  delete field.input.dataset.selected;
+  clearSelectedPlace(field.key);
+}
+
+function clearSelectedPlace(key){
+  selectedPlaces[key]=null;
+  updateDistanceUI();
+  updateSwapState();
+}
+function setSelectedPlace(key,data){
+  selectedPlaces[key]=data;
+  updateDistanceUI();
+  maybeComputeDistance();
+  updateSwapState();
+}
+
+function updateDistanceUI(opts={}){
+  if(opts.error){
+    distanceValue.textContent="--";
+    if(distanceNote) distanceNote.textContent=opts.error;
+    updatePrice({error:opts.error});
+    return;
+  }
+  if(opts.loading){
+    distanceValue.textContent="...";
+    if(distanceNote) distanceNote.textContent="Calculating driving distance...";
+    updatePrice({loading:true});
+    return;
+  }
+  if(typeof opts.miles==="number"){
+    distanceValue.textContent=opts.miles.toFixed(1);
+    if(distanceNote) distanceNote.textContent="";
+    updatePrice({miles:opts.miles});
+    return;
+  }
+  if(selectedPlaces.from && selectedPlaces.to){
+    distanceValue.textContent="...";
+    if(distanceNote) distanceNote.textContent="Calculating driving distance...";
+    updatePrice({loading:true});
+    return;
+  }
+  distanceValue.textContent="--";
+  if(distanceNote) distanceNote.textContent="";
+  updatePrice();
+}
+
+function updateSwapState(){
+  const ready=Boolean(selectedPlaces.from && selectedPlaces.to);
+  swapBtn.disabled=!ready;
+}
+
+function updatePrice(opts={}){
+  if(opts.error){ price.textContent="$0"; priceNote.textContent=opts.error; return; }
+  if(opts.loading){ price.textContent="..."; priceNote.textContent="Waiting for distance to estimate fare."; return; }
+  if(typeof opts.miles==="number"){ const fare=calcFare(opts.miles); price.textContent=`$${fare}`; priceNote.textContent=`${distanceValue.textContent} miles driving`; return; }
+  price.textContent="$0"; priceNote.textContent="-- miles driving";
+}
+
+async function fetchMapboxSuggestions(q){
+  if(!MAPBOX_ACCESS_TOKEN) return;
+  const url=new URL("https://api.mapbox.com/search/searchbox/v1/suggest");
+  url.searchParams.set("q",q);
+  url.searchParams.set("language","en");
+  url.searchParams.set("limit",String(SUGGEST_LIMIT));
+  url.searchParams.set("types","poi,address,place");
+  url.searchParams.set("access_token",MAPBOX_ACCESS_TOKEN);
+  url.searchParams.set("session_token",MAPBOX_SESSION_TOKEN);
+  url.searchParams.set("country",MAPBOX_COUNTRY);
+  url.searchParams.set("bbox",MAPBOX_BBOX);
+  if(mapboxAbortController) mapboxAbortController.abort();
+  mapboxAbortController=new AbortController();
+  const res=await fetch(url.toString(),{signal:mapboxAbortController.signal});
+  if(!res.ok) throw new Error("Mapbox suggest failed");
+  return res.json();
+}
+
+async function fetchPlaceDetails(mapboxId){
+  if(!mapboxId) return null;
+  const url=new URL(`https://api.mapbox.com/search/searchbox/v1/retrieve/${encodeURIComponent(mapboxId)}`);
+  url.searchParams.set("session_token",MAPBOX_SESSION_TOKEN);
+  url.searchParams.set("access_token",MAPBOX_ACCESS_TOKEN);
+  const res=await fetch(url.toString());
+  if(!res.ok) throw new Error("Mapbox retrieve failed");
+  const data=await res.json();
+  const feature=data?.features?.[0];
+  const coords=feature?.geometry?.coordinates;
+  if(!coords || coords.length<2) return null;
+  return {coords:{lon:coords[0],lat:coords[1]}};
+}
+
+function metersToMiles(m){ return m/1609.344; }
+async function fetchDrivingDistance(fromCoords,toCoords,{signal}={}){
+  if(!fromCoords || !toCoords) throw new Error("Missing coords");
+  const coordsStr=`${fromCoords.lon},${fromCoords.lat};${toCoords.lon},${toCoords.lat}`;
+  const url=new URL(`https://api.mapbox.com/directions/v5/mapbox/driving/${coordsStr}`);
+  url.searchParams.set("access_token",MAPBOX_ACCESS_TOKEN);
+  url.searchParams.set("geometries","geojson");
+  url.searchParams.set("overview","false");
+  const res=await fetch(url.toString(),{signal});
+  if(!res.ok) throw new Error("Directions failed");
+  const data=await res.json();
+  const distanceMeters=data?.routes?.[0]?.distance;
+  if(typeof distanceMeters!=="number") throw new Error("No distance");
+  return metersToMiles(distanceMeters);
+}
+
+function maybeComputeDistance(){
+  const from=selectedPlaces.from;
+  const to=selectedPlaces.to;
+  if(!from || !to){ updateDistanceUI(); return; }
+  updateDistanceUI({loading:true});
+  if(distanceAbortController) distanceAbortController.abort();
+  distanceAbortController=new AbortController();
+  fetchDrivingDistance(from.coords,to.coords,{signal:distanceAbortController.signal})
+    .then(miles=>updateDistanceUI({miles}))
+    .catch(err=>{ if(err.name!=="AbortError") updateDistanceUI({error:"Could not fetch driving distance. Try again."}); });
+}
+
+function renderResults(field,suggestions){
+  if(!suggestions || !suggestions.length){ clearResults(field); return; }
+  const ul=document.createElement("ul");
+  suggestions.forEach(item=>{
+    const btn=document.createElement("button");
+    const headline=item.name || item.place_formatted || item.full_address || item.context?.place?.name || "Unknown";
+    const contextParts=[item.context?.address?.name,item.context?.street?.name,item.context?.place?.name,item.context?.region?.name,item.context?.postcode?.name,item.context?.country?.name].filter(Boolean);
+    const rawSelection=item.full_address || item.place_formatted || (headline && contextParts.length ? `${headline}, ${contextParts.join(", ")}` : (headline || contextParts.join(", ")));
+    const selectionValue=normalizeLocationText(rawSelection);
+    const label=formatSuggestionLabel(item, selectionValue, headline);
+    btn.innerHTML=`<span aria-hidden="true" style="margin-right:8px;">📍</span>${label}`;
+    btn.type="button";
+    btn.addEventListener("click",()=>{
+      const val=selectionValue || headline;
+      const displayLabel=abbreviateLocation(val);
+      showChip(field,displayLabel);
+      clearResults(field);
+      field.input.focus();
+      fetchPlaceDetails(item.mapbox_id)
+        .then(details=>{
+          if(details?.coords){ setSelectedPlace(field.key,{label:displayLabel,mapboxId:item.mapbox_id,coords:details.coords}); }
+          else { hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }
+        })
+        .catch(err=>{ if(err.name!=="AbortError"){ hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }});
+    });
+    const li=document.createElement("li");
+    li.appendChild(btn);
+    ul.appendChild(li);
+  });
+  field.results.innerHTML="";
+  field.results.appendChild(ul);
+}
+
+function clearResults(field){ field.results.innerHTML=""; }
+
+function handleInput(field){
+  const q=field.input.value.trim();
+  if(!q){ clearResults(field); return; }
+  hideChip(field);
+  fetchMapboxSuggestions(q)
+    .then(data=>renderResults(field,data?.suggestions||[]))
+    .catch(()=>{});
+}
+
+Object.values(mapboxFields).forEach(field=>{
+  field.input.addEventListener("input",()=>handleInput(field));
+  field.chipClear.addEventListener("click",()=>{
+    field.input.value="";
+    hideChip(field);
+    clearResults(field);
+    field.input.placeholder="Start typing a location";
+    field.input.focus();
+  });
+});
+
+document.addEventListener("click",e=>{
+  const fields=[fromLocation,toLocation,fromResults,toResults,fromChip,toChip];
+  if(fields.some(el=>el && el.contains(e.target))) return;
+  [fromResults,toResults].forEach(el=>el.innerHTML="");
+});
+
+swapBtn.addEventListener("click",()=>{
+  if(swapBtn.disabled) return;
+  const temp=selectedPlaces.from;
+  selectedPlaces.from=selectedPlaces.to;
+  selectedPlaces.to=temp;
+  if(selectedPlaces.from){ showChip(mapboxFields.from, selectedPlaces.from.label); }
+  if(selectedPlaces.to){ showChip(mapboxFields.to, selectedPlaces.to.label); }
+  updateSwapState();
+  maybeComputeDistance();
+});
+
+// Schedule default
+scheduleInput.step="300";
+scheduleInput.value=toLocalInput(roundToFiveMinutes(addHours(new Date(),1)));
+</script>
 </body>
 </html>
