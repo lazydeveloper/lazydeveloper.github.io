@@ -51,6 +51,7 @@ h1{
 
     .mapbox-field{
       width:100%;
+      max-width:100%;
       border:1px solid #cfd5e6;
       border-radius:10px;
       padding:14px 12px;
@@ -85,8 +86,8 @@ h1{
     }
     .mapbox-suggestions button:hover{ background:#f2f5ff; }
 
-    .schedule-control{ position:relative; }
-    .schedule-input{ padding-left:60px; }
+    .schedule-control{ position:relative; width:100%; }
+    .schedule-input{ padding-left:60px; width:100%; display:block; }
     .swap-inline{
       position:absolute;
       left:12px;
@@ -119,7 +120,8 @@ h1{
       text-align:center;
     }
     .metric .k{ font-size:13px;color:#FFFFFF; margin-bottom:6px; }
-    .metric .v{ font-size:38px;font-weight:800;color:#FFFFFF; font-family:"JetBrains Mono","Source Code Pro",monospace; }
+    .metric .v{ font-size:38px;font-weight:800;color:#FFFFFF; font-family:"JetBrains Mono","Source Code Pro",monospace; transition:filter .2s ease, opacity .2s ease; }
+    .metric .v.loading{ filter:blur(3px); opacity:0.5; }
     .metric .note{
       margin-top:8px;
       font-size:15px;
@@ -258,6 +260,7 @@ const MAX_MILES=3999;
 const MIN_QUERY_LENGTH=4;
 const DEBOUNCE_MS=350;
 const CACHE_TTL_MS=24*60*60*1000; // 24h
+const RECENT_LIMIT=6;
 
 const timestampEl=document.getElementById("timestamp");
 const distanceValue=document.getElementById("distanceValue");
@@ -389,6 +392,28 @@ function setCache(key,data){
   try{ localStorage.setItem(key, JSON.stringify({ts:Date.now(),data})); }catch{}
 }
 
+// Recents helpers
+function loadRecents(){
+  try{
+    const raw=localStorage.getItem("recentPlaces");
+    if(!raw) return [];
+    const arr=JSON.parse(raw);
+    if(!Array.isArray(arr)) return [];
+    const now=Date.now();
+    const fresh=arr.filter(item=>item?.ts && now-item.ts<CACHE_TTL_MS && item.label && item.coords);
+    return fresh.slice(0,RECENT_LIMIT);
+  }catch{ return []; }
+}
+function saveRecent(entry){
+  try{
+    const recents=loadRecents();
+    const filtered=recents.filter(r=>!(r.mapboxId && entry.mapboxId && r.mapboxId===entry.mapboxId) && r.label!==entry.label);
+    filtered.unshift({...entry,ts:Date.now()});
+    const trimmed=filtered.slice(0,RECENT_LIMIT);
+    localStorage.setItem("recentPlaces", JSON.stringify(trimmed));
+  }catch{}
+}
+
 // Debounce helper
 function debounce(fn, delay){
   let t;
@@ -448,6 +473,9 @@ function clearSelectedPlace(key){
 }
 function setSelectedPlace(key,data){
   selectedPlaces[key]=data;
+  if(data?.coords && data?.label){
+    saveRecent({label:data.label,mapboxId:data.mapboxId||null,coords:data.coords});
+  }
   updateDistanceUI();
   maybeComputeDistance();
   updateSwapState();
@@ -501,10 +529,11 @@ function updatePrice(opts={}){
     price.textContent="$0";
     distanceValue.textContent="--";
     distanceSuffix.textContent=opts.error;
+    price.classList.remove("loading");
     return;
   }
   if(opts.loading){
-    price.textContent="...";
+    price.classList.add("loading");
     distanceValue.textContent="...";
     distanceSuffix.textContent="Waiting for distance to estimate fare.";
     return;
@@ -513,11 +542,13 @@ function updatePrice(opts={}){
     const fare=calcFare(opts.miles);
     price.textContent=`$${fare}`;
     distanceSuffix.textContent="miles driving";
+    price.classList.remove("loading");
     return;
   }
   price.textContent="$0";
   distanceValue.textContent="--";
   distanceSuffix.textContent="miles driving";
+  price.classList.remove("loading");
 }
 
 async function fetchMapboxSuggestions(q){
@@ -639,9 +670,31 @@ function renderResults(field,suggestions){
 
 function clearResults(field){ field.results.innerHTML=""; }
 
+function renderRecents(field){
+  const recents=loadRecents();
+  if(!recents.length){ clearResults(field); return; }
+  const ul=document.createElement("ul");
+  recents.forEach(item=>{
+    const btn=document.createElement("button");
+    btn.innerHTML=`<span aria-hidden="true" style="margin-right:8px;">⏱</span>${item.label}`;
+    btn.type="button";
+    btn.addEventListener("click",()=>{
+      showChip(field,item.label);
+      clearResults(field);
+      setSelectedPlace(field.key,{label:item.label,mapboxId:item.mapboxId||null,coords:item.coords});
+      field.input.focus();
+    });
+    const li=document.createElement("li");
+    li.appendChild(btn);
+    ul.appendChild(li);
+  });
+  field.results.innerHTML="";
+  field.results.appendChild(ul);
+}
+
 function handleInput(field){
   const q=field.input.value.trim();
-  if(!q){ clearResults(field); return; }
+  if(!q){ renderRecents(field); return; }
   if(q.length<MIN_QUERY_LENGTH){ clearResults(field); return; }
   hideChip(field);
   fetchMapboxSuggestions(q)
@@ -652,6 +705,7 @@ function handleInput(field){
 Object.values(mapboxFields).forEach(field=>{
   const debounced=debounce(()=>handleInput(field),DEBOUNCE_MS);
   field.input.addEventListener("input",debounced);
+  field.input.addEventListener("focus",()=>{ if(!field.input.value.trim()) renderRecents(field); });
   field.chipClear.addEventListener("click",()=>{
     field.input.value="";
     hideChip(field);
