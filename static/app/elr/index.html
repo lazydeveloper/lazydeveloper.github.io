@@ -258,14 +258,9 @@ const MAX_MILES=3999;
 
 const timestampEl=document.getElementById("timestamp");
 const distanceValue=document.getElementById("distanceValue");
-const distanceNote=document.getElementById("distanceNote");
+const distanceNote=null; // distance note removed from UI; keep null for guards
 const price=document.getElementById("price");
 const priceNote=document.getElementById("priceNote");
-<<<<<<< Updated upstream
-const combo=document.getElementById("combo");
-const maxMilesMsg=document.getElementById("maxMilesMsg");
-const timestampEl=document.getElementById("timestamp");
-=======
 const fromLocation=document.getElementById("fromLocation");
 const fromResults=document.getElementById("fromResults");
 const fromChipWrapper=document.getElementById("fromChipWrapper");
@@ -280,7 +275,6 @@ const toChipText=document.getElementById("toChipText");
 const toChipClear=document.getElementById("toChipClear");
 const swapBtn=document.getElementById("swapBtn");
 const scheduleInput=document.getElementById("scheduleInput");
->>>>>>> Stashed changes
 
 let mapboxAbortController=null;
 let distanceAbortController=null;
@@ -290,141 +284,7 @@ const mapboxFields={
   to:{key:"to",input:toLocation,results:toResults,chipWrapper:toChipWrapper,chip:toChip,chipText:toChipText,chipClear:toChipClear}
 };
 
-<<<<<<< Updated upstream
-function showMaxMiles(show){
-  maxMilesMsg.style.display = show ? "block" : "none";
-}
-
-function calcMiles(m){
-  if(m<1)return 5;
-  if(m<=10)return Math.round(5+m);
-  if(m<=15)return Math.round(5+m*1.1);
-  if(m<=20)return Math.round(5+m*1.2);
-  return Math.round(5+m*1.3);
-}
-
-function milesFormula(m){
-  if(m<=10)return"Fare = $5 + miles";
-  if(m<=15)return"Fare = $5 + (miles × 1.1)";
-  if(m<=20)return"Fare = $5 + (miles × 1.2)";
-  return"Fare = $5 + (miles × 1.3)";
-}
-
-function openPicker(o){ picker.classList.toggle("open",o); }
-
-function showChip(t){
-  chipText.textContent=t;
-  chip.style.display="inline-flex";
-  combo.classList.add("has-chip");
-}
-
-function hideChip(){
-  chip.style.display="none";
-  chipText.textContent="";
-  combo.classList.remove("has-chip");
-}
-
-function sync(){
-  entry.readOnly=state==="final";
-  entry.placeholder=state==="none"&&milesDraft===""?"Where to?":"";
-  combo.classList.toggle("success",state==="final");
-}
-
-function resetAll(){
-  state="none";
-  selectionType=null;
-  milesDraft="";
-  entry.value="";
-  hideChip();
-  price.textContent="$0";
-  priceNote.textContent="Enter miles or select a destination to see pricing.";
-  showMaxMiles(false);
-  openPicker(false);
-  sync();
-}
-
-function shake(){
-  combo.classList.remove("shake");
-  void combo.offsetWidth;
-  combo.classList.add("shake");
-  combo.addEventListener("animationend",()=>combo.classList.remove("shake"),{once:true});
-}
-
-function renderMiles(){
-  if(!milesDraft){ resetAll(); openPicker(true); return; }
-
-  if(Number(milesDraft) > MAX_MILES){
-    showMaxMiles(true);
-    shake();
-    return;
-  }
-  showMaxMiles(false);
-
-  state="preview"; selectionType="miles";
-  entry.value="";
-  showChip(milesDraft+" mi");
-  price.textContent="$"+calcMiles(+milesDraft);
-  priceNote.textContent=milesFormula(+milesDraft);
-  openPicker(false);
-  sync();
-}
-
-entry.addEventListener("focus",()=>state==="none"&&openPicker(true));
-entry.addEventListener("click",()=>state==="none"&&openPicker(true));
-
-entry.addEventListener("beforeinput",(e)=>{
-  if(state==="final")return;
-
-  if(e.inputType==="insertText"){
-    const ch=e.data;
-    if(!/^\d$/.test(ch) || (milesDraft===""&&ch==="0")){
-      e.preventDefault(); shake(); return;
-    }
-    e.preventDefault();
-    milesDraft+=ch;
-    renderMiles();
-  }
-
-  if(e.inputType==="deleteContentBackward"){
-    e.preventDefault();
-    milesDraft=milesDraft.slice(0,-1);
-    if(!milesDraft){
-      showMaxMiles(false);
-      resetAll();
-    } else {
-      renderMiles();
-    }
-  }
-});
-
-document.querySelectorAll(".destChip").forEach(b=>{
-  b.addEventListener("mousedown",e=>e.preventDefault());
-  b.addEventListener("click",()=>{
-    if(state==="final")return;
-    milesDraft="";
-    showMaxMiles(false);
-    state="final"; selectionType="dest";
-    showChip(b.dataset.dest);
-    price.textContent="$"+fares[b.dataset.dest];
-    priceNote.textContent="Fare = Fixed fare (tolls included)";
-    openPicker(false);
-    sync();
-  });
-});
-
-entry.addEventListener("keydown",(e)=>{
-  if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
-  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
-});
-
-clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
-
-document.addEventListener("click",e=>!combo.contains(e.target)&&openPicker(false));
-
-/* ===== Timestamp: "Jan 09, 5:33pm" with blinking colon ===== */
-=======
 // Timestamp
->>>>>>> Stashed changes
 function pad2(n){ return String(n).padStart(2,"0"); }
 function formatStamp(d){
   const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -717,6 +577,8 @@ swapBtn.addEventListener("click",()=>{
 // Schedule default
 scheduleInput.step="300";
 scheduleInput.value=toLocalInput(roundToFiveMinutes(addHours(new Date(),1)));
+
 </script>
+
 </body>
 </html>
