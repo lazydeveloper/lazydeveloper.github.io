@@ -169,7 +169,7 @@ h1{
 <div class="trip-card" id="tripCard">
   <div class="metric">
     <div class="v" id="price">$0</div>
-    <div class="note" id="priceNote"><span id="distanceValue">--</span> miles driving</div>
+    <div class="note" id="priceNote"><span id="distanceValue">--</span> <span id="distanceSuffix">miles driving</span></div>
   </div>
 </div>
 
@@ -249,23 +249,22 @@ h1{
 </div>
 
 <script>
-const MAPBOX_ACCESS_TOKEN=window.MAPBOX_ACCESS_TOKEN||"pk.eyJ1IjoibGF6eWRldmVsb3BlciIsImEiOiJjbWthNWQyeDkyMGF2M21vdXZtdHNqNHJhIn0.3gbi1sLzpHP6zgADFNXePg";
+const MAPBOX_ACCESS_TOKEN=window.MAPBOX_ACCESS_TOKEN||"pk.eyJ1IjoibGF6eWRldmVsb3BlciIsImEiOiJjbWtiOTA4b2cwMWZiM2VweGdhMmE1Y3h4In0.YkjBVRuEZVG8_Naj49z8sA";
 const MAPBOX_SESSION_TOKEN=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2));
 const MAPBOX_COUNTRY="US";
 const MAPBOX_BBOX="-75.563587,38.788657,-73.88506,41.357423"; // New Jersey bounds
 const SUGGEST_LIMIT=5;
 const MAX_MILES=3999;
+const MIN_QUERY_LENGTH=4;
+const DEBOUNCE_MS=350;
+const CACHE_TTL_MS=24*60*60*1000; // 24h
 
 const timestampEl=document.getElementById("timestamp");
 const distanceValue=document.getElementById("distanceValue");
-const distanceNote=document.getElementById("distanceNote");
+const distanceSuffix=document.getElementById("distanceSuffix");
+const distanceNote=null; // distance note removed from UI; keep null for guards
 const price=document.getElementById("price");
 const priceNote=document.getElementById("priceNote");
-<<<<<<< Updated upstream
-const combo=document.getElementById("combo");
-const maxMilesMsg=document.getElementById("maxMilesMsg");
-const timestampEl=document.getElementById("timestamp");
-=======
 const fromLocation=document.getElementById("fromLocation");
 const fromResults=document.getElementById("fromResults");
 const fromChipWrapper=document.getElementById("fromChipWrapper");
@@ -280,7 +279,6 @@ const toChipText=document.getElementById("toChipText");
 const toChipClear=document.getElementById("toChipClear");
 const swapBtn=document.getElementById("swapBtn");
 const scheduleInput=document.getElementById("scheduleInput");
->>>>>>> Stashed changes
 
 let mapboxAbortController=null;
 let distanceAbortController=null;
@@ -290,141 +288,7 @@ const mapboxFields={
   to:{key:"to",input:toLocation,results:toResults,chipWrapper:toChipWrapper,chip:toChip,chipText:toChipText,chipClear:toChipClear}
 };
 
-<<<<<<< Updated upstream
-function showMaxMiles(show){
-  maxMilesMsg.style.display = show ? "block" : "none";
-}
-
-function calcMiles(m){
-  if(m<1)return 5;
-  if(m<=10)return Math.round(5+m);
-  if(m<=15)return Math.round(5+m*1.1);
-  if(m<=20)return Math.round(5+m*1.2);
-  return Math.round(5+m*1.3);
-}
-
-function milesFormula(m){
-  if(m<=10)return"Fare = $5 + miles";
-  if(m<=15)return"Fare = $5 + (miles × 1.1)";
-  if(m<=20)return"Fare = $5 + (miles × 1.2)";
-  return"Fare = $5 + (miles × 1.3)";
-}
-
-function openPicker(o){ picker.classList.toggle("open",o); }
-
-function showChip(t){
-  chipText.textContent=t;
-  chip.style.display="inline-flex";
-  combo.classList.add("has-chip");
-}
-
-function hideChip(){
-  chip.style.display="none";
-  chipText.textContent="";
-  combo.classList.remove("has-chip");
-}
-
-function sync(){
-  entry.readOnly=state==="final";
-  entry.placeholder=state==="none"&&milesDraft===""?"Where to?":"";
-  combo.classList.toggle("success",state==="final");
-}
-
-function resetAll(){
-  state="none";
-  selectionType=null;
-  milesDraft="";
-  entry.value="";
-  hideChip();
-  price.textContent="$0";
-  priceNote.textContent="Enter miles or select a destination to see pricing.";
-  showMaxMiles(false);
-  openPicker(false);
-  sync();
-}
-
-function shake(){
-  combo.classList.remove("shake");
-  void combo.offsetWidth;
-  combo.classList.add("shake");
-  combo.addEventListener("animationend",()=>combo.classList.remove("shake"),{once:true});
-}
-
-function renderMiles(){
-  if(!milesDraft){ resetAll(); openPicker(true); return; }
-
-  if(Number(milesDraft) > MAX_MILES){
-    showMaxMiles(true);
-    shake();
-    return;
-  }
-  showMaxMiles(false);
-
-  state="preview"; selectionType="miles";
-  entry.value="";
-  showChip(milesDraft+" mi");
-  price.textContent="$"+calcMiles(+milesDraft);
-  priceNote.textContent=milesFormula(+milesDraft);
-  openPicker(false);
-  sync();
-}
-
-entry.addEventListener("focus",()=>state==="none"&&openPicker(true));
-entry.addEventListener("click",()=>state==="none"&&openPicker(true));
-
-entry.addEventListener("beforeinput",(e)=>{
-  if(state==="final")return;
-
-  if(e.inputType==="insertText"){
-    const ch=e.data;
-    if(!/^\d$/.test(ch) || (milesDraft===""&&ch==="0")){
-      e.preventDefault(); shake(); return;
-    }
-    e.preventDefault();
-    milesDraft+=ch;
-    renderMiles();
-  }
-
-  if(e.inputType==="deleteContentBackward"){
-    e.preventDefault();
-    milesDraft=milesDraft.slice(0,-1);
-    if(!milesDraft){
-      showMaxMiles(false);
-      resetAll();
-    } else {
-      renderMiles();
-    }
-  }
-});
-
-document.querySelectorAll(".destChip").forEach(b=>{
-  b.addEventListener("mousedown",e=>e.preventDefault());
-  b.addEventListener("click",()=>{
-    if(state==="final")return;
-    milesDraft="";
-    showMaxMiles(false);
-    state="final"; selectionType="dest";
-    showChip(b.dataset.dest);
-    price.textContent="$"+fares[b.dataset.dest];
-    priceNote.textContent="Fare = Fixed fare (tolls included)";
-    openPicker(false);
-    sync();
-  });
-});
-
-entry.addEventListener("keydown",(e)=>{
-  if(e.key==="Enter"&&state==="preview"){ state="final"; sync(); }
-  if(e.key==="Backspace"&&state==="final"){ e.preventDefault(); resetAll(); openPicker(true); }
-});
-
-clearBtn.onclick=()=>{ resetAll(); openPicker(true); entry.focus(); };
-
-document.addEventListener("click",e=>!combo.contains(e.target)&&openPicker(false));
-
-/* ===== Timestamp: "Jan 09, 5:33pm" with blinking colon ===== */
-=======
 // Timestamp
->>>>>>> Stashed changes
 function pad2(n){ return String(n).padStart(2,"0"); }
 function formatStamp(d){
   const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -510,6 +374,55 @@ function fareFormulaText(miles){
   return"Fare = $5 + (miles × 1.3), rounded";
 }
 
+// Local cache helpers (24h TTL)
+function getCache(key){
+  try{
+    const raw=localStorage.getItem(key);
+    if(!raw) return null;
+    const {ts,data}=JSON.parse(raw);
+    if(!ts||!data) return null;
+    if(Date.now()-ts>CACHE_TTL_MS){ localStorage.removeItem(key); return null; }
+    return data;
+  }catch{ return null; }
+}
+function setCache(key,data){
+  try{ localStorage.setItem(key, JSON.stringify({ts:Date.now(),data})); }catch{}
+}
+
+// Debounce helper
+function debounce(fn, delay){
+  let t;
+  return function(...args){
+    clearTimeout(t);
+    t=setTimeout(()=>fn.apply(this,args), delay);
+  };
+}
+
+// Count-up animation for miles text
+let milesAnimFrame=null;
+function animateMilesValue(targetMiles){
+  if(milesAnimFrame) cancelAnimationFrame(milesAnimFrame);
+  return new Promise(resolve=>{
+    const startVal=parseFloat(distanceValue.dataset.value||"0")||0;
+    const toVal=targetMiles;
+    const duration=420;
+    const start=performance.now();
+    function step(now){
+      const t=Math.min(1,(now-start)/duration);
+      const eased=1-Math.pow(1-t,3);
+      const val=startVal+(toVal-startVal)*eased;
+      distanceValue.textContent=val.toFixed(1);
+      distanceValue.dataset.value=val;
+      if(t<1){
+        milesAnimFrame=requestAnimationFrame(step);
+      } else {
+        resolve();
+      }
+    }
+    milesAnimFrame=requestAnimationFrame(step);
+  });
+}
+
 function showChip(field,text){
   field.chipText.textContent=text;
   field.chip.style.display="inline-flex";
@@ -543,29 +456,37 @@ function setSelectedPlace(key,data){
 function updateDistanceUI(opts={}){
   if(opts.error){
     distanceValue.textContent="--";
+    delete distanceValue.dataset.value;
+    distanceSuffix.textContent=opts.error;
     if(distanceNote) distanceNote.textContent=opts.error;
     updatePrice({error:opts.error});
     return;
   }
   if(opts.loading){
     distanceValue.textContent="...";
+    delete distanceValue.dataset.value;
+    distanceSuffix.textContent="Calculating driving distance...";
     if(distanceNote) distanceNote.textContent="Calculating driving distance...";
     updatePrice({loading:true});
     return;
   }
   if(typeof opts.miles==="number"){
-    distanceValue.textContent=opts.miles.toFixed(1);
+    distanceSuffix.textContent="miles driving";
     if(distanceNote) distanceNote.textContent="";
-    updatePrice({miles:opts.miles});
+    animateMilesValue(opts.miles).then(()=>updatePrice({miles:opts.miles}));
     return;
   }
   if(selectedPlaces.from && selectedPlaces.to){
     distanceValue.textContent="...";
+    delete distanceValue.dataset.value;
+    distanceSuffix.textContent="Calculating driving distance...";
     if(distanceNote) distanceNote.textContent="Calculating driving distance...";
     updatePrice({loading:true});
     return;
   }
   distanceValue.textContent="--";
+  delete distanceValue.dataset.value;
+  distanceSuffix.textContent="miles driving";
   if(distanceNote) distanceNote.textContent="";
   updatePrice();
 }
@@ -576,14 +497,34 @@ function updateSwapState(){
 }
 
 function updatePrice(opts={}){
-  if(opts.error){ price.textContent="$0"; priceNote.textContent=opts.error; return; }
-  if(opts.loading){ price.textContent="..."; priceNote.textContent="Waiting for distance to estimate fare."; return; }
-  if(typeof opts.miles==="number"){ const fare=calcFare(opts.miles); price.textContent=`$${fare}`; priceNote.textContent=`${distanceValue.textContent} miles driving`; return; }
-  price.textContent="$0"; priceNote.textContent="-- miles driving";
+  if(opts.error){
+    price.textContent="$0";
+    distanceValue.textContent="--";
+    distanceSuffix.textContent=opts.error;
+    return;
+  }
+  if(opts.loading){
+    price.textContent="...";
+    distanceValue.textContent="...";
+    distanceSuffix.textContent="Waiting for distance to estimate fare.";
+    return;
+  }
+  if(typeof opts.miles==="number"){
+    const fare=calcFare(opts.miles);
+    price.textContent=`$${fare}`;
+    distanceSuffix.textContent="miles driving";
+    return;
+  }
+  price.textContent="$0";
+  distanceValue.textContent="--";
+  distanceSuffix.textContent="miles driving";
 }
 
 async function fetchMapboxSuggestions(q){
   if(!MAPBOX_ACCESS_TOKEN) return;
+  const cacheKey=`suggest:${q.toLowerCase()}`;
+  const cached=getCache(cacheKey);
+  if(cached) return Promise.resolve(cached);
   const url=new URL("https://api.mapbox.com/search/searchbox/v1/suggest");
   url.searchParams.set("q",q);
   url.searchParams.set("language","en");
@@ -597,11 +538,16 @@ async function fetchMapboxSuggestions(q){
   mapboxAbortController=new AbortController();
   const res=await fetch(url.toString(),{signal:mapboxAbortController.signal});
   if(!res.ok) throw new Error("Mapbox suggest failed");
-  return res.json();
+  const data=await res.json();
+  setCache(cacheKey,data);
+  return data;
 }
 
 async function fetchPlaceDetails(mapboxId){
   if(!mapboxId) return null;
+  const cacheKey=`retrieve:${mapboxId}`;
+  const cached=getCache(cacheKey);
+  if(cached) return Promise.resolve(cached);
   const url=new URL(`https://api.mapbox.com/search/searchbox/v1/retrieve/${encodeURIComponent(mapboxId)}`);
   url.searchParams.set("session_token",MAPBOX_SESSION_TOKEN);
   url.searchParams.set("access_token",MAPBOX_ACCESS_TOKEN);
@@ -611,7 +557,9 @@ async function fetchPlaceDetails(mapboxId){
   const feature=data?.features?.[0];
   const coords=feature?.geometry?.coordinates;
   if(!coords || coords.length<2) return null;
-  return {coords:{lon:coords[0],lat:coords[1]}};
+  const payload={coords:{lon:coords[0],lat:coords[1]}};
+  setCache(cacheKey,payload);
+  return payload;
 }
 
 function metersToMiles(m){ return m/1609.344; }
@@ -634,6 +582,10 @@ function maybeComputeDistance(){
   const from=selectedPlaces.from;
   const to=selectedPlaces.to;
   if(!from || !to){ updateDistanceUI(); return; }
+  if(!from.coords || !to.coords){
+    updateDistanceUI({error:"Missing coordinates for one of the locations."});
+    return;
+  }
   updateDistanceUI({loading:true});
   if(distanceAbortController) distanceAbortController.abort();
   distanceAbortController=new AbortController();
@@ -660,12 +612,22 @@ function renderResults(field,suggestions){
       showChip(field,displayLabel);
       clearResults(field);
       field.input.focus();
-      fetchPlaceDetails(item.mapbox_id)
-        .then(details=>{
-          if(details?.coords){ setSelectedPlace(field.key,{label:displayLabel,mapboxId:item.mapbox_id,coords:details.coords}); }
-          else { hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }
-        })
-        .catch(err=>{ if(err.name!=="AbortError"){ hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }});
+      const coordsFromSuggest=item?.coordinates;
+      const hasCoords=coordsFromSuggest && typeof coordsFromSuggest.longitude==="number" && typeof coordsFromSuggest.latitude==="number";
+      if(hasCoords){
+        setSelectedPlace(field.key,{
+          label:displayLabel,
+          mapboxId:item.mapbox_id,
+          coords:{lon:coordsFromSuggest.longitude,lat:coordsFromSuggest.latitude}
+        });
+      } else {
+        fetchPlaceDetails(item.mapbox_id)
+          .then(details=>{
+            if(details?.coords){ setSelectedPlace(field.key,{label:displayLabel,mapboxId:item.mapbox_id,coords:details.coords}); }
+            else { hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }
+          })
+          .catch(err=>{ if(err.name!=="AbortError"){ hideChip(field); updateDistanceUI({error:"Could not retrieve location details."}); }});
+      }
     });
     const li=document.createElement("li");
     li.appendChild(btn);
@@ -680,6 +642,7 @@ function clearResults(field){ field.results.innerHTML=""; }
 function handleInput(field){
   const q=field.input.value.trim();
   if(!q){ clearResults(field); return; }
+  if(q.length<MIN_QUERY_LENGTH){ clearResults(field); return; }
   hideChip(field);
   fetchMapboxSuggestions(q)
     .then(data=>renderResults(field,data?.suggestions||[]))
@@ -687,7 +650,8 @@ function handleInput(field){
 }
 
 Object.values(mapboxFields).forEach(field=>{
-  field.input.addEventListener("input",()=>handleInput(field));
+  const debounced=debounce(()=>handleInput(field),DEBOUNCE_MS);
+  field.input.addEventListener("input",debounced);
   field.chipClear.addEventListener("click",()=>{
     field.input.value="";
     hideChip(field);
