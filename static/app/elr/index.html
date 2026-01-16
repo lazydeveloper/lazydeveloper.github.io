@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@500&family=JetBrains+Mono:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     *{ box-sizing:border-box; }
@@ -158,11 +159,26 @@ h1{
       box-shadow:0 10px 20px rgba(20,20,50,.18);
       transform:translateY(-1px);
     }
+    .copy-btn.sending{
+      transform:translateY(0) scale(0.99);
+      box-shadow:0 10px 20px rgba(20,20,50,.18);
+    }
     .copy-btn:disabled{
       opacity:0;
       cursor:default;
       box-shadow:none;
       transform:none;
+    }
+    .wa-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:18px;
+      height:18px;
+      flex-shrink:0;
+      margin-right:4px;
+      color:#25D366;
+      font-size:18px;
     }
     @keyframes copyFlash{
       0%{ left:-60%; opacity:0; }
@@ -235,7 +251,10 @@ h1{
     <div class="note" id="priceNote"><span id="distanceValue">--</span> <span id="distanceSuffix">miles driving</span></div>
   </div>
   <div style="height:6px;"></div>
-  <button id="copyTrip" class="copy-btn" type="button" aria-label="Copy price and miles">⧉ Copy Ride Info</button>
+  <button id="copyTrip" class="copy-btn" type="button" aria-label="Post in ELR group">
+    <span aria-hidden="true" class="wa-icon"><i class="fa-brands fa-whatsapp"></i></span>
+    Post in ELR Group
+  </button>
 </div>
 
 <div style="height:12px;"></div>
@@ -859,16 +878,23 @@ if(copyTrip){
     const line5=`estimated by our app https://shiva.dev/app/elr/`;
     const payload=[line1,line2,line3,"",line4,line5].join("\n");
     const originalLabel=copyTrip.textContent;
-    copyTrip.classList.add("copied");
-    copyTrip.textContent="Copied!";
-    copyTrip.style.setProperty("--flash-play","1");
-    navigator.clipboard?.writeText(payload).catch(()=>{}).finally(()=>{
+    copyTrip.classList.add("sending");
+
+    // Open WhatsApp share so user can choose a chat/group after a short animation beat
+    const encodedMsg=encodeURIComponent(payload);
+    const waDeep=`whatsapp://send?text=${encodedMsg}`;
+    const waWeb=`https://wa.me/?text=${encodedMsg}`;
+    const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const targetUrl=isMobile?waDeep:waWeb;
+    setTimeout(()=>{
+      const opened=window.open(targetUrl,"_blank");
+      if(!opened && !isMobile){
+        window.location.href=waWeb;
+      }
       setTimeout(()=>{
-        copyTrip.classList.remove("copied");
-        copyTrip.textContent=originalLabel;
-        copyTrip.style.removeProperty("--flash-play");
-      },900);
-    });
+        copyTrip.classList.remove("sending");
+      },700);
+    },200);
   });
 }
 
