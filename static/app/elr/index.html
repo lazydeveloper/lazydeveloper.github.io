@@ -139,6 +139,7 @@ h1{
       padding:6px 10px;
       font-size:12px;
       font-weight:700;
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       cursor:pointer;
       box-shadow:0 6px 14px rgba(20,20,50,.12);
       display:none;
@@ -373,6 +374,7 @@ const mapboxFields={
   from:{key:"from",input:fromLocation,results:fromResults,chipWrapper:fromChipWrapper,chip:fromChip,chipText:fromChipText,chipClear:fromChipClear},
   to:{key:"to",input:toLocation,results:toResults,chipWrapper:toChipWrapper,chip:toChip,chipText:toChipText,chipClear:toChipClear}
 };
+const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 // Timestamp
 function pad2(n){ return String(n).padStart(2,"0"); }
@@ -874,7 +876,7 @@ if(copyTrip){
     const line1=`*Looking for 1 way ride ${whenText}*`;
     const line2=`From: ${pickup}`;
     const line3=`To: ${dropoff}`;
-    const line4=`Willing to pay ${priceText} for ${milesText} 1 way ride,`;
+    const line4=`Willing to pay ${priceText} for ${milesText} 1 way ride as`;
     const line5=`estimated by our app https://shiva.dev/app/elr/`;
     const payload=[line1,line2,line3,"",line4,line5].join("\n");
     const originalLabel=copyTrip.textContent;
@@ -884,13 +886,9 @@ if(copyTrip){
     const encodedMsg=encodeURIComponent(payload);
     const waDeep=`whatsapp://send?text=${encodedMsg}`;
     const waWeb=`https://wa.me/?text=${encodedMsg}`;
-    const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const targetUrl=isMobile?waDeep:waWeb;
     setTimeout(()=>{
-      const opened=window.open(targetUrl,"_blank");
-      if(!opened && !isMobile){
-        window.location.href=waWeb;
-      }
+      window.location.href=targetUrl;
       setTimeout(()=>{
         copyTrip.classList.remove("sending");
       },700);
