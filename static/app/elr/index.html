@@ -46,7 +46,7 @@ h1{
     .mapbox-fields{ display:flex; flex-direction:column; gap:10px; margin-bottom:12px; }
     .mapbox-fields label{ display:block; font-size:12px; font-weight:700; color:#333; margin-bottom:4px; }
 
-    .mapbox-row-full{ width:100%; }
+    .mapbox-row-full{ width:100%; min-width:0; }
     .mapbox-suggestions{ position:relative; }
 
     .mapbox-field{
@@ -86,8 +86,8 @@ h1{
     }
     .mapbox-suggestions button:hover{ background:#f2f5ff; }
 
-    .schedule-control{ position:relative; width:100%; }
-    .schedule-input{ padding-left:60px; width:100%; display:block; }
+    .schedule-control{ position:relative; width:100%; min-width:0; }
+    .schedule-input{ padding-left:60px; width:100%; max-width:100%; min-width:0; display:block; }
     .swap-inline{
       position:absolute;
       left:12px;
@@ -112,6 +112,7 @@ h1{
 
     /* Trip card */
 .trip-card{
+      position:relative;
       margin-top:16px;
       padding:18px;
       background:#5F78C9;
@@ -128,6 +129,66 @@ h1{
       color:#FFFFFF;
       line-height:1.4;
       min-height:14px;
+    }
+    .copy-btn{
+      border:1px solid #4d62aa;
+      background:#fff;
+      color:#2e3f70;
+      border-radius:10px;
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(20,20,50,.12);
+      display:none;
+      align-items:center;
+      gap:6px;
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(4px);
+      position:relative;
+      overflow:hidden;
+    }
+    .copy-btn:hover{ transform:translateY(-1px); box-shadow:0 9px 18px rgba(20,20,50,.16); }
+    .copy-btn:active{ transform:translateY(0); }
+    .copy-btn.copied{
+      background:#e7f0ff;
+      color:#1b2f63;
+      box-shadow:0 10px 20px rgba(20,20,50,.18);
+      transform:translateY(-1px);
+    }
+    .copy-btn:disabled{
+      opacity:0;
+      cursor:default;
+      box-shadow:none;
+      transform:none;
+    }
+    @keyframes copyFlash{
+      0%{ left:-60%; opacity:0; }
+      10%{ opacity:0.8; }
+      50%{ left:100%; opacity:0.8; }
+      100%{ left:100%; opacity:0; }
+    }
+    .copy-btn.copied::after{
+      animation: copyFlash 1.2s ease;
+      opacity:1;
+    }
+    .copy-btn.visible::after{
+      animation: copyFlash 1.8s ease infinite;
+      opacity:1;
+    }
+    .copy-btn::after{
+      content:"";
+      position:absolute;
+      left:-60%;
+      top:0;
+      width:40%;
+      height:100%;
+      background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+      transform:skewX(-20deg);
+      opacity:0;
+      pointer-events:none;
     }
 
     /* Selected chip */
@@ -173,6 +234,8 @@ h1{
     <div class="v" id="price">$0</div>
     <div class="note" id="priceNote"><span id="distanceValue">--</span> <span id="distanceSuffix">miles driving</span></div>
   </div>
+  <div style="height:6px;"></div>
+  <button id="copyTrip" class="copy-btn" type="button" aria-label="Copy price and miles">⧉ Copy Ride Info</button>
 </div>
 
 <div style="height:12px;"></div>
@@ -282,6 +345,7 @@ const toChipText=document.getElementById("toChipText");
 const toChipClear=document.getElementById("toChipClear");
 const swapBtn=document.getElementById("swapBtn");
 const scheduleInput=document.getElementById("scheduleInput");
+const copyTrip=document.getElementById("copyTrip");
 
 let mapboxAbortController=null;
 let distanceAbortController=null;
@@ -321,6 +385,19 @@ function addHours(d,h){ return new Date(d.getTime()+h*60*60*1000); }
 function toLocalInput(d){
   const pad=n=>String(n).padStart(2,"0");
   return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+function formatFriendlyWhen(d){
+  if(!(d instanceof Date) || Number.isNaN(d.getTime())) return "now";
+  const now=new Date();
+  const startOfDay=(dt)=>new Date(dt.getFullYear(),dt.getMonth(),dt.getDate());
+  const today=startOfDay(now).getTime();
+  const target=startOfDay(d).getTime();
+  const diffDays=Math.round((target - today)/(1000*60*60*24));
+  const timeStr=d.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+  if(diffDays===0) return `Today at ${timeStr}`;
+  if(diffDays===1) return `Tomorrow at ${timeStr}`;
+  const weekday=d.toLocaleDateString(undefined,{weekday:"long"});
+  return `${weekday} at ${timeStr}`;
 }
 
 function normalizeLocationText(text){
@@ -530,12 +607,14 @@ function updatePrice(opts={}){
     distanceValue.textContent="--";
     distanceSuffix.textContent=opts.error;
     price.classList.remove("loading");
+    if(copyTrip){ copyTrip.disabled=true; copyTrip.style.opacity="0"; copyTrip.style.pointerEvents="none"; copyTrip.style.display="none"; }
     return;
   }
   if(opts.loading){
     price.classList.add("loading");
     distanceValue.textContent="...";
     distanceSuffix.textContent="Waiting for distance to estimate fare.";
+    if(copyTrip){ copyTrip.disabled=true; copyTrip.style.opacity="0"; copyTrip.style.pointerEvents="none"; copyTrip.style.display="none"; }
     return;
   }
   if(typeof opts.miles==="number"){
@@ -543,12 +622,29 @@ function updatePrice(opts={}){
     price.textContent=`$${fare}`;
     distanceSuffix.textContent="miles driving";
     price.classList.remove("loading");
+    if(copyTrip){
+      copyTrip.style.display="inline-flex";
+      requestAnimationFrame(()=>{
+        copyTrip.disabled=false;
+        copyTrip.style.opacity="1";
+        copyTrip.style.pointerEvents="auto";
+        copyTrip.style.transform="translateY(0)";
+        copyTrip.classList.add("visible");
+      });
+    }
     return;
   }
   price.textContent="$0";
   distanceValue.textContent="--";
   distanceSuffix.textContent="miles driving";
   price.classList.remove("loading");
+   if(copyTrip){ copyTrip.disabled=true; copyTrip.style.opacity="0"; copyTrip.style.pointerEvents="none"; copyTrip.style.display="none"; }
+}
+
+function isNewJerseySuggestion(item){
+  const regionAbbr=item?.context?.region?.abbr||"";
+  const regionName=item?.context?.region?.name||"";
+  return /(^|\b)NJ(\b|$)/i.test(regionAbbr) || /New Jersey/i.test(regionName);
 }
 
 async function fetchMapboxSuggestions(q){
@@ -627,8 +723,13 @@ function maybeComputeDistance(){
 
 function renderResults(field,suggestions){
   if(!suggestions || !suggestions.length){ clearResults(field); return; }
+  const filtered = suggestions.filter(isNewJerseySuggestion);
+  if(!filtered.length){
+    field.results.innerHTML="<ul><li style=\"padding:8px 8px;color:#444;font-size:14px;\">No New Jersey matches</li></ul>";
+    return;
+  }
   const ul=document.createElement("ul");
-  suggestions.forEach(item=>{
+  filtered.forEach(item=>{
     const btn=document.createElement("button");
     const headline=item.name || item.place_formatted || item.full_address || item.context?.place?.name || "Unknown";
     const contextParts=[item.context?.address?.name,item.context?.street?.name,item.context?.place?.name,item.context?.region?.name,item.context?.postcode?.name,item.context?.country?.name].filter(Boolean);
@@ -735,6 +836,41 @@ swapBtn.addEventListener("click",()=>{
 // Schedule default
 scheduleInput.step="300";
 scheduleInput.value=toLocalInput(roundToFiveMinutes(addHours(new Date(),1)));
+
+// Copy price + miles
+if(copyTrip){
+  copyTrip.addEventListener("click",()=>{
+    if(copyTrip.disabled) return;
+    const pickup=selectedPlaces.to?.label || "Not set";
+    const dropoff=selectedPlaces.from?.label || "Not set";
+    const milesText=distanceValue.textContent.trim() ? `${distanceValue.textContent.trim()} miles` : "Miles not set";
+    let whenText="now";
+    if(scheduleInput.value){
+      const d=new Date(scheduleInput.value);
+      if(!Number.isNaN(d.getTime())){
+        whenText=formatFriendlyWhen(d);
+      }
+    }
+    const priceText=price.textContent.trim()||"$0";
+    const line1=`*Looking for 1 way ride ${whenText}*`;
+    const line2=`From: ${pickup}`;
+    const line3=`To: ${dropoff}`;
+    const line4=`Willing to pay ${priceText} for ${milesText} 1 way ride,`;
+    const line5=`estimated by our app https://shiva.dev/app/elr/`;
+    const payload=[line1,line2,line3,"",line4,line5].join("\n");
+    const originalLabel=copyTrip.textContent;
+    copyTrip.classList.add("copied");
+    copyTrip.textContent="Copied!";
+    copyTrip.style.setProperty("--flash-play","1");
+    navigator.clipboard?.writeText(payload).catch(()=>{}).finally(()=>{
+      setTimeout(()=>{
+        copyTrip.classList.remove("copied");
+        copyTrip.textContent=originalLabel;
+        copyTrip.style.removeProperty("--flash-play");
+      },900);
+    });
+  });
+}
 
 </script>
 
