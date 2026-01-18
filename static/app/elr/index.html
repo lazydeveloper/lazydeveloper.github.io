@@ -462,6 +462,7 @@ function formatSuggestionLabel(item, selectionValue, headline){
 }
 
 function calcFare(miles){
+  if(miles<=0)return 0;
   if(miles<1)return 5;
   if(miles<=10)return Math.round(5+miles);
   if(miles<=15)return Math.round(5+miles*1.1);
@@ -644,14 +645,21 @@ function updatePrice(opts={}){
     distanceSuffix.textContent="miles driving";
     price.classList.remove("loading");
     if(copyTrip){
-      copyTrip.style.display="inline-flex";
-      requestAnimationFrame(()=>{
-        copyTrip.disabled=false;
-        copyTrip.style.opacity="1";
-        copyTrip.style.pointerEvents="auto";
-        copyTrip.style.transform="translateY(0)";
-        copyTrip.classList.add("visible");
-      });
+      if(fare>0){
+        copyTrip.style.display="inline-flex";
+        requestAnimationFrame(()=>{
+          copyTrip.disabled=false;
+          copyTrip.style.opacity="1";
+          copyTrip.style.pointerEvents="auto";
+          copyTrip.style.transform="translateY(0)";
+          copyTrip.classList.add("visible");
+        });
+      } else {
+        copyTrip.disabled=true;
+        copyTrip.style.opacity="0";
+        copyTrip.style.pointerEvents="none";
+        copyTrip.style.display="none";
+      }
     }
     return;
   }
