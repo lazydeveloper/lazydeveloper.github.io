@@ -49,7 +49,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 # Author config
 [author]
   name = "Shiva"
-  email = "i@shiva.dev"
+  email = "hi@shiva.dev"
   link = "https://shiva.dev"
 
 [params]
