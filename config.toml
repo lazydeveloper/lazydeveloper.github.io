@@ -49,10 +49,48 @@ ignoreLogs = ['warning-goldmark-raw-html']
 # Author config
 [author]
   name = "Shiva"
-  email = "i@shiva.dev"
+  email = "hi@shiva.dev"
   link = "https://shiva.dev"
 
 [params]
+
+[outputs]
+  # JSON output is required for lunr search and richer snippets
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+
+[params]
+  # Site-wide meta used by OpenGraph/Twitter/Schema
+  title = "Shiva"
+  description = "This is shiva and I build things for web"
+  keywords = ["Shiva", "Siva", "inampudi", "siva inampudi", "shiva.dev", "software engineering", "developer blog", "automation"]
+  images = ["/android-chrome-192x192.png"]
+
+  # Favicons/app icons already live in /static, keep them discoverable
+  [params.app]
+    title = "Shiva"
+
+  # Site verification placeholders (fill with search console codes when ready)
+  [params.verification]
+    google = "0MVTlFNw17OE-QT9MenNyGilFY76e6LHd-UwvqYxryI"
+    bing = ""
+
+  # Default SEO image data for rich previews
+  [params.seo]
+    image = "/android-chrome-192x192.png"
+    thumbnailUrl = "/android-chrome-192x192.png"
+
+  # Page-level schema defaults (publisher logo/name)
+  [params.page.seo]
+    images = []
+    [params.page.seo.publisher]
+      name = "Shiva"
+      logoUrl = "/android-chrome-192x192.png"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.7
+  filename = "sitemap.xml"
 
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
@@ -64,13 +102,6 @@ ignoreLogs = ['warning-goldmark-raw-html']
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
-
-
-  # Enable JSON output 
-  [outputs]
-    home = ["HTML", "RSS", "JSON"]
-    page = ["HTML"]
-
 
 
 
